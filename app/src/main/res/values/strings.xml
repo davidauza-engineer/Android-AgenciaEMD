@@ -1,3 +1,34 @@
 <resources>
+
     <string name="app_name">Agencia EMD</string>
+
+    <string name="business_name">Agencia EMD</string>
+
+    <string name="slogan">E-Marketing Developer</string>
+
+    <string name="description">Somos un equipo de profesionales curiosos, creativos y apasionados
+                                por el marketing. Disfrutamos lo que mejor sabemos hacer: Planear, crear y comunicar
+                                en canales digitales. Nuestros pilares son: Innovación, compromiso, trabajo en equipo,
+                                responsabilidad y pasión por los proyectos de nuestros clientes.</string>
+
+    <string name="about_us">Conócenos</string>
+
+    <string name="web_address">http://agenciaemd.com</string>
+
+    <string name="call_us">Llámanos</string>
+
+    <string name="cellphone">+57 322-946-7440
+                                \nLunes a Sábado
+                                \n8:30am a 6:00pm</string>
+
+    <string name="write_us">Escríbenos</string>
+
+    <string name="email">hola@agenciaemd.com</string>
+
+    <string name="find_us">Encuéntranos</string>
+
+    <string name="address">Carrera 11 # 21 - 90
+                            \nOficina 312
+                            \nSogamoso, Boyacá</string>
+
 </resources>

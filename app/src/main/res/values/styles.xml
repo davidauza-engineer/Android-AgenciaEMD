@@ -6,6 +6,23 @@
         <item name="colorPrimary">#fe5c5c</item>
         <item name="colorPrimaryDark">#c52332</item>
         <item name="colorAccent">#FFC107</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
+    </style>
+
+    <!-- Style for the buttons. -->
+    <style name="buttons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">32dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+    
+    <!-- Style for the TextViews below the buttons. -->
+    <style name="text_views_below_buttons">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">@color/secondaryText</item>
     </style>
 
 </resources>

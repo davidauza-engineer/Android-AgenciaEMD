@@ -1,30 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="67dp"
-        android:layout_marginRight="67dp"
-        android:layout_marginBottom="8dp"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/stat_notify_more" />
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/business_name"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@color/primaryText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginTop="16dp" />
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/slogan"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/secondaryText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:adjustViewBounds="true"
+            android:maxWidth="200dp"
+            android:src="@drawable/logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/description"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/primaryText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo" />
+
+        <Button
+            android:id="@+id/web_button"
+            style="@style/buttons"
+            android:drawableLeft="@drawable/internet"
+            android:text="@string/about_us"
+            app:layout_constraintLeft_toLeftOf="@id/description"
+            app:layout_constraintRight_toLeftOf="@id/find_us_button"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <TextView
+            android:id="@+id/web_address"
+            style="@style/text_views_below_buttons"
+            android:text="@string/web_address"
+            app:layout_constraintLeft_toLeftOf="@id/web_button"
+            app:layout_constraintRight_toRightOf="@id/web_button"
+            app:layout_constraintTop_toBottomOf="@id/web_button" />
+
+        <Button
+            android:id="@+id/call_us_button"
+            style="@style/buttons"
+            android:layout_width="0dp"
+            android:drawableLeft="@drawable/call"
+            android:text="@string/call_us"
+            app:layout_constraintLeft_toLeftOf="@id/web_button"
+            app:layout_constraintRight_toRightOf="@id/web_button"
+            app:layout_constraintTop_toBottomOf="@id/web_address" />
+
+        <TextView
+            android:id="@+id/phone_number"
+            style="@style/text_views_below_buttons"
+            android:gravity="center_horizontal"
+            android:text="@string/cellphone"
+            app:layout_constraintLeft_toLeftOf="@id/call_us_button"
+            app:layout_constraintRight_toRightOf="@id/call_us_button"
+            app:layout_constraintTop_toBottomOf="@id/call_us_button" />
+
+        <Button
+            android:id="@+id/email_button"
+            style="@style/buttons"
+            android:layout_width="0dp"
+            android:drawableLeft="@drawable/envelope"
+            android:text="@string/write_us"
+            app:layout_constraintLeft_toLeftOf="@id/find_us_button"
+            app:layout_constraintRight_toRightOf="@id/find_us_button"
+            app:layout_constraintTop_toBottomOf="@id/description" />
+
+        <TextView
+            android:id="@+id/email_address"
+            style="@style/text_views_below_buttons"
+            android:text="@string/email"
+            app:layout_constraintLeft_toLeftOf="@id/email_button"
+            app:layout_constraintRight_toRightOf="@id/email_button"
+            app:layout_constraintTop_toBottomOf="@id/email_button" />
+
+        <Button
+            android:id="@+id/find_us_button"
+            style="@style/buttons"
+            android:drawableLeft="@drawable/placeholder"
+            android:text="@string/find_us"
+            app:layout_constraintLeft_toRightOf="@id/web_button"
+            app:layout_constraintRight_toRightOf="@id/description"
+            app:layout_constraintTop_toBottomOf="@id/email_address" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/text_views_below_buttons"
+            android:gravity="center_horizontal"
+            android:text="@string/address"
+            app:layout_constraintLeft_toLeftOf="@id/find_us_button"
+            app:layout_constraintRight_toRightOf="@id/find_us_button"
+            app:layout_constraintTop_toBottomOf="@id/find_us_button" />
+
+        <TextView
+            android:id="@+id/copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/secondaryText"
+            android:textColorLink="@android:color/holo_blue_light"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
