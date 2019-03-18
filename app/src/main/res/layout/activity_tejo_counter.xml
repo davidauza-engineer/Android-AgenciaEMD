@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TejoCounter">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/team_a_title"
+            style="@style/team_titles"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/team_a"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/team_b_title"
+            style="@style/team_titles"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/team_b"
+            app:layout_constraintLeft_toRightOf="@id/line"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/team_a_score"
+            style="@style/score_text_views"
+            android:fontFamily="sans-serif-light"
+            app:layout_constraintLeft_toLeftOf="@id/team_a_title"
+            app:layout_constraintRight_toRightOf="@id/team_a_title"
+            app:layout_constraintTop_toBottomOf="@id/team_a_title" />
+
+        <TextView
+            android:id="@+id/team_b_score"
+            style="@style/score_text_views"
+            android:fontFamily="sans-serif-light"
+            app:layout_constraintLeft_toLeftOf="@id/team_b_title"
+            app:layout_constraintRight_toRightOf="@id/team_b_title"
+            app:layout_constraintTop_toBottomOf="@id/team_b_title" />
+
+        <Button
+            android:id="@+id/monona_button_a"
+            style="@style/tejo_buttons"
+            android:onClick="mononaTeamA"
+            android:text="@string/monona_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/team_a_score" />
+
+        <Button
+            android:id="@+id/monona_button_b"
+            style="@style/tejo_buttons"
+            android:onClick="mononaTeamB"
+            android:text="@string/monona_text"
+            app:layout_constraintLeft_toRightOf="@id/line"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/team_b_score" />
+
+        <Button
+            android:id="@+id/embocinada_button_a"
+            style="@style/tejo_buttons"
+            android:onClick="embocinadaTeamA"
+            android:text="@string/embocinada_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/monona_button_a" />
+
+        <Button
+            android:id="@+id/embocinada_button_b"
+            style="@style/tejo_buttons"
+            android:onClick="embocinadaTeamB"
+            android:text="@string/embocinada_text"
+            app:layout_constraintLeft_toRightOf="@id/line"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/monona_button_b" />
+
+        <Button
+            android:id="@+id/mecha_button_a"
+            style="@style/tejo_buttons"
+            android:onClick="mechaTeamA"
+            android:text="@string/mecha_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/embocinada_button_a" />
+
+        <Button
+            android:id="@+id/mecha_button_b"
+            style="@style/tejo_buttons"
+            android:onClick="mechaTeamB"
+            android:text="@string/mecha_text"
+            app:layout_constraintLeft_toRightOf="@id/line"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/embocinada_button_b" />
+
+        <Button
+            android:id="@+id/mano_button_a"
+            style="@style/tejo_buttons"
+            android:onClick="manoTeamA"
+            android:text="@string/mano_text"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line"
+            app:layout_constraintTop_toBottomOf="@id/mecha_button_a" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@android:color/darker_gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/team_a_title" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

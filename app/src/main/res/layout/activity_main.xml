@@ -132,6 +132,25 @@
             app:layout_constraintRight_toRightOf="@id/find_us_button"
             app:layout_constraintTop_toBottomOf="@id/find_us_button" />
 
+        <Button
+            android:id="@+id/tejo_button"
+            style="@style/buttons"
+            android:drawableLeft="@drawable/scoreboard"
+            android:onClick="goToTejoActivity"
+            android:text="@string/tejo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/address" />
+
+        <TextView
+            android:id="@+id/text_tejo"
+            style="@style/text_views_below_buttons"
+            android:gravity="center_horizontal"
+            android:text="@string/tejo_text"
+            app:layout_constraintLeft_toLeftOf="@id/tejo_button"
+            app:layout_constraintRight_toRightOf="@id/tejo_button"
+            app:layout_constraintTop_toBottomOf="@id/tejo_button" />
+
         <TextView
             android:id="@+id/copyright"
             android:layout_width="wrap_content"
@@ -145,7 +164,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/address" />
+            app:layout_constraintTop_toBottomOf="@id/text_tejo" />
 
     </android.support.constraint.ConstraintLayout>
 

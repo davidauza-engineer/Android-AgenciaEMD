@@ -1,11 +1,13 @@
 package engineer.davidauza.agenciaemd;
 
+import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Layout;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,15 +25,23 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the copyright text and links
         String copyrightText = "Copyright 2019 <a href=\"https://davidauza.engineer\">David Auza</a>" +
-                                 "<br /><a href=\"http://agenciaemd.com\">Agencia EMD</a> " +
-                                 "<br />Todos los derechos reservados" +
-                                 "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
-                                    " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
+                "<br /><a href=\"http://agenciaemd.com\">Agencia EMD</a> " +
+                "<br />Todos los derechos reservados" +
+                "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
+                " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
 
         TextView copyrightTextView = findViewById(R.id.copyright);
         copyrightTextView.setText(Html.fromHtml(copyrightText));
         copyrightTextView.setMovementMethod(LinkMovementMethod.getInstance());
 
+    }
+
+    /**
+     * This method starts the tejo counter's activity
+     */
+    public void goToTejoActivity(View view) {
+        Intent intent = new Intent(this, TejoCounter.class);
+        startActivity(intent);
     }
 
 }

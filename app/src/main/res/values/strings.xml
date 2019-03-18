@@ -31,4 +31,23 @@
                             \nOficina 312
                             \nSogamoso, Boyacá</string>
 
+    <string name="tejo">Puntaje Tejo</string>
+
+    <string name="tejo_text">Registra el puntaje del deporte
+                                \nícono de nuestra región</string>
+
+    <string name="team_a">Equipo A</string>
+
+    <string name="team_b">Equipo B</string>
+
+    <string name="game_over">El juego ha terminado. Uno de los equipos ha alcanzado los 27 puntos.</string>
+
+    <string name="monona_text">Moñona +9</string>
+
+    <string name="embocinada_text">Embocinada +6</string>
+
+    <string name="mecha_text">Mecha +3</string>
+
+    <string name="mano_text">Mano +1</string>
+
 </resources>
