@@ -1,6 +1,5 @@
 package engineer.davidauza.agenciaemd;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.net.Uri;
@@ -35,6 +34,9 @@ public class TejoCounter extends AppCompatActivity {
 
     // Tracks if there is a previous state saved
     private boolean previousStateSaved = false;
+
+    // Tracks if it is possible to reset the game
+    private boolean resetAvailable = false;
 
     // The TextView corresponding to team A's score
     private TextView teamATextView;
@@ -82,7 +84,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamA, teamATextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -102,7 +104,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamB, teamBTextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -122,7 +124,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamA, teamATextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -142,7 +144,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamB, teamBTextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -162,7 +164,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamA, teamATextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -182,7 +184,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamB, teamBTextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -202,7 +204,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamA, teamATextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -222,26 +224,8 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(scoreTeamB, teamBTextView);
             checkForGameOver();
         } else {
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
-    }
-
-    /**
-     * This method creates a toast to let the user know the game has ended as one of the teams has
-     * scored 27 points.
-     */
-    private void createToastGameOver() {
-        Toast toast = Toast.makeText(this, R.string.game_over, Toast.LENGTH_SHORT);
-        // If the user is using a version of Android greater than 21, style the toast
-        if (Build.VERSION.SDK_INT >= 21) {
-            View viewToast = toast.getView();
-            viewToast.setBackgroundTintList(ColorStateList.valueOf(getResources().
-                    getColor(R.color.colorAccent)));
-            TextView text = viewToast.findViewById(android.R.id.message);
-            text.setTextColor(getResources().getColor(R.color.primaryText));
-            text.setGravity(Gravity.CENTER_HORIZONTAL);
-        }
-        toast.show();
     }
 
     /**
@@ -254,12 +238,12 @@ public class TejoCounter extends AppCompatActivity {
             // This TextView is below the teamATextView and it is shown if team A wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
             gameOver = true;
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         } else if (scoreTeamB >= 27 && !gameOver) {
             //This TextView is below the teamBTextView and it is shown if team B wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
             gameOver = true;
-            createToastGameOver();
+            createToastShort(R.string.game_over);
         }
     }
 
@@ -271,10 +255,13 @@ public class TejoCounter extends AppCompatActivity {
         previousScoreTeamB = scoreTeamB;
         previousGameOver = gameOver;
         if (!previousStateSaved) {
-            changeUndoButtonAlpha(1.0f);
+            changeButtonAlpha(R.id.undo_button, 1.0f);
             previousStateSaved = true;
         }
-
+        if (!resetAvailable) {
+            changeButtonAlpha(R.id.reset_button, 1.0f);
+            resetAvailable = true;
+        }
     }
 
     /**
@@ -284,8 +271,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void undo(View view) {
+        if (!resetAvailable && previousStateSaved) {
+            changeButtonAlpha(R.id.reset_button, 1.0f);
+            resetAvailable = true;
+        }
         if (previousStateSaved) {
-            changeUndoButtonAlpha(0.25f);
+            changeButtonAlpha(R.id.undo_button, 0.25f);
             previousStateSaved = false;
         }
         // If the winner (¡Ganador!) TextView is visible for any of the teams, set it to not visible
@@ -300,15 +291,16 @@ public class TejoCounter extends AppCompatActivity {
         displayScore(scoreTeamA, teamATextView);
         scoreTeamB = previousScoreTeamB;
         displayScore(scoreTeamB, teamBTextView);
+        checkForGameOver();
         gameOver = previousGameOver;
     }
 
     /**
      * This method changes the alpha of the undo button (Deshacer)
      */
-    private void changeUndoButtonAlpha(float pAlpha) {
-        Button undoButton = findViewById(R.id.undo_button);
-        undoButton.setAlpha(pAlpha);
+    private void changeButtonAlpha(int pIdButton, float pAlpha) {
+        Button button = findViewById(pIdButton);
+        button.setAlpha(pAlpha);
     }
 
     /**
@@ -339,14 +331,58 @@ public class TejoCounter extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Toast.makeText(this, getString(R.string.error_email), Toast.LENGTH_LONG)
-                    .show();
+            // Inform the user there is no email app installed on the phone
+            createToastShort(R.string.error_email);
         }
-        Toast.makeText(this, getString(R.string.error_email), Toast.LENGTH_LONG)
-                .show();
     }
 
+    /**
+     * This method creates and styles a short toast
+     */
+    private void createToastShort(int pMessage) {
+        Toast toast = Toast.makeText(this, pMessage, Toast.LENGTH_SHORT);
+        // If the user is using a version of Android greater than 21, style the toast
+        if (Build.VERSION.SDK_INT >= 21) {
+            View viewToast = toast.getView();
+            viewToast.setBackgroundTintList(ColorStateList.valueOf(getResources().
+                    getColor(R.color.colorAccent)));
+            TextView text = viewToast.findViewById(android.R.id.message);
+            text.setTextColor(getResources().getColor(R.color.primaryText));
+            text.setGravity(Gravity.CENTER_HORIZONTAL);
+        }
+        toast.show();
+    }
+
+    /**
+     * This method resets the game
+     *
+     * @param view
+     */
+    public void reset(View view) {
+        /**
+         * Manejar estado inicial despues de deshacer
+         */
+        // If the winner (¡Ganador!) TextView is visible for any of the teams, set it to not visible
+        if (gameOver) {
+            if (scoreTeamA >= 27) {
+                changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 0);
+            } else if (scoreTeamB >= 27) {
+                changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 0);
+            }
+        }
+        if (resetAvailable) {
+            saveState();
+        }
+        scoreTeamA = 0;
+        displayScore(scoreTeamA, teamATextView);
+        scoreTeamB = 0;
+        displayScore(scoreTeamB, teamBTextView);
+        gameOver = false;
+        resetAvailable = false;
+        changeButtonAlpha(R.id.reset_button, 0.25f);
+    }
+
+
     //TODO Implementar botón reset
-    //TODO Implementar botón compartir
     // TODO Cambio de orientación y cambio de actividad, necesito persistir los datos
 }
