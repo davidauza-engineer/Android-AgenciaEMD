@@ -65,7 +65,7 @@
             style="@style/buttons"
             android:drawableLeft="@drawable/internet"
             android:text="@string/about_us"
-            app:layout_constraintLeft_toLeftOf="@id/description"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/find_us_button"
             app:layout_constraintTop_toBottomOf="@id/description" />
 
@@ -120,7 +120,7 @@
             android:drawableLeft="@drawable/placeholder"
             android:text="@string/find_us"
             app:layout_constraintLeft_toRightOf="@id/web_button"
-            app:layout_constraintRight_toRightOf="@id/description"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/email_address" />
 
         <TextView

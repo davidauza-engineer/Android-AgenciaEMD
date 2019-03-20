@@ -29,6 +29,20 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/winner_team_a_text_view"
+            style="@style/winner_text_views"
+            app:layout_constraintLeft_toLeftOf="@id/team_a_title"
+            app:layout_constraintRight_toRightOf="@id/team_a_title"
+            app:layout_constraintTop_toBottomOf="@id/team_a_title" />
+
+        <TextView
+            android:id="@+id/winner_team_b_text_view"
+            style="@style/winner_text_views"
+            app:layout_constraintLeft_toLeftOf="@id/team_b_title"
+            app:layout_constraintRight_toRightOf="@id/team_b_title"
+            app:layout_constraintTop_toBottomOf="@id/team_b_title" />
+
+        <TextView
             android:id="@+id/team_a_score"
             style="@style/score_text_views"
             android:fontFamily="sans-serif-light"
@@ -47,6 +61,7 @@
         <Button
             android:id="@+id/monona_button_a"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/nine"
             android:onClick="mononaTeamA"
             android:text="@string/monona_text"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -56,6 +71,7 @@
         <Button
             android:id="@+id/monona_button_b"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/nine"
             android:onClick="mononaTeamB"
             android:text="@string/monona_text"
             app:layout_constraintLeft_toRightOf="@id/line"
@@ -65,6 +81,7 @@
         <Button
             android:id="@+id/embocinada_button_a"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/six"
             android:onClick="embocinadaTeamA"
             android:text="@string/embocinada_text"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -74,6 +91,7 @@
         <Button
             android:id="@+id/embocinada_button_b"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/six"
             android:onClick="embocinadaTeamB"
             android:text="@string/embocinada_text"
             app:layout_constraintLeft_toRightOf="@id/line"
@@ -83,6 +101,7 @@
         <Button
             android:id="@+id/mecha_button_a"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/three"
             android:onClick="mechaTeamA"
             android:text="@string/mecha_text"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -92,6 +111,7 @@
         <Button
             android:id="@+id/mecha_button_b"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/three"
             android:onClick="mechaTeamB"
             android:text="@string/mecha_text"
             app:layout_constraintLeft_toRightOf="@id/line"
@@ -101,21 +121,67 @@
         <Button
             android:id="@+id/mano_button_a"
             style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/one"
             android:onClick="manoTeamA"
             android:text="@string/mano_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/line"
             app:layout_constraintTop_toBottomOf="@id/mecha_button_a" />
 
+        <Button
+            android:id="@+id/mano_button_b"
+            style="@style/tejo_buttons"
+            android:drawableLeft="@drawable/one"
+            android:onClick="manoTeamB"
+            android:text="@string/mano_text"
+            app:layout_constraintLeft_toRightOf="@id/line"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mecha_button_b" />
+
         <View
             android:id="@+id/line"
             android:layout_width="1dp"
             android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
             android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/undo_button"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="@id/team_a_title" />
+
+        <Button
+            android:id="@+id/undo_button"
+            style="@style/menu_buttons_tejo"
+            android:layout_width="0dp"
+            android:layout_marginTop="64dp"
+            android:drawableLeft="@drawable/undo"
+            android:onClick="undoLastAction"
+            android:text="@string/undo"
+            app:layout_constraintLeft_toLeftOf="@id/share_button"
+            app:layout_constraintRight_toRightOf="@id/share_button"
+            app:layout_constraintTop_toBottomOf="@id/mano_button_b" />
+
+        <Button
+            android:id="@+id/share_button"
+            style="@style/menu_buttons_tejo"
+            android:drawableLeft="@drawable/share"
+            android:onClick="shareScore"
+            android:text="@string/share"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/undo_button" />
+
+        <Button
+            android:id="@+id/reset_button"
+            style="@style/menu_buttons_tejo"
+            android:layout_width="0dp"
+            android:layout_marginBottom="32dp"
+            android:drawableLeft="@drawable/reset"
+            android:onClick="resetGame"
+            android:text="@string/reset"
+            app:layout_constraintLeft_toLeftOf="@id/share_button"
+            app:layout_constraintRight_toRightOf="@id/share_button"
+            app:layout_constraintTop_toBottomOf="@id/share_button" />
 
     </android.support.constraint.ConstraintLayout>
 

@@ -42,12 +42,20 @@
 
     <string name="game_over">El juego ha terminado. Uno de los equipos ha alcanzado los 27 puntos.</string>
 
-    <string name="monona_text">Moñona +9</string>
+    <string name="monona_text">Moñona</string>
 
-    <string name="embocinada_text">Embocinada +6</string>
+    <string name="embocinada_text">Embocinada</string>
 
-    <string name="mecha_text">Mecha +3</string>
+    <string name="mecha_text">Mecha</string>
 
-    <string name="mano_text">Mano +1</string>
+    <string name="mano_text">Mano</string>
+
+    <string name="winner">¡Ganador!</string>
+
+    <string name="undo">Deshacer</string>
+
+    <string name="share">Compartir</string>
+
+    <string name="reset">Reiniciar</string>
 
 </resources>

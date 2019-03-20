@@ -17,6 +17,9 @@ public class TejoCounter extends AppCompatActivity {
     // Tracks the score for team B
     int scoreTeamB = 0;
 
+    // Tracks if the game is still running, meaning none of the teams have reached 27 points
+    boolean gameOver = false;
+
     // The TextView corresponding to team A's score
     TextView teamATextView;
 
@@ -53,10 +56,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void mononaTeamA(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamA += 9;
             displayScore(scoreTeamA, teamATextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -68,10 +73,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void mononaTeamB(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamB += 9;
             displayScore(scoreTeamB, teamBTextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -83,10 +90,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void embocinadaTeamA(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamA += 6;
             displayScore(scoreTeamA, teamATextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -98,10 +107,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void embocinadaTeamB(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamB += 6;
             displayScore(scoreTeamB, teamBTextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -113,10 +124,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void mechaTeamA(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamA += 3;
             displayScore(scoreTeamA, teamATextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -128,10 +141,12 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void mechaTeamB(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamB += 3;
             displayScore(scoreTeamB, teamBTextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -143,10 +158,29 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void manoTeamA(View view) {
-        // The game ends when a team scores 27 points
-        if (scoreTeamA < 27 && scoreTeamB < 27) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
             scoreTeamA++;
             displayScore(scoreTeamA, teamATextView);
+            checkForGameOver();
+        } else {
+            createToastGameOver();
+        }
+    }
+
+    /**
+     * This method add 1 point to Team B. This kind of scoring is called Mano
+     *
+     * @param view
+     */
+    public void manoTeamB(View view) {
+        // The game ends when a team reaches 27 points
+        checkForGameOver();
+        if (!gameOver) {
+            scoreTeamB++;
+            displayScore(scoreTeamB, teamBTextView);
+            checkForGameOver();
         } else {
             createToastGameOver();
         }
@@ -170,8 +204,29 @@ public class TejoCounter extends AppCompatActivity {
         toast.show();
     }
 
-    //TODO Implementar mensaje de ganador
+    /**
+     * This method checks if the game has ended, by checking if either team has reached 27 points.
+     * If so it activates the corresponding TextView to let the user know which team had won the
+     * game.
+     */
+    private void checkForGameOver() {
+        if (scoreTeamA >= 27 && !gameOver) {
+            // This TextView is below the teamATextView and it is shown if team A wins the game
+            TextView winnerTeamA = findViewById(R.id.winner_team_a_text_view);
+            winnerTeamA.setAlpha(1);
+            gameOver = true;
+            createToastGameOver();
+        } else if (scoreTeamB >= 27 && !gameOver) {
+            //This TextView is below the teamBTextView and it is shown if team B wins the game
+            TextView winnerTeamB = findViewById(R.id.winner_team_b_text_view);
+            winnerTeamB.setAlpha(1);
+            gameOver = true;
+            createToastGameOver();
+        }
+    }
+
     //TODO Implementar botón reset
     //TODO Implementar botón deshacer
     //TODO Implementar botón compartir
+    // TODO Cambio de orientación y cambio de actividad, necesito persistir los datos
 }
