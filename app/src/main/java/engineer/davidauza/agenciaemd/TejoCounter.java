@@ -1,6 +1,9 @@
 package engineer.davidauza.agenciaemd;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.net.Uri;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -314,6 +317,33 @@ public class TejoCounter extends AppCompatActivity {
     private void changeWinnerTextViewAlpha(int pResourceId, float pAlpha) {
         TextView textView = findViewById(pResourceId);
         textView.setAlpha(pAlpha);
+    }
+
+    /**
+     * This method let the user share the scores by email
+     */
+    public void share(View view) {
+        String body = getString(R.string.body_part_one) + "  " + scoreTeamA;
+        if (gameOver && scoreTeamA >= 27) {
+            body += "  " + getString(R.string.winner);
+        }
+        body += getString(R.string.body_part_two) + "  " + scoreTeamB;
+        if (gameOver && scoreTeamB >= 27) {
+            body += "  " + getString(R.string.winner);
+        }
+        body += getString(R.string.body_part_three);
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
+        intent.putExtra(Intent.EXTRA_TEXT, body);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, getString(R.string.error_email), Toast.LENGTH_LONG)
+                    .show();
+        }
+        Toast.makeText(this, getString(R.string.error_email), Toast.LENGTH_LONG)
+                .show();
     }
 
     //TODO Implementar botón reset

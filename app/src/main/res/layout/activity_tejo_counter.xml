@@ -165,8 +165,8 @@
         <Button
             android:id="@+id/share_button"
             style="@style/menu_buttons_tejo"
-            android:drawableLeft="@drawable/share"
-            android:onClick="shareScore"
+            android:drawableLeft="@drawable/envelope"
+            android:onClick="share"
             android:text="@string/share"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

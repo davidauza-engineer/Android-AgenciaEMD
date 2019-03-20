@@ -58,4 +58,15 @@
 
     <string name="reset">Reiniciar</string>
 
+    <string name="email_subject">Puntaje Partido de Tejo</string>
+
+    <string name="body_part_one">Puntaje Equipo A:</string>
+
+    <string name="body_part_two">\n\nPuntaje Equipo B:</string>
+
+    <string name="body_part_three">\n\nGracias por preferirnos, \n\nAgencia de Marketing EMD</string>
+
+    <string name="error_email">Se necesita una aplicación de correo electrónico para
+                                compartir el puntaje.</string>
+
 </resources>
