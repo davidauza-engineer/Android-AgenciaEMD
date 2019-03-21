@@ -56,6 +56,10 @@ public class TejoCounter extends AppCompatActivity {
         // Assign the corresponding TextView, to display score for team B
         teamBTextView = findViewById(R.id.team_b_score);
         displayScore(scoreTeamB, teamBTextView);
+
+        // Set copyright text
+        TextView copyrightTextView = findViewById(R.id.copyright);
+        MainActivity.setCopyrightText(copyrightTextView);
     }
 
     /**
@@ -275,17 +279,17 @@ public class TejoCounter extends AppCompatActivity {
             changeButtonAlpha(R.id.reset_button, 1.0f);
             resetAvailable = true;
         }
-        if (previousStateSaved) {
-            changeButtonAlpha(R.id.undo_button, 0.25f);
-            previousStateSaved = false;
-        }
         // If the winner (¡Ganador!) TextView is visible for any of the teams, set it to not visible
-        if (gameOver) {
+        if (gameOver && previousStateSaved) {
             if (scoreTeamA >= 27) {
                 changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 0);
             } else if (scoreTeamB >= 27) {
                 changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 0);
             }
+        }
+        if (previousStateSaved) {
+            changeButtonAlpha(R.id.undo_button, 0.25f);
+            previousStateSaved = false;
         }
         scoreTeamA = previousScoreTeamA;
         displayScore(scoreTeamA, teamATextView);
@@ -359,9 +363,6 @@ public class TejoCounter extends AppCompatActivity {
      * @param view
      */
     public void reset(View view) {
-        /**
-         * Manejar estado inicial despues de deshacer
-         */
         // If the winner (¡Ganador!) TextView is visible for any of the teams, set it to not visible
         if (gameOver) {
             if (scoreTeamA >= 27) {
@@ -383,6 +384,5 @@ public class TejoCounter extends AppCompatActivity {
     }
 
 
-    //TODO Implementar botón reset
     // TODO Cambio de orientación y cambio de actividad, necesito persistir los datos
 }
