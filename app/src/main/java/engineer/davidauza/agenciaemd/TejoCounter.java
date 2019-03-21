@@ -1,6 +1,7 @@
 package engineer.davidauza.agenciaemd;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.net.Uri;
 import android.os.Build;
@@ -14,48 +15,70 @@ import android.widget.Toast;
 
 public class TejoCounter extends AppCompatActivity {
 
+    // The name of the file to store the state so it can be recovered
+    public static final String PREFS_NAME = "MyPrefsFile";
     // Tracks the score for team A
-    private int scoreTeamA = 0;
-
+    private int mScoreTeamA = 0;
     // Tracks the previous state for scoreTeamA
-    private int previousScoreTeamA = scoreTeamA;
-
+    private int mPreviousScoreTeamA = mScoreTeamA;
     // Tracks the score for team B
-    private int scoreTeamB = 0;
-
+    private int mScoreTeamB = 0;
     // Tracks the previous state for scoreTeamB
-    private int previousScoreTeamB = scoreTeamB;
-
+    private int mPreviousScoreTeamB = mScoreTeamB;
     // Tracks if the game is still running, meaning none of the teams have reached 27 points
-    private boolean gameOver = false;
-
+    private boolean mGameOver = false;
     // Tracks the previous state for gameOver
-    private boolean previousGameOver = gameOver;
-
+    private boolean mPreviousGameOver = mGameOver;
     // Tracks if there is a previous state saved
-    private boolean previousStateSaved = false;
-
+    private boolean mPreviousStateSaved = false;
     // Tracks if it is possible to reset the game
-    private boolean resetAvailable = false;
-
+    private boolean mResetAvailable = false;
     // The TextView corresponding to team A's score
-    private TextView teamATextView;
-
+    private TextView mTeamATextView;
     // The TextView corresponding to team B's score
-    private TextView teamBTextView;
+    private TextView mTeamBTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tejo_counter);
 
+        // Create SharedPreferences to restore the state of the activity
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        // Load the state of the app and update UI accordingly
+        mScoreTeamA = settings.getInt("mScoreTeamA", mScoreTeamA);
+        mPreviousScoreTeamA = settings.getInt("mPreviousScoreTeamA", mPreviousScoreTeamA);
+        mScoreTeamB = settings.getInt("mScoreTeamB", mScoreTeamB);
+        mPreviousScoreTeamB = settings.getInt("mPreviousScoreTeamB", mPreviousScoreTeamB);
+        mGameOver = settings.getBoolean("mGameOver", mGameOver);
+        if (mGameOver) {
+            // Display winner TextView
+            if (mScoreTeamA >= 27) {
+                changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
+            } else if (mScoreTeamB >= 27) {
+                changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
+            }
+        }
+        mPreviousGameOver = settings.getBoolean("mPreviousGameOver", mPreviousGameOver);
+        mPreviousStateSaved = settings.getBoolean("mPreviousStateSaved", mPreviousStateSaved);
+        // Adjust undo button (Deshacer) alpha
+        if (mPreviousStateSaved) {
+            changeButtonAlpha(R.id.undo_button, 1);
+        }
+        mResetAvailable = settings.getBoolean("mResetAvailable", mResetAvailable);
+        // Adjust reset button (Reiniciar) alpha
+        if (mResetAvailable) {
+            changeButtonAlpha(R.id.reset_button, 1);
+        }
+
         // Assign the corresponding TextView, to display score for team A
-        teamATextView = findViewById(R.id.team_a_score);
-        displayScore(scoreTeamA, teamATextView);
+        mTeamATextView = findViewById(R.id.team_a_score);
+        displayScore(mScoreTeamA, mTeamATextView);
 
         // Assign the corresponding TextView, to display score for team B
-        teamBTextView = findViewById(R.id.team_b_score);
-        displayScore(scoreTeamB, teamBTextView);
+        mTeamBTextView = findViewById(R.id.team_b_score);
+        displayScore(mScoreTeamB, mTeamBTextView);
 
         // Set copyright text
         TextView copyrightTextView = findViewById(R.id.copyright);
@@ -63,29 +86,49 @@ public class TejoCounter extends AppCompatActivity {
     }
 
     /**
+     * This method saves the state of the app
+     */
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Store the state of the app
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putInt("mScoreTeamA", mScoreTeamA);
+        editor.putInt("mPreviousScoreTeamA", mPreviousScoreTeamA);
+        editor.putInt("mScoreTeamB", mScoreTeamB);
+        editor.putInt("mPreviousScoreTeamB", mPreviousScoreTeamB);
+        editor.putBoolean("mGameOver", mGameOver);
+        editor.putBoolean("mPreviousGameOver", mPreviousGameOver);
+        editor.putBoolean("mPreviousStateSaved", mPreviousStateSaved);
+        editor.putBoolean("mResetAvailable", mResetAvailable);
+        editor.commit();
+    }
+
+    /**
      * This method displays the score for teams based on the score and TextView indicated
      *
-     * @param scoreToDisplay
-     * @param teamTextView
+     * @param pScoreToDisplay
+     * @param pTeamTextView
      */
-    private void displayScore(int scoreToDisplay, TextView teamTextView) {
-        teamTextView.setText(Integer.toString(scoreToDisplay));
+    private void displayScore(int pScoreToDisplay, TextView pTeamTextView) {
+        pTeamTextView.setText(Integer.toString(pScoreToDisplay));
     }
 
     /**
      * This method add 9 points to Team A. This kind of scoring is called Moñona
      *
-     * @param view
+     * @param pView
      */
-    public void mononaTeamA(View view) {
-        if (!gameOver) {
+    public void mononaTeamA(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamA += 9;
-            displayScore(scoreTeamA, teamATextView);
+        if (!mGameOver) {
+            mScoreTeamA += 9;
+            displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -95,17 +138,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 9 points to Team B. This kind of scoring is called Moñona
      *
-     * @param view
+     * @param pView
      */
-    public void mononaTeamB(View view) {
-        if (!gameOver) {
+    public void mononaTeamB(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamB += 9;
-            displayScore(scoreTeamB, teamBTextView);
+        if (!mGameOver) {
+            mScoreTeamB += 9;
+            displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -115,17 +158,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 6 points to Team A. This kind of scoring is called Embocinada
      *
-     * @param view
+     * @param pView
      */
-    public void embocinadaTeamA(View view) {
-        if (!gameOver) {
+    public void embocinadaTeamA(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamA += 6;
-            displayScore(scoreTeamA, teamATextView);
+        if (!mGameOver) {
+            mScoreTeamA += 6;
+            displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -135,17 +178,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 6 points to Team B. This kind of scoring is called Embocinada
      *
-     * @param view
+     * @param pView
      */
-    public void embocinadaTeamB(View view) {
-        if (!gameOver) {
+    public void embocinadaTeamB(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamB += 6;
-            displayScore(scoreTeamB, teamBTextView);
+        if (!mGameOver) {
+            mScoreTeamB += 6;
+            displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -155,17 +198,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 3 points to Team A. This kind of scoring is called Mecha
      *
-     * @param view
+     * @param pView
      */
-    public void mechaTeamA(View view) {
-        if (!gameOver) {
+    public void mechaTeamA(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamA += 3;
-            displayScore(scoreTeamA, teamATextView);
+        if (!mGameOver) {
+            mScoreTeamA += 3;
+            displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -175,17 +218,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 3 points to Team B. This kind of scoring is called Mecha
      *
-     * @param view
+     * @param pView
      */
-    public void mechaTeamB(View view) {
-        if (!gameOver) {
+    public void mechaTeamB(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamB += 3;
-            displayScore(scoreTeamB, teamBTextView);
+        if (!mGameOver) {
+            mScoreTeamB += 3;
+            displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -195,17 +238,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 1 point to Team A. This kind of scoring is called Mano
      *
-     * @param view
+     * @param pView
      */
-    public void manoTeamA(View view) {
-        if (!gameOver) {
+    public void manoTeamA(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamA++;
-            displayScore(scoreTeamA, teamATextView);
+        if (!mGameOver) {
+            mScoreTeamA++;
+            displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -215,17 +258,17 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method add 1 point to Team B. This kind of scoring is called Mano
      *
-     * @param view
+     * @param pView
      */
-    public void manoTeamB(View view) {
-        if (!gameOver) {
+    public void manoTeamB(View pView) {
+        if (!mGameOver) {
             saveState();
         }
         // The game ends when a team reaches 27 points
         checkForGameOver();
-        if (!gameOver) {
-            scoreTeamB++;
-            displayScore(scoreTeamB, teamBTextView);
+        if (!mGameOver) {
+            mScoreTeamB++;
+            displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
             createToastShort(R.string.game_over);
@@ -238,33 +281,34 @@ public class TejoCounter extends AppCompatActivity {
      * game.
      */
     private void checkForGameOver() {
-        if (scoreTeamA >= 27 && !gameOver) {
+        if (mScoreTeamA >= 27 && !mGameOver) {
             // This TextView is below the teamATextView and it is shown if team A wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
-            gameOver = true;
+            mGameOver = true;
             createToastShort(R.string.game_over);
-        } else if (scoreTeamB >= 27 && !gameOver) {
+        } else if (mScoreTeamB >= 27 && !mGameOver) {
             //This TextView is below the teamBTextView and it is shown if team B wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
-            gameOver = true;
+            mGameOver = true;
             createToastShort(R.string.game_over);
         }
     }
 
     /**
-     * This method save the state of the variables scoreTeamA, scoreTeamB and gameOver
+     * This method save the state of the variables scoreTeamA, scoreTeamB and gameOver for the undo
+     * button (Deshacer)
      */
     private void saveState() {
-        previousScoreTeamA = scoreTeamA;
-        previousScoreTeamB = scoreTeamB;
-        previousGameOver = gameOver;
-        if (!previousStateSaved) {
+        mPreviousScoreTeamA = mScoreTeamA;
+        mPreviousScoreTeamB = mScoreTeamB;
+        mPreviousGameOver = mGameOver;
+        if (!mPreviousStateSaved) {
             changeButtonAlpha(R.id.undo_button, 1.0f);
-            previousStateSaved = true;
+            mPreviousStateSaved = true;
         }
-        if (!resetAvailable) {
+        if (!mResetAvailable) {
             changeButtonAlpha(R.id.reset_button, 1.0f);
-            resetAvailable = true;
+            mResetAvailable = true;
         }
     }
 
@@ -272,31 +316,31 @@ public class TejoCounter extends AppCompatActivity {
      * This method returns to the previous state the variables: scoreTeamA, scoreTeamB, and gameOver
      * and displays them accordingly
      *
-     * @param view
+     * @param pView
      */
-    public void undo(View view) {
-        if (!resetAvailable && previousStateSaved) {
+    public void undo(View pView) {
+        if (!mResetAvailable && mPreviousStateSaved) {
             changeButtonAlpha(R.id.reset_button, 1.0f);
-            resetAvailable = true;
+            mResetAvailable = true;
         }
         // If the winner (¡Ganador!) TextView is visible for any of the teams, set it to not visible
-        if (gameOver && previousStateSaved) {
-            if (scoreTeamA >= 27) {
+        if (mGameOver && mPreviousStateSaved) {
+            if (mScoreTeamA >= 27) {
                 changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 0);
-            } else if (scoreTeamB >= 27) {
+            } else if (mScoreTeamB >= 27) {
                 changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 0);
             }
         }
-        if (previousStateSaved) {
+        if (mPreviousStateSaved) {
             changeButtonAlpha(R.id.undo_button, 0.25f);
-            previousStateSaved = false;
+            mPreviousStateSaved = false;
         }
-        scoreTeamA = previousScoreTeamA;
-        displayScore(scoreTeamA, teamATextView);
-        scoreTeamB = previousScoreTeamB;
-        displayScore(scoreTeamB, teamBTextView);
+        mScoreTeamA = mPreviousScoreTeamA;
+        displayScore(mScoreTeamA, mTeamATextView);
+        mScoreTeamB = mPreviousScoreTeamB;
+        displayScore(mScoreTeamB, mTeamBTextView);
         checkForGameOver();
-        gameOver = previousGameOver;
+        mGameOver = mPreviousGameOver;
     }
 
     /**
@@ -318,13 +362,13 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method let the user share the scores by email
      */
-    public void share(View view) {
-        String body = getString(R.string.body_part_one) + "  " + scoreTeamA;
-        if (gameOver && scoreTeamA >= 27) {
+    public void share(View pView) {
+        String body = getString(R.string.body_part_one) + "  " + mScoreTeamA;
+        if (mGameOver && mScoreTeamA >= 27) {
             body += "  " + getString(R.string.winner);
         }
-        body += getString(R.string.body_part_two) + "  " + scoreTeamB;
-        if (gameOver && scoreTeamB >= 27) {
+        body += getString(R.string.body_part_two) + "  " + mScoreTeamB;
+        if (mGameOver && mScoreTeamB >= 27) {
             body += "  " + getString(R.string.winner);
         }
         body += getString(R.string.body_part_three);
@@ -360,29 +404,26 @@ public class TejoCounter extends AppCompatActivity {
     /**
      * This method resets the game
      *
-     * @param view
+     * @param pView
      */
-    public void reset(View view) {
+    public void reset(View pView) {
         // If the winner (¡Ganador!) TextView is visible for any of the teams, set it to not visible
-        if (gameOver) {
-            if (scoreTeamA >= 27) {
+        if (mGameOver) {
+            if (mScoreTeamA >= 27) {
                 changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 0);
-            } else if (scoreTeamB >= 27) {
+            } else if (mScoreTeamB >= 27) {
                 changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 0);
             }
         }
-        if (resetAvailable) {
+        if (mResetAvailable) {
             saveState();
         }
-        scoreTeamA = 0;
-        displayScore(scoreTeamA, teamATextView);
-        scoreTeamB = 0;
-        displayScore(scoreTeamB, teamBTextView);
-        gameOver = false;
-        resetAvailable = false;
+        mScoreTeamA = 0;
+        displayScore(mScoreTeamA, mTeamATextView);
+        mScoreTeamB = 0;
+        displayScore(mScoreTeamB, mTeamBTextView);
+        mGameOver = false;
+        mResetAvailable = false;
         changeButtonAlpha(R.id.reset_button, 0.25f);
     }
-
-
-    // TODO Cambio de orientación y cambio de actividad, necesito persistir los datos
 }

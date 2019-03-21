@@ -12,6 +12,22 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // If the API is greater than or equal to 26 justify the text
+        if (Build.VERSION.SDK_INT >= 26) {
+            TextView description = findViewById(R.id.description);
+            description.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+        }
+
+        // Set copyright text
+        TextView copyrightTextView = findViewById(R.id.copyright);
+        setCopyrightText(copyrightTextView);
+    }
+
     /**
      * This method sets the copyright text and links
      */
@@ -29,24 +45,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This method starts the tejo counter's activity
      */
-    public void goToTejoActivity(View view) {
+    public void goToTejoActivity(View pView) {
         Intent intent = new Intent(this, TejoCounter.class);
         startActivity(intent);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // If the API is greater than or equal to 26 justify the text
-        if (Build.VERSION.SDK_INT >= 26) {
-            TextView description = findViewById(R.id.description);
-            description.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
-        }
-
-        // Set copyright text
-        TextView copyrightTextView = findViewById(R.id.copyright);
-        setCopyrightText(copyrightTextView);
     }
 }
