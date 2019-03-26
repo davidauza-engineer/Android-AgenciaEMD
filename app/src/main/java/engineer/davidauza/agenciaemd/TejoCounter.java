@@ -131,7 +131,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -151,7 +151,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -171,7 +171,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -191,7 +191,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -211,7 +211,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -231,7 +231,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -251,7 +251,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -271,7 +271,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -285,12 +285,12 @@ public class TejoCounter extends AppCompatActivity {
             // This TextView is below the teamATextView and it is shown if team A wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
             mGameOver = true;
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         } else if (mScoreTeamB >= 27 && !mGameOver) {
             //This TextView is below the teamBTextView and it is shown if team B wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
             mGameOver = true;
-            createToastShort(R.string.game_over);
+            createToastShort(R.string.tejo_game_over);
         }
     }
 
@@ -363,24 +363,24 @@ public class TejoCounter extends AppCompatActivity {
      * This method let the user share the scores by email
      */
     public void share(View pView) {
-        String body = getString(R.string.body_part_one) + "  " + mScoreTeamA;
+        String body = getString(R.string.tejo_body_part_one) + "  " + mScoreTeamA;
         if (mGameOver && mScoreTeamA >= 27) {
-            body += "  " + getString(R.string.winner);
+            body += "  " + getString(R.string.tejo_winner);
         }
-        body += getString(R.string.body_part_two) + "  " + mScoreTeamB;
+        body += getString(R.string.tejo_body_part_two) + "  " + mScoreTeamB;
         if (mGameOver && mScoreTeamB >= 27) {
-            body += "  " + getString(R.string.winner);
+            body += "  " + getString(R.string.tejo_winner);
         }
-        body += getString(R.string.body_part_three);
+        body += getString(R.string.tejo_body_part_three);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject));
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.tejo_email_subject));
         intent.putExtra(Intent.EXTRA_TEXT, body);
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
             // Inform the user there is no email app installed on the phone
-            createToastShort(R.string.error_email);
+            createToastShort(R.string.tejo_error_email);
         }
     }
 

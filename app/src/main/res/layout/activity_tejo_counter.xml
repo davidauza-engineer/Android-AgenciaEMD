@@ -14,7 +14,7 @@
             android:id="@+id/team_a_title"
             style="@style/team_titles"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/team_a"
+            android:text="@string/tejo_team_a"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/line"
             app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
             android:id="@+id/team_b_title"
             style="@style/team_titles"
             android:fontFamily="sans-serif-medium"
-            android:text="@string/team_b"
+            android:text="@string/tejo_team_b"
             app:layout_constraintLeft_toRightOf="@id/line"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -63,7 +63,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/nine"
             android:onClick="mononaTeamA"
-            android:text="@string/monona_text"
+            android:text="@string/tejo_monona_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/line"
             app:layout_constraintTop_toBottomOf="@id/team_a_score" />
@@ -73,7 +73,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/nine"
             android:onClick="mononaTeamB"
-            android:text="@string/monona_text"
+            android:text="@string/tejo_monona_text"
             app:layout_constraintLeft_toRightOf="@id/line"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/team_b_score" />
@@ -83,7 +83,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/six"
             android:onClick="embocinadaTeamA"
-            android:text="@string/embocinada_text"
+            android:text="@string/tejo_embocinada_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/line"
             app:layout_constraintTop_toBottomOf="@id/monona_button_a" />
@@ -93,7 +93,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/six"
             android:onClick="embocinadaTeamB"
-            android:text="@string/embocinada_text"
+            android:text="@string/tejo_embocinada_text"
             app:layout_constraintLeft_toRightOf="@id/line"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/monona_button_b" />
@@ -103,7 +103,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/three"
             android:onClick="mechaTeamA"
-            android:text="@string/mecha_text"
+            android:text="@string/tejo_mecha_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/line"
             app:layout_constraintTop_toBottomOf="@id/embocinada_button_a" />
@@ -113,7 +113,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/three"
             android:onClick="mechaTeamB"
-            android:text="@string/mecha_text"
+            android:text="@string/tejo_mecha_text"
             app:layout_constraintLeft_toRightOf="@id/line"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/embocinada_button_b" />
@@ -123,7 +123,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/one"
             android:onClick="manoTeamA"
-            android:text="@string/mano_text"
+            android:text="@string/tejo_mano_text"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/line"
             app:layout_constraintTop_toBottomOf="@id/mecha_button_a" />
@@ -133,7 +133,7 @@
             style="@style/tejo_buttons"
             android:drawableLeft="@drawable/one"
             android:onClick="manoTeamB"
-            android:text="@string/mano_text"
+            android:text="@string/tejo_mano_text"
             app:layout_constraintLeft_toRightOf="@id/line"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mecha_button_b" />
@@ -157,7 +157,7 @@
             android:alpha="0.25"
             android:drawableLeft="@drawable/undo"
             android:onClick="undo"
-            android:text="@string/undo"
+            android:text="@string/tejo_undo"
             app:layout_constraintLeft_toLeftOf="@id/share_button"
             app:layout_constraintRight_toRightOf="@id/share_button"
             app:layout_constraintTop_toBottomOf="@id/mano_button_b" />
@@ -167,7 +167,7 @@
             style="@style/menu_buttons_tejo"
             android:drawableLeft="@drawable/envelope"
             android:onClick="share"
-            android:text="@string/share"
+            android:text="@string/tejo_share"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/undo_button" />
@@ -179,7 +179,7 @@
             android:alpha="0.25"
             android:drawableLeft="@drawable/reset"
             android:onClick="reset"
-            android:text="@string/reset"
+            android:text="@string/tejo_reset"
             app:layout_constraintLeft_toLeftOf="@id/share_button"
             app:layout_constraintRight_toRightOf="@id/share_button"
             app:layout_constraintTop_toBottomOf="@id/share_button" />

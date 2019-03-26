@@ -1,72 +1,53 @@
 <resources>
 
-    <string name="app_name">Agencia EMD</string>
 
-    <string name="business_name">Agencia EMD</string>
-
-    <string name="slogan">E-Marketing Developer</string>
-
-    <string name="description">Somos un equipo de profesionales curiosos, creativos y apasionados
-                                por el marketing. Disfrutamos lo que mejor sabemos hacer: Planear, crear y comunicar
-                                en canales digitales. Nuestros pilares son: Innovación, compromiso, trabajo en equipo,
-                                responsabilidad y pasión por los proyectos de nuestros clientes.</string>
-
-    <string name="about_us">Conócenos</string>
-
-    <string name="web_address">http://agenciaemd.com</string>
-
-    <string name="call_us">Llámanos</string>
-
-    <string name="cellphone">+57 322-946-7440
+    <!-- Main Layout Strings Start -->
+    <string name="main_app_name">Agencia EMD</string>
+    <string name="main_slogan">E-Marketing Developer</string>
+    <string name="main_description">Somos un equipo de profesionales curiosos, creativos y apasionados
+                                por el marketing. Disfrutamos lo que mejor sabemos hacer: Planear,
+                                crear y comunicar en canales digitales. Nuestros pilares son:
+                                Innovación, compromiso, trabajo en equipo, responsabilidad y
+                                pasión por los proyectos de nuestros clientes.</string>
+    <string name="main_about_us">Conócenos</string>
+    <string name="main_web_address">http://agenciaemd.com</string>
+    <string name="main_call_us">Llámanos</string>
+    <string name="main_cellphone">+57 322-946-7440
                                 \nLunes a Sábado
                                 \n8:30am a 6:00pm</string>
-
-    <string name="write_us">Escríbenos</string>
-
-    <string name="email">hola@agenciaemd.com</string>
-
-    <string name="find_us">Encuéntranos</string>
-
-    <string name="address">Carrera 11 # 21 - 90
+    <string name="main_write_us">Escríbenos</string>
+    <string name="main_email">hola@agenciaemd.com</string>
+    <string name="main_find_us">Encuéntranos</string>
+    <string name="main_address">Carrera 11 # 21 - 90
                             \nOficina 312
                             \nSogamoso, Boyacá</string>
-
-    <string name="tejo">Puntaje Tejo</string>
-
-    <string name="tejo_text">Registra el puntaje del deporte
+    <string name="main_tejo">Puntaje Tejo</string>
+    <string name="main_tejo_text">Registra el puntaje del deporte
                                 \nícono de nuestra región</string>
+    <!-- Main Layout Strings End -->
 
-    <string name="team_a">Equipo A</string>
 
-    <string name="team_b">Equipo B</string>
-
-    <string name="game_over">El juego ha terminado. Uno de los equipos ha alcanzado los 27 puntos.</string>
-
-    <string name="monona_text">Moñona</string>
-
-    <string name="embocinada_text">Embocinada</string>
-
-    <string name="mecha_text">Mecha</string>
-
-    <string name="mano_text">Mano</string>
-
-    <string name="winner">¡Ganador!</string>
-
-    <string name="undo">Deshacer</string>
-
-    <string name="share">Compartir</string>
-
-    <string name="reset">Reiniciar</string>
-
-    <string name="email_subject">Puntaje Partido de Tejo</string>
-
-    <string name="body_part_one">Puntaje Equipo A:</string>
-
-    <string name="body_part_two">\n\nPuntaje Equipo B:</string>
-
-    <string name="body_part_three">\n\nGracias por preferirnos, \n\nAgencia de Marketing EMD</string>
-
-    <string name="error_email">Se necesita una aplicación de correo electrónico para
+    <!-- Tejo Counter Layout Strings Start -->
+    <string name="tejo_team_a">Equipo A</string>
+    <string name="tejo_team_b">Equipo B</string>
+    <string name="tejo_game_over">El juego ha terminado. Uno de los equipos ha alcanzado los 27
+                                puntos.</string>
+    <string name="tejo_monona_text">Moñona</string>
+    <string name="tejo_embocinada_text">Embocinada</string>
+    <string name="tejo_mecha_text">Mecha</string>
+    <string name="tejo_mano_text">Mano</string>
+    <string name="tejo_winner">¡Ganador!</string>
+    <string name="tejo_undo">Deshacer</string>
+    <string name="tejo_share">Compartir</string>
+    <string name="tejo_reset">Reiniciar</string>
+    <string name="tejo_email_subject">Puntaje Partido de Tejo</string>
+    <string name="tejo_body_part_one">Puntaje Equipo A:</string>
+    <string name="tejo_body_part_two">\n\nPuntaje Equipo B:</string>
+    <string name="tejo_body_part_three">\n\nGracias por preferirnos, \n\nAgencia de Marketing
+                                    EMD</string>
+    <string name="tejo_error_email">Se necesita una aplicación de correo electrónico para
                                 compartir el puntaje.</string>
+    <!-- Tejo Counter Strings End -->
+
 
 </resources>

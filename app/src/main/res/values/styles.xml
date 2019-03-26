@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">#fe5c5c</item>
-        <item name="colorPrimaryDark">#c52332</item>
-        <item name="colorAccent">#FFC107</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
@@ -18,7 +18,7 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <!-- Style for the TextViews below the buttons. -->
+    <!-- Style for the TextViews below the buttons of the main layout. -->
     <style name="text_views_below_buttons">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -26,7 +26,7 @@
         <item name="android:textColor">@color/secondaryText</item>
     </style>
 
-    <!-- Style for the team title TextViews at TejoCounter activity -->
+    <!-- Style for the team title TextViews at Tejo Counter layout- -->
     <style name="team_titles">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -35,7 +35,7 @@
         <item name="android:textColor">@color/secondaryText</item>
     </style>
 
-    <!-- Style for the score's TextViews. -->
+    <!-- Style for the score's TextViews at Tejo Counter Layout. -->
     <style name="score_text_views">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -45,7 +45,7 @@
         <item name="android:paddingBottom">16dp</item>
     </style>
 
-    <!-- Style for the buttons at TejoCounter activity -->
+    <!-- Style for the buttons at Tejo Counter layout -->
     <style name="tejo_buttons">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -57,17 +57,17 @@
     </style>
 
     <!-- Style fot TextViews which become visible if a team reaches 27 points and hence wins the
-            game -->
+            game at Tejo Counter layout -->
     <style name="winner_text_views">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/holo_green_dark</item>
-        <item name="android:text">@string/winner</item>
+        <item name="android:text">@string/tejo_winner</item>
         <item name="android:textStyle">bold</item>
         <item name="android:alpha">0</item>
     </style>
 
-    <!-- Style for the buttons at the bottom of the TejoCounter activiy. -->
+    <!-- Style for the buttons at the bottom of the Tejo Counter layout. -->
     <style name="menu_buttons_tejo">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

@@ -15,7 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/business_name"
+            android:text="@string/main_app_name"
             android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@color/primaryText"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +27,7 @@
             android:id="@+id/subtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/slogan"
+            android:text="@string/main_slogan"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@color/secondaryText"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -53,7 +53,7 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/description"
+            android:text="@string/main_description"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/primaryText"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -64,7 +64,7 @@
             android:id="@+id/web_button"
             style="@style/buttons"
             android:drawableLeft="@drawable/internet"
-            android:text="@string/about_us"
+            android:text="@string/main_about_us"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/find_us_button"
             app:layout_constraintTop_toBottomOf="@id/description" />
@@ -72,7 +72,7 @@
         <TextView
             android:id="@+id/web_address"
             style="@style/text_views_below_buttons"
-            android:text="@string/web_address"
+            android:text="@string/main_web_address"
             app:layout_constraintLeft_toLeftOf="@id/web_button"
             app:layout_constraintRight_toRightOf="@id/web_button"
             app:layout_constraintTop_toBottomOf="@id/web_button" />
@@ -82,7 +82,7 @@
             style="@style/buttons"
             android:layout_width="0dp"
             android:drawableLeft="@drawable/call"
-            android:text="@string/call_us"
+            android:text="@string/main_call_us"
             app:layout_constraintLeft_toLeftOf="@id/web_button"
             app:layout_constraintRight_toRightOf="@id/web_button"
             app:layout_constraintTop_toBottomOf="@id/web_address" />
@@ -91,7 +91,7 @@
             android:id="@+id/phone_number"
             style="@style/text_views_below_buttons"
             android:gravity="center_horizontal"
-            android:text="@string/cellphone"
+            android:text="@string/main_cellphone"
             app:layout_constraintLeft_toLeftOf="@id/call_us_button"
             app:layout_constraintRight_toRightOf="@id/call_us_button"
             app:layout_constraintTop_toBottomOf="@id/call_us_button" />
@@ -101,7 +101,7 @@
             style="@style/buttons"
             android:layout_width="0dp"
             android:drawableLeft="@drawable/envelope"
-            android:text="@string/write_us"
+            android:text="@string/main_write_us"
             app:layout_constraintLeft_toLeftOf="@id/find_us_button"
             app:layout_constraintRight_toRightOf="@id/find_us_button"
             app:layout_constraintTop_toBottomOf="@id/description" />
@@ -109,7 +109,7 @@
         <TextView
             android:id="@+id/email_address"
             style="@style/text_views_below_buttons"
-            android:text="@string/email"
+            android:text="@string/main_email"
             app:layout_constraintLeft_toLeftOf="@id/email_button"
             app:layout_constraintRight_toRightOf="@id/email_button"
             app:layout_constraintTop_toBottomOf="@id/email_button" />
@@ -118,7 +118,7 @@
             android:id="@+id/find_us_button"
             style="@style/buttons"
             android:drawableLeft="@drawable/placeholder"
-            android:text="@string/find_us"
+            android:text="@string/main_find_us"
             app:layout_constraintLeft_toRightOf="@id/web_button"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/email_address" />
@@ -127,7 +127,7 @@
             android:id="@+id/address"
             style="@style/text_views_below_buttons"
             android:gravity="center_horizontal"
-            android:text="@string/address"
+            android:text="@string/main_address"
             app:layout_constraintLeft_toLeftOf="@id/find_us_button"
             app:layout_constraintRight_toRightOf="@id/find_us_button"
             app:layout_constraintTop_toBottomOf="@id/find_us_button" />
@@ -137,7 +137,7 @@
             style="@style/buttons"
             android:drawableLeft="@drawable/scoreboard"
             android:onClick="goToTejoActivity"
-            android:text="@string/tejo"
+            android:text="@string/main_tejo"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/address" />
@@ -146,7 +146,7 @@
             android:id="@+id/text_tejo"
             style="@style/text_views_below_buttons"
             android:gravity="center_horizontal"
-            android:text="@string/tejo_text"
+            android:text="@string/main_tejo_text"
             app:layout_constraintLeft_toLeftOf="@id/tejo_button"
             app:layout_constraintRight_toRightOf="@id/tejo_button"
             app:layout_constraintTop_toBottomOf="@id/tejo_button" />
