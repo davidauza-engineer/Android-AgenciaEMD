@@ -29,6 +29,7 @@
         tools:src="@drawable/logo" />
 
     <TextView
+        android:id="@+id/question_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -40,5 +41,67 @@
         app:layout_constraintTop_toBottomOf="@id/question_picture"
         tools:text="¿Cuál de las siguientes herramientas de marketing digital utiliza usted en su empresa?" />
 
+    <RadioGroup
+        android:id="@+id/radio_buttons_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/question_body">
+
+        <RadioButton
+            android:id="@+id/yes_radio_button"
+            style="@style/QuestionRadioButtons"
+            tools:text="Sí" />
+
+        <RadioButton
+            android:id="@+id/no_radio_button"
+            style="@style/QuestionRadioButtons"
+            tools:text="No" />
+    </RadioGroup>
+
+    <CheckBox
+        android:id="@+id/checkbox_one"
+        style="@style/QuestionCheckBoxes"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_buttons_group"
+        tools:text="Opción 1" />
+
+    <CheckBox
+        android:id="@+id/checkbox_two"
+        style="@style/QuestionCheckBoxes"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_one"
+        tools:text="Opción 2" />
+
+    <CheckBox
+        android:id="@+id/checkbox_three"
+        style="@style/QuestionCheckBoxes"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_two"
+        tools:text="Opción 3" />
+
+    <CheckBox
+        android:id="@+id/checkbox_four"
+        style="@style/QuestionCheckBoxes"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_three"
+        tools:text="Opción 4" />
+
+    <CheckBox
+        android:id="@+id/checkbox_five"
+        style="@style/QuestionCheckBoxes"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_four"
+        tools:text="Opción 5" />
+
+    <CheckBox
+        android:id="@+id/checkbox_six"
+        style="@style/QuestionCheckBoxes"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkbox_five"
+        tools:text="Opción 6" />
 
 </android.support.constraint.ConstraintLayout>

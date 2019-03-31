@@ -53,4 +53,21 @@
     <!-- Tejo Counter Strings End -->
 
 
+    <!-- Test Strings Start -->
+    <string name="test_question_one_header">Pregunta 1</string>
+    <string name="test_question_one_body">Si cuentas con un sitio web selecciona cada una de las
+                                            funcionalidades con las que este cuenta, de lo contrario
+                                            salta a la pregunta cuatro (4):</string>
+    <string name="test_question_one_option_one">Ventas</string>
+    <string name="test_question_one_option_two">Marketing y promoción (Anuncios sobre ofertas,
+                                                suscriptores a la página, promociones especiales)
+                                                </string>
+    <string name="test_question_one_option_three">Blogging (Publicación periódica de información/
+                                                    contenido valioso para el público objetivo)
+                                                    </string>
+    <string name="test_question_one_option_four">Anuncios o servicios de terceros integrados
+                                                    (Google AdSense, Amazon Associates, Infolinks,
+                                                        etc.)</string>
+
+
 </resources>
