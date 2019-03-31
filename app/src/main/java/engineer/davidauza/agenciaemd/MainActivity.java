@@ -49,4 +49,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TejoCounter.class);
         startActivity(intent);
     }
+
+    /**
+     * This method starts the Test Activity
+     */
+    public void goToTestActivity(View view) {
+        Intent intent = new Intent(this, TestActivity.class);
+        startActivity(intent);
+    }
 }

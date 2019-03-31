@@ -10,7 +10,7 @@
     </style>
 
     <!-- Style for the buttons of the main layout. -->
-    <style name="buttons">
+    <style name="MainButtons">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">32dp</item>
@@ -19,15 +19,16 @@
     </style>
 
     <!-- Style for the TextViews below the buttons of the main layout. -->
-    <style name="text_views_below_buttons">
+    <style name="MainTextBelowButtons">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
         <item name="android:textColor">@color/secondaryText</item>
+        <item name="android:gravity">center_horizontal</item>
     </style>
 
     <!-- Style for the team title TextViews at Tejo Counter layout- -->
-    <style name="team_titles">
+    <style name="TejoTeamHeaders">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">16dp</item>
@@ -36,7 +37,7 @@
     </style>
 
     <!-- Style for the score's TextViews at Tejo Counter Layout. -->
-    <style name="score_text_views">
+    <style name="TejoScoreTextViews">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">16dp</item>
@@ -46,7 +47,7 @@
     </style>
 
     <!-- Style for the buttons at Tejo Counter layout -->
-    <style name="tejo_buttons">
+    <style name="TejoButtonsForEachTeam">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
@@ -58,7 +59,7 @@
 
     <!-- Style fot TextViews which become visible if a team reaches 27 points and hence wins the
             game at Tejo Counter layout -->
-    <style name="winner_text_views">
+    <style name="TejoWinnerTextViews">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/holo_green_dark</item>
@@ -68,7 +69,7 @@
     </style>
 
     <!-- Style for the buttons at the bottom of the Tejo Counter layout. -->
-    <style name="menu_buttons_tejo">
+    <style name="TejoMenuButtons">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>

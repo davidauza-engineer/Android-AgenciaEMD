@@ -24,6 +24,9 @@
     <string name="main_tejo">Puntaje Tejo</string>
     <string name="main_tejo_text">Registra el puntaje del deporte
                                 \nícono de nuestra región</string>
+    <string name="main_quiz">Test Estrategia Digital</string>
+    <string name="main_quiz_text">Conoce el estado de tu empresa en cuanto
+        \nal uso estratégico de plataformas digitales</string>
     <!-- Main Layout Strings End -->
 
 
