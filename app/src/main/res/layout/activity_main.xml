@@ -10,7 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
@@ -18,7 +17,7 @@
             android:layout_marginTop="16dp"
             android:text="@string/main_app_name"
             android:textAppearance="?android:textAppearanceLarge"
-            android:textColor="@color/primaryText"
+            android:textColor="@color/colorPrimaryText"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -30,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="@string/main_slogan"
             android:textAppearance="?android:textAppearanceMedium"
-            android:textColor="@color/secondaryText"
+            android:textColor="@color/colorSecondaryText"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -56,7 +55,7 @@
             android:layout_marginRight="16dp"
             android:text="@string/main_description"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="@color/primaryText"
+            android:textColor="@color/colorPrimaryText"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/logo" />
@@ -174,7 +173,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginBottom="16dp"
             android:gravity="center_horizontal"
-            android:textColor="@color/secondaryText"
+            android:textColor="@color/colorSecondaryText"
             android:textColorLink="@android:color/holo_blue_light"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"

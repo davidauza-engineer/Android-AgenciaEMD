@@ -191,7 +191,7 @@
             android:layout_marginTop="40dp"
             android:layout_marginBottom="16dp"
             android:gravity="center_horizontal"
-            android:textColor="@color/secondaryText"
+            android:textColor="@color/colorSecondaryText"
             android:textColorLink="@android:color/holo_blue_light"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"

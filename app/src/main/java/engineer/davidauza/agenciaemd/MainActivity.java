@@ -12,16 +12,25 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * This method justifies the text if the API is greater than or equal to 26
+     *
+     * @param pTextView The TextView to justify
+     */
+    public static void justifyText(TextView pTextView) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            pTextView.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // If the API is greater than or equal to 26 justify the text
-        if (Build.VERSION.SDK_INT >= 26) {
-            TextView description = findViewById(R.id.description);
-            description.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
-        }
+        // If the API is greater than or equal to 26 justify the text of the company's description
+        TextView description = findViewById(R.id.description);
+        justifyText(description);
 
         // Set copyright text
         TextView copyrightTextView = findViewById(R.id.copyright);

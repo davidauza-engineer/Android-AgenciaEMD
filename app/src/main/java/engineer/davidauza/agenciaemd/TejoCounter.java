@@ -395,7 +395,7 @@ public class TejoCounter extends AppCompatActivity {
             viewToast.setBackgroundTintList(ColorStateList.valueOf(getResources().
                     getColor(R.color.colorAccent)));
             TextView text = viewToast.findViewById(android.R.id.message);
-            text.setTextColor(getResources().getColor(R.color.primaryText));
+            text.setTextColor(getResources().getColor(R.color.colorPrimaryText));
             text.setGravity(Gravity.CENTER_HORIZONTAL);
         }
         toast.show();

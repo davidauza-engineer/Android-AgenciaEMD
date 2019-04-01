@@ -145,4 +145,103 @@ public class Question {
         mCheckBoxFiveText = pCheckBoxFiveText;
         mCheckBoxSixText = pCheckBoxSixText;
     }
+
+    /**
+     * Get the header of the question.
+     *
+     * @return the header of the question.
+     */
+    public String getQuestionHeader() {
+        return mQuestionHeader;
+    }
+
+    /**
+     * Return the image resource ID of the question.
+     *
+     * @return the image resource ID of the question.
+     */
+    public int getImageResourceId() {
+        return mImageResourceId;
+    }
+
+    /**
+     * Get the body of the question.
+     *
+     * @return the body of the question.
+     */
+    public String getQuestionBody() {
+        return mQuestionBody;
+    }
+
+    /**
+     * Get the text of the first RadioButton
+     *
+     * @return the text of the first RadioButton
+     */
+    public String getRadioButtonOneText() {
+        return mRadioButtonOneText;
+    }
+
+    /**
+     * Get the text of the second RadioButton
+     *
+     * @return the text of the second RadioButton
+     */
+    public String getRadioButtonTwoText() {
+        return mRadioButtonTwoText;
+    }
+
+    /**
+     * Get the text of the first CheckBox
+     *
+     * @return the text of the first CheckBox
+     */
+    public String getCheckBoxOneText() {
+        return mCheckBoxOneText;
+    }
+
+    /**
+     * Get the text of the second CheckBox
+     *
+     * @return the text of the second CheckBox
+     */
+    public String getCheckBoxTwoText() {
+        return mCheckBoxTwoText;
+    }
+
+    /**
+     * Get the text of the third CheckBox
+     *
+     * @return the text of the third CheckBox
+     */
+    public String getCheckBoxThreeText() {
+        return mCheckBoxThreeText;
+    }
+
+    /**
+     * Get the text of the fourth CheckBox
+     *
+     * @return the text of the fourth CheckBox
+     */
+    public String getCheckBoxFourText() {
+        return mCheckBoxFourText;
+    }
+
+    /**
+     * Get the text of the fifth CheckBox
+     *
+     * @return the text of the fifth CheckBox
+     */
+    public String getCheckBoxFiveText() {
+        return mCheckBoxFiveText;
+    }
+
+    /**
+     * Get the text of the sixth CheckBox
+     *
+     * @return the text of the sixth CheckBox
+     */
+    public String getCheckBoxSixText() {
+        return mCheckBoxSixText;
+    }
 }
