@@ -1,32 +1,35 @@
 <resources>
 
-
     <!-- Main Layout Strings Start -->
     <string name="main_app_name">Agencia EMD</string>
     <string name="main_slogan">E-Marketing Developer</string>
-    <string name="main_description">Somos un equipo de profesionales curiosos, creativos y apasionados
-                                por el marketing. Disfrutamos lo que mejor sabemos hacer: Planear,
-                                crear y comunicar en canales digitales. Nuestros pilares son:
-                                Innovación, compromiso, trabajo en equipo, responsabilidad y
-                                pasión por los proyectos de nuestros clientes.</string>
+    <string name="main_description">Somos un equipo de profesionales curiosos, creativos y
+        apasionados por el marketing. Disfrutamos lo que mejor sabemos hacer: Planear, crear y
+        comunicar en canales digitales. Nuestros pilares son: Innovación, compromiso, trabajo en
+        equipo, responsabilidad y pasión por los proyectos de nuestros clientes.
+    </string>
     <string name="main_about_us">Conócenos</string>
     <string name="main_web_address">http://agenciaemd.com</string>
     <string name="main_call_us">Llámanos</string>
     <string name="main_cellphone">+57 322-946-7440
-                                \nLunes a Sábado
-                                \n8:30am a 6:00pm</string>
+        \nLunes a Sábado
+        \n8:30am a 6:00pm
+    </string>
     <string name="main_write_us">Escríbenos</string>
     <string name="main_email">hola@agenciaemd.com</string>
     <string name="main_find_us">Encuéntranos</string>
     <string name="main_address">Carrera 11 # 21 - 90
-                            \nOficina 312
-                            \nSogamoso, Boyacá</string>
+        \nOficina 312
+        \nSogamoso, Boyacá
+    </string>
     <string name="main_tejo">Puntaje Tejo</string>
     <string name="main_tejo_text">Registra el puntaje del deporte
-                                \nícono de nuestra región</string>
+        \nícono de nuestra región
+    </string>
     <string name="main_quiz">Test Estrategia Digital</string>
     <string name="main_quiz_text">Conoce el estado de tu empresa en cuanto
-        \nal uso estratégico de plataformas digitales</string>
+        \nal uso estratégico de plataformas digitales
+    </string>
     <!-- Main Layout Strings End -->
 
 
@@ -34,7 +37,8 @@
     <string name="tejo_team_a">Equipo A</string>
     <string name="tejo_team_b">Equipo B</string>
     <string name="tejo_game_over">El juego ha terminado. Uno de los equipos ha alcanzado los 27
-                                puntos.</string>
+        puntos.
+    </string>
     <string name="tejo_monona_text">Moñona</string>
     <string name="tejo_embocinada_text">Embocinada</string>
     <string name="tejo_mecha_text">Mecha</string>
@@ -46,28 +50,129 @@
     <string name="tejo_email_subject">Puntaje Partido de Tejo</string>
     <string name="tejo_body_part_one">Puntaje Equipo A:</string>
     <string name="tejo_body_part_two">\n\nPuntaje Equipo B:</string>
-    <string name="tejo_body_part_three">\n\nGracias por preferirnos, \n\nAgencia de Marketing
-                                    EMD</string>
+    <string name="tejo_body_part_three">\n\nGracias por preferirnos, \n\nAgencia de Marketing EMD
+    </string>
     <string name="tejo_error_email">Se necesita una aplicación de correo electrónico para
-                                compartir el puntaje.</string>
+        compartir el puntaje.
+    </string>
     <!-- Tejo Counter Strings End -->
 
 
     <!-- Test Strings Start -->
+    <!-- Question One Start -->
     <string name="test_question_one_header">Pregunta 1</string>
-    <string name="test_question_one_body">Si cuentas con un sitio web selecciona cada una de las
-                                            funcionalidades con las que este cuenta, de lo contrario
-                                            salta a la pregunta cuatro (4):</string>
+    <string name="test_question_one_body">Si cuentas con un sitio web, selecciona cada una de las
+        funcionalidades con las que este cuenta, de lo contrario salta a la pregunta cuatro (4):
+    </string>
     <string name="test_question_one_option_one">Ventas</string>
     <string name="test_question_one_option_two">Marketing y promoción (Anuncios sobre ofertas,
-                                                suscriptores a la página, promociones especiales)
-                                                </string>
+        suscriptores a la página, promociones especiales)
+    </string>
     <string name="test_question_one_option_three">Blogging (Publicación periódica de información o
-                                                    contenido valioso para el público objetivo)
-                                                    </string>
+        contenido valioso para el público objetivo)
+    </string>
     <string name="test_question_one_option_four">Anuncios o servicios de terceros integrados
-                                                    (Google AdSense, Amazon Associates, Infolinks,
-                                                        etc.)</string>
-
+        (Google AdSense, Amazon Associates, Infolinks, etc.)
+    </string>
+    <!-- Question One End -->
+    <!-- Question Two Start -->
+    <string name="test_question_two_header">Pregunta 2</string>
+    <string name="test_question_two_body">¿Sientes que tu sitio web tiene un impacto positivo
+        significativo en las áreas de marketing y ventas de tu empresa?
+    </string>
+    <string name="test_question_two_option_one">Sí</string>
+    <string name="test_question_two_option_two">No</string>
+    <!-- Question Two End -->
+    <!-- Question Three Start -->
+    <string name="test_question_three_header">Pregunta 3</string>
+    <string name="test_question_three_body">¿Realizas campañas publicitarias o de promoción para
+        posicionar la página web en motores de búsqueda, o en páginas de terceros?
+    </string>
+    <string name="test_question_three_option_one">Sí</string>
+    <string name="test_question_three_option_two">No</string>
+    <!-- Question Three End -->
+    <!-- Question Four Start -->
+    <string name="test_question_four_header">Pregunta 4</string>
+    <string name="test_question_four_body">Si haces uso de redes sociales, señala en cuáles
+        plataformas haces gestión activa (entiéndase como publicación de contenido relevante de
+        manera continua, contacto con clientes potenciales y actuales, y como herramienta de
+        comunicación en general), de lo contrario salta a la pregunta ocho (8):
+    </string>
+    <string name="test_question_four_option_one">Facebook</string>
+    <string name="test_question_four_option_two">Instagram</string>
+    <string name="test_question_four_option_three">YouTube</string>
+    <string name="test_question_four_option_four">Twitter</string>
+    <string name="test_question_four_option_five">LinkedIn</string>
+    <string name="test_question_four_option_six">Otras (Pinterest, Snapchat, Flickr, etc.)</string>
+    <!-- Question Four End -->
+    <!-- Question Five Start -->
+    <string name="test_question_five_header">Pregunta 5</string>
+    <string name="test_question_five_body">Señala cuáles de las siguientes acciones llevas a cabo en
+        tus cuentas de redes sociales:
+    </string>
+    <string name="test_question_five_option_one">Ventas</string>
+    <string name="test_question_five_option_two">Marketing y promoción (Anuncios sobre ofertas y
+        promociones especiales, concursos, etc.)
+    </string>
+    <string name="test_question_five_option_three">Publicación de contenido afín con tu audiencia
+        objetivo para ganar seguidores y aumentar la conexión con la marca
+    </string>
+    <string name="test_question_five_option_four">Utilización de servicios como el chat para
+        mantenerte en contacto con tus clientes
+    </string>
+    <!-- Question Five End -->
+    <!-- Question Six Start -->
+    <string name="test_question_six_header">Pregunta 6</string>
+    <string name="test_question_six_body">¿Consideras que el uso de redes sociales tiene un impacto
+        positivo significativo sobre las áreas de marketing y ventas de tu empresa?
+    </string>
+    <string name="test_question_six_option_one">Sí</string>
+    <string name="test_question_six_option_two">No</string>
+    <!-- Question Six End -->
+    <!-- Question Seven Start -->
+    <string name="test_question_seven_header">Pregunta 7</string>
+    <string name="test_question_seven_body">¿Realizas campañas publicitarias pagas u orgánicas
+        (no pagas) dentro de tus redes sociales para posicionar y exponer tu negocio?
+    </string>
+    <string name="test_question_seven_option_one">Sí</string>
+    <string name="test_question_seven_option_two">No</string>
+    <!-- Question Seven End -->
+    <!-- Question Eight Start -->
+    <string name="test_question_eight_header">Pregunta 8</string>
+    <string name="test_question_eight_body">Si cuentas con aplicaciones móviles ¿En qué plataformas
+        tienes publicadas dichas herramientas? De lo contrario por favor ve al botón \"Obtener
+        Resultados\" al final del cuestionario:
+    </string>
+    <string name="test_question_eight_option_one">Google Play Store</string>
+    <string name="test_question_eight_option_two">Apple App Store</string>
+    <string name="test_question_eight_option_three">Windows Store</string>
+    <string name="test_question_eight_option_four">Amazon App Store</string>
+    <string name="test_question_eight_option_five">BlackBerry World</string>
+    <string name="test_question_eight_option_six">Galaxy Store</string>
+    <!-- Question Eight End -->
+    <!-- Question Nine Start -->
+    <string name="test_question_nine_header">Pregunta 9</string>
+    <string name="test_question_nine_body">¿Con qué funcionalidades cuentan dichas aplicaciones
+        móviles?
+    </string>
+    <string name="test_question_nine_option_one">Ventas</string>
+    <string name="test_question_nine_option_two">Marketing y promoción (Anuncios sobre ofertas,
+        suscriptores, promociones especiales)
+    </string>
+    <string name="test_question_nine_option_three">Blogging (Publicación periódica de
+        información/contenido valioso para el público objetivo)
+    </string>
+    <string name="test_question_nine_option_four">Anuncios o servicios de terceros integrados
+        (Google AdMob, Unity Ads, Chartboost, etc.)
+    </string>
+    <!-- Question Nine End -->
+    <!-- Question Ten Start -->
+    <string name="test_question_ten_header">Pregunta 10</string>
+    <string name="test_question_ten_body">Consideras que dichas aplicaciones tienen un impacto
+        positivo significativo sobre las áreas de marketing y ventas de tu empresa?
+    </string>
+    <string name="test_question_ten_option_one">Sí</string>
+    <string name="test_question_ten_option_two">No</string>
+    <!-- Question Ten End -->
 
 </resources>

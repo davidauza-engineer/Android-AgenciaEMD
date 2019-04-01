@@ -31,12 +31,12 @@ public class QuestionAdapter extends ArrayAdapter {
 
     @Override
     public View getView(int pPosition, View pConvertView, ViewGroup pParent) {
-        // Check if an existing View is being reused, otherwise inflate the View
+
         View listItemView = pConvertView;
-        if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).
-                    inflate(R.layout.question_layout, pParent, false);
-        }
+
+        // Inflate the View
+        listItemView = LayoutInflater.from(getContext()).
+                inflate(R.layout.question_layout, pParent, false);
 
         // Get the Question object located at this position in the list
         Question currentQuestion = (Question) getItem(pPosition);
