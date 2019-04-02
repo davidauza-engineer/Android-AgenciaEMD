@@ -59,8 +59,9 @@
 
 
     <!-- Test Strings Start -->
+    <string name="test_end">Terminar</string>
     <!-- Question One Start -->
-    <string name="test_question_one_header">Pregunta 1</string>
+    <string name="test_question_one_header">Pregunta 1 de 10</string>
     <string name="test_question_one_body">Si cuentas con un sitio web, selecciona cada una de las
         funcionalidades con las que este cuenta, de lo contrario salta a la pregunta cuatro (4):
     </string>
@@ -76,7 +77,7 @@
     </string>
     <!-- Question One End -->
     <!-- Question Two Start -->
-    <string name="test_question_two_header">Pregunta 2</string>
+    <string name="test_question_two_header">Pregunta 2 de 10</string>
     <string name="test_question_two_body">¿Sientes que tu sitio web tiene un impacto positivo
         significativo en las áreas de marketing y ventas de tu empresa?
     </string>
@@ -84,7 +85,7 @@
     <string name="test_question_two_option_two">No</string>
     <!-- Question Two End -->
     <!-- Question Three Start -->
-    <string name="test_question_three_header">Pregunta 3</string>
+    <string name="test_question_three_header">Pregunta 3 de 10</string>
     <string name="test_question_three_body">¿Realizas campañas publicitarias o de promoción para
         posicionar la página web en motores de búsqueda, o en páginas de terceros?
     </string>
@@ -92,7 +93,7 @@
     <string name="test_question_three_option_two">No</string>
     <!-- Question Three End -->
     <!-- Question Four Start -->
-    <string name="test_question_four_header">Pregunta 4</string>
+    <string name="test_question_four_header">Pregunta 4 de 10</string>
     <string name="test_question_four_body">Si haces uso de redes sociales, señala en cuáles
         plataformas haces gestión activa (entiéndase como publicación de contenido relevante de
         manera continua, contacto con clientes potenciales y actuales, y como herramienta de
@@ -106,7 +107,7 @@
     <string name="test_question_four_option_six">Otras (Pinterest, Snapchat, Flickr, etc.)</string>
     <!-- Question Four End -->
     <!-- Question Five Start -->
-    <string name="test_question_five_header">Pregunta 5</string>
+    <string name="test_question_five_header">Pregunta 5 de 10</string>
     <string name="test_question_five_body">Señala cuáles de las siguientes acciones llevas a cabo en
         tus cuentas de redes sociales:
     </string>
@@ -122,7 +123,7 @@
     </string>
     <!-- Question Five End -->
     <!-- Question Six Start -->
-    <string name="test_question_six_header">Pregunta 6</string>
+    <string name="test_question_six_header">Pregunta 6 de 10</string>
     <string name="test_question_six_body">¿Consideras que el uso de redes sociales tiene un impacto
         positivo significativo sobre las áreas de marketing y ventas de tu empresa?
     </string>
@@ -130,7 +131,7 @@
     <string name="test_question_six_option_two">No</string>
     <!-- Question Six End -->
     <!-- Question Seven Start -->
-    <string name="test_question_seven_header">Pregunta 7</string>
+    <string name="test_question_seven_header">Pregunta 7 de 10</string>
     <string name="test_question_seven_body">¿Realizas campañas publicitarias pagas u orgánicas
         (no pagas) dentro de tus redes sociales para posicionar y exponer tu negocio?
     </string>
@@ -138,10 +139,10 @@
     <string name="test_question_seven_option_two">No</string>
     <!-- Question Seven End -->
     <!-- Question Eight Start -->
-    <string name="test_question_eight_header">Pregunta 8</string>
+    <string name="test_question_eight_header">Pregunta 8 de 10</string>
     <string name="test_question_eight_body">Si cuentas con aplicaciones móviles ¿En qué plataformas
-        tienes publicadas dichas herramientas? De lo contrario por favor ve al botón \"Obtener
-        Resultados\" al final del cuestionario:
+        tienes publicadas dichas herramientas? De lo contrario, por favor presiona el botón
+        \"Finalizar\" para obtener tus resultados:
     </string>
     <string name="test_question_eight_option_one">Google Play Store</string>
     <string name="test_question_eight_option_two">Apple App Store</string>
@@ -151,7 +152,7 @@
     <string name="test_question_eight_option_six">Galaxy Store</string>
     <!-- Question Eight End -->
     <!-- Question Nine Start -->
-    <string name="test_question_nine_header">Pregunta 9</string>
+    <string name="test_question_nine_header">Pregunta 9 de 10</string>
     <string name="test_question_nine_body">¿Con qué funcionalidades cuentan dichas aplicaciones
         móviles?
     </string>
@@ -167,7 +168,7 @@
     </string>
     <!-- Question Nine End -->
     <!-- Question Ten Start -->
-    <string name="test_question_ten_header">Pregunta 10</string>
+    <string name="test_question_ten_header">Pregunta 10 de 10</string>
     <string name="test_question_ten_body">Consideras que dichas aplicaciones tienen un impacto
         positivo significativo sobre las áreas de marketing y ventas de tu empresa?
     </string>
