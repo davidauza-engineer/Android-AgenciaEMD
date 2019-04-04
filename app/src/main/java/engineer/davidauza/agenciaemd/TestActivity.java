@@ -14,7 +14,7 @@ public class TestActivity extends AppCompatActivity {
         setContentView(R.layout.activity_test);
 
         // Create the list of questions
-        ArrayList<Question> questions = new ArrayList<Question>();
+        final ArrayList<Question> questions = new ArrayList<Question>();
         // Question one
         questions.add(new Question(getString(R.string.test_question_one_header),
                 R.drawable.question_one, getString(R.string.test_question_one_body),

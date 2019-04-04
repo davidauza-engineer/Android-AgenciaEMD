@@ -102,7 +102,7 @@ public class TejoCounter extends AppCompatActivity {
         editor.putBoolean("mPreviousGameOver", mPreviousGameOver);
         editor.putBoolean("mPreviousStateSaved", mPreviousStateSaved);
         editor.putBoolean("mResetAvailable", mResetAvailable);
-        editor.commit();
+        editor.apply();
     }
 
     /**

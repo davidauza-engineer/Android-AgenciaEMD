@@ -1,14 +1,14 @@
 package engineer.davidauza.agenciaemd;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -19,6 +19,57 @@ import java.util.ArrayList;
  * data source, which is a list of Question objects.
  */
 public class QuestionAdapter extends ArrayAdapter {
+
+    // The name of the file to store the state so it can be recovered
+    public static final String PREFS_NAME = "MyPrefsFile";
+
+    // Create SharedPreferences to restore the state of the activity
+    SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, 0);
+
+    /**
+     * Listener for the first RadioButton. It saves the state of the first RadioButton of each
+     * question once the state of the RadioGroup is changed.
+     */
+    CompoundButton.OnCheckedChangeListener radioButtonOneListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = settings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneRadioButtonOne", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoRadioButtonOne", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeRadioButtonOne", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourRadioButtonOne", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveRadioButtonOne", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixRadioButtonOne", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenRadioButtonOne", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightRadioButtonOne", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineRadioButtonOne", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenRadioButtonOne", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
 
     /**
      * Create a new QuestionAdapter object.
@@ -32,7 +83,7 @@ public class QuestionAdapter extends ArrayAdapter {
     }
 
     @Override
-    public View getView(int pPosition, View pConvertView, ViewGroup pParent) {
+    public View getView(final int pPosition, View pConvertView, ViewGroup pParent) {
 
         View listItemView = pConvertView;
 
@@ -72,6 +123,15 @@ public class QuestionAdapter extends ArrayAdapter {
         } else {
             // If text has been provided, get the text and display it
             firstRadioButton.setText(currentQuestion.getRadioButtonOneText());
+
+            // Set a tag to the radioButton so it can be recognized by the listener
+            firstRadioButton.setTag(pPosition);
+
+            // Set the proper listener
+            firstRadioButton.setOnCheckedChangeListener(radioButtonOneListener);
+
+            // Update the UI by loading the state of the button
+            firstRadioButton.setChecked(loadBoolean(firstRadioButton.getTag().toString()));
         }
 
         // Find the second RadioButton in the question_layout.xml layout with the ID
@@ -166,5 +226,39 @@ public class QuestionAdapter extends ArrayAdapter {
 
         // Return the whole question layout layout so that it can be shown in the ListView
         return listItemView;
+    }
+
+
+    /**
+     * This method returns the saved value for the first RadioButton
+     *
+     * @param pTag The tag associated with the button loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadBoolean(String pTag) {
+        switch (pTag) {
+            case "0":
+                return settings.getBoolean("QuestionOneRadioButtonOne", false);
+            case "1":
+                return settings.getBoolean("QuestionTwoRadioButtonOne", false);
+            case "2":
+                return settings.getBoolean("QuestionThreeRadioButtonOne", false);
+            case "3":
+                return settings.getBoolean("QuestionFourRadioButtonOne", false);
+            case "4":
+                return settings.getBoolean("QuestionFiveRadioButtonOne", false);
+            case "5":
+                return settings.getBoolean("QuestionSixRadioButtonOne", false);
+            case "6":
+                return settings.getBoolean("QuestionSevenRadioButtonOne", false);
+            case "7":
+                return settings.getBoolean("QuestionEightRadioButtonOne", false);
+            case "8":
+                return settings.getBoolean("QuestionNineRadioButtonOne", false);
+            case "9":
+                return settings.getBoolean("QuestionTenRadioButtonOne", false);
+            default:
+                return false;
+        }
     }
 }
