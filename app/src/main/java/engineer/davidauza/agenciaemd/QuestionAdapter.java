@@ -72,6 +72,51 @@ public class QuestionAdapter extends ArrayAdapter {
             };
 
     /**
+     * Listener for the second RadioButton. It saves the state of the second RadioButton of each
+     * question once the state of the RadioGroup is changed.
+     */
+    CompoundButton.OnCheckedChangeListener radioButtonTwoListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = settings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneRadioButtonTwo", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoRadioButtonTwo", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeRadioButtonTwo", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourRadioButtonTwo", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveRadioButtonTwo", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixRadioButtonTwo", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenRadioButtonTwo", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightRadioButtonTwo", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineRadioButtonTwo", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenRadioButtonTwo", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
      * Create a new QuestionAdapter object.
      *
      * @param pContext   is the current context (i.e. Activity) that the adapter is being created
@@ -124,14 +169,14 @@ public class QuestionAdapter extends ArrayAdapter {
             // If text has been provided, get the text and display it
             firstRadioButton.setText(currentQuestion.getRadioButtonOneText());
 
-            // Set a tag to the radioButton so it can be recognized by the listener
+            // Set a tag to the RadioButton so it can be recognized by the listener
             firstRadioButton.setTag(pPosition);
 
             // Set the proper listener
             firstRadioButton.setOnCheckedChangeListener(radioButtonOneListener);
 
             // Update the UI by loading the state of the button
-            firstRadioButton.setChecked(loadBoolean(firstRadioButton.getTag().toString()));
+            firstRadioButton.setChecked(loadRadioButtonOne(firstRadioButton.getTag().toString()));
         }
 
         // Find the second RadioButton in the question_layout.xml layout with the ID
@@ -144,6 +189,15 @@ public class QuestionAdapter extends ArrayAdapter {
         } else {
             // If text has been provided, get the text and display it
             secondRadioButton.setText(currentQuestion.getRadioButtonTwoText());
+
+            // Set a tag to the RadioButton so it can be recognized by the listener
+            secondRadioButton.setTag(pPosition);
+
+            // Set the proper listener
+            secondRadioButton.setOnCheckedChangeListener(radioButtonTwoListener);
+
+            // Update the UI by loading the state of the button
+            secondRadioButton.setChecked(loadRadioButtonTwo(secondRadioButton.getTag().toString()));
         }
 
         // Find the first CheckBox in the question_layout.xml layout with the ID checkbox_one.
@@ -235,7 +289,7 @@ public class QuestionAdapter extends ArrayAdapter {
      * @param pTag The tag associated with the button loading the information
      * @return The value stored for the tag indicated. If the value is not found, it returns false
      */
-    private boolean loadBoolean(String pTag) {
+    private boolean loadRadioButtonOne(String pTag) {
         switch (pTag) {
             case "0":
                 return settings.getBoolean("QuestionOneRadioButtonOne", false);
@@ -257,6 +311,39 @@ public class QuestionAdapter extends ArrayAdapter {
                 return settings.getBoolean("QuestionNineRadioButtonOne", false);
             case "9":
                 return settings.getBoolean("QuestionTenRadioButtonOne", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the second RadioButton
+     *
+     * @param pTag The tag associated with the button loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadRadioButtonTwo(String pTag) {
+        switch (pTag) {
+            case "0":
+                return settings.getBoolean("QuestionOneRadioButtonTwo", false);
+            case "1":
+                return settings.getBoolean("QuestionTwoRadioButtonTwo", false);
+            case "2":
+                return settings.getBoolean("QuestionThreeRadioButtonTwo", false);
+            case "3":
+                return settings.getBoolean("QuestionFourRadioButtonTwo", false);
+            case "4":
+                return settings.getBoolean("QuestionFiveRadioButtonTwo", false);
+            case "5":
+                return settings.getBoolean("QuestionSixRadioButtonTwo", false);
+            case "6":
+                return settings.getBoolean("QuestionSevenRadioButtonTwo", false);
+            case "7":
+                return settings.getBoolean("QuestionEightRadioButtonTwo", false);
+            case "8":
+                return settings.getBoolean("QuestionNineRadioButtonTwo", false);
+            case "9":
+                return settings.getBoolean("QuestionTenRadioButtonTwo", false);
             default:
                 return false;
         }
