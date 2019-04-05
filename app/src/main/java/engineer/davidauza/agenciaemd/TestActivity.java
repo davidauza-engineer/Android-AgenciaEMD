@@ -104,6 +104,4 @@ public class TestActivity extends AppCompatActivity {
         // display list items for each Question in the list.
         listView.setAdapter(adapter);
     }
-
-    // TODO Fix the orientation change
 }

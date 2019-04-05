@@ -24,17 +24,17 @@ public class QuestionAdapter extends ArrayAdapter {
     public static final String PREFS_NAME = "MyPrefsFile";
 
     // Create SharedPreferences to restore the state of the activity
-    SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, 0);
+    private SharedPreferences mSettings = getContext().getSharedPreferences(PREFS_NAME, 0);
 
     /**
      * Listener for the first RadioButton. It saves the state of the first RadioButton of each
      * question once the state of the RadioGroup is changed.
      */
-    CompoundButton.OnCheckedChangeListener radioButtonOneListener =
+    private CompoundButton.OnCheckedChangeListener mRadioButtonOneListener =
             new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SharedPreferences.Editor editor = settings.edit();
+                    SharedPreferences.Editor editor = mSettings.edit();
                     switch (buttonView.getTag().toString()) {
                         case "0":
                             editor.putBoolean("QuestionOneRadioButtonOne", isChecked);
@@ -75,11 +75,11 @@ public class QuestionAdapter extends ArrayAdapter {
      * Listener for the second RadioButton. It saves the state of the second RadioButton of each
      * question once the state of the RadioGroup is changed.
      */
-    CompoundButton.OnCheckedChangeListener radioButtonTwoListener =
+    private CompoundButton.OnCheckedChangeListener mRadioButtonTwoListener =
             new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    SharedPreferences.Editor editor = settings.edit();
+                    SharedPreferences.Editor editor = mSettings.edit();
                     switch (buttonView.getTag().toString()) {
                         case "0":
                             editor.putBoolean("QuestionOneRadioButtonTwo", isChecked);
@@ -110,6 +110,276 @@ public class QuestionAdapter extends ArrayAdapter {
                             break;
                         case "9":
                             editor.putBoolean("QuestionTenRadioButtonTwo", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
+     * Listener for the first CheckBox. It saves the state of the first CheckBox of each
+     * question once the state of that CheckBox is changed.
+     */
+    private CompoundButton.OnCheckedChangeListener mCheckBoxOneListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneCheckBoxOne", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoCheckBoxOne", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeCheckBoxOne", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourCheckBoxOne", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveCheckBoxOne", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixCheckBoxOne", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenCheckBoxOne", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightCheckBoxOne", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineCheckBoxOne", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenCheckBoxOne", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
+     * Listener for the second CheckBox. It saves the state of the second CheckBox of each
+     * question once the state of that CheckBox is changed.
+     */
+    private CompoundButton.OnCheckedChangeListener mCheckBoxTwoListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneCheckBoxTwo", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoCheckBoxTwo", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeCheckBoxTwo", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourCheckBoxTwo", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveCheckBoxTwo", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixCheckBoxTwo", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenCheckBoxTwo", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightCheckBoxTwo", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineCheckBoxTwo", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenCheckBoxTwo", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
+     * Listener for the third CheckBox. It saves the state of the third CheckBox of each
+     * question once the state of that CheckBox is changed.
+     */
+    private CompoundButton.OnCheckedChangeListener mCheckBoxThreeListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneCheckBoxThree", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoCheckBoxThree", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeCheckBoxThree", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourCheckBoxThree", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveCheckBoxThree", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixCheckBoxThree", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenCheckBoxThree", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightCheckBoxThree", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineCheckBoxThree", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenCheckBoxThree", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
+     * Listener for the fourth CheckBox. It saves the state of the fourth CheckBox of each
+     * question once the state of that CheckBox is changed.
+     */
+    private CompoundButton.OnCheckedChangeListener mCheckBoxFourListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneCheckBoxFour", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoCheckBoxFour", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeCheckBoxFour", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourCheckBoxFour", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveCheckBoxFour", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixCheckBoxFour", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenCheckBoxFour", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightCheckBoxFour", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineCheckBoxFour", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenCheckBoxFour", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
+     * Listener for the fifth CheckBox. It saves the state of the fifth CheckBox of each
+     * question once the state of that CheckBox is changed.
+     */
+    private CompoundButton.OnCheckedChangeListener mCheckBoxFiveListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneCheckBoxFive", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoCheckBoxFive", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeCheckBoxFive", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourCheckBoxFive", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveCheckBoxFive", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixCheckBoxFive", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenCheckBoxFive", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightCheckBoxFive", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineCheckBoxFive", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenCheckBoxFive", isChecked);
+                            break;
+                    }
+                    editor.apply();
+                }
+            };
+
+    /**
+     * Listener for the sixth CheckBox. It saves the state of the sixth CheckBox of each
+     * question once the state of that CheckBox is changed.
+     */
+    private CompoundButton.OnCheckedChangeListener mCheckBoxSixListener =
+            new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    SharedPreferences.Editor editor = mSettings.edit();
+                    switch (buttonView.getTag().toString()) {
+                        case "0":
+                            editor.putBoolean("QuestionOneCheckBoxSix", isChecked);
+                            break;
+                        case "1":
+                            editor.putBoolean("QuestionTwoCheckBoxSix", isChecked);
+                            break;
+                        case "2":
+                            editor.putBoolean("QuestionThreeCheckBoxSix", isChecked);
+                            break;
+                        case "3":
+                            editor.putBoolean("QuestionFourCheckBoxSix", isChecked);
+                            break;
+                        case "4":
+                            editor.putBoolean("QuestionFiveCheckBoxSix", isChecked);
+                            break;
+                        case "5":
+                            editor.putBoolean("QuestionSixCheckBoxSix", isChecked);
+                            break;
+                        case "6":
+                            editor.putBoolean("QuestionSevenCheckBoxSix", isChecked);
+                            break;
+                        case "7":
+                            editor.putBoolean("QuestionEightCheckBoxSix", isChecked);
+                            break;
+                        case "8":
+                            editor.putBoolean("QuestionNineCheckBoxSix", isChecked);
+                            break;
+                        case "9":
+                            editor.putBoolean("QuestionTenCheckBoxSix", isChecked);
                             break;
                     }
                     editor.apply();
@@ -173,7 +443,7 @@ public class QuestionAdapter extends ArrayAdapter {
             firstRadioButton.setTag(pPosition);
 
             // Set the proper listener
-            firstRadioButton.setOnCheckedChangeListener(radioButtonOneListener);
+            firstRadioButton.setOnCheckedChangeListener(mRadioButtonOneListener);
 
             // Update the UI by loading the state of the button
             firstRadioButton.setChecked(loadRadioButtonOne(firstRadioButton.getTag().toString()));
@@ -194,7 +464,7 @@ public class QuestionAdapter extends ArrayAdapter {
             secondRadioButton.setTag(pPosition);
 
             // Set the proper listener
-            secondRadioButton.setOnCheckedChangeListener(radioButtonTwoListener);
+            secondRadioButton.setOnCheckedChangeListener(mRadioButtonTwoListener);
 
             // Update the UI by loading the state of the button
             secondRadioButton.setChecked(loadRadioButtonTwo(secondRadioButton.getTag().toString()));
@@ -211,6 +481,15 @@ public class QuestionAdapter extends ArrayAdapter {
             firstCheckBox.setText(currentQuestion.getCheckBoxOneText());
             // If API is greater than or equal to 26, justify the text
             MainActivity.justifyText(firstCheckBox);
+
+            // Set a tag to the CheckBox so it can be recognized by the listener
+            firstCheckBox.setTag(pPosition);
+
+            // Set the proper listener
+            firstCheckBox.setOnCheckedChangeListener(mCheckBoxOneListener);
+
+            // Update the UI by loading the state of the CheckBox
+            firstCheckBox.setChecked(loadCheckBoxOne(firstCheckBox.getTag().toString()));
         }
 
         // Find the second CheckBox in the question_layout.xml layout with the ID checkbox_two.
@@ -224,6 +503,15 @@ public class QuestionAdapter extends ArrayAdapter {
             secondCheckBox.setText(currentQuestion.getCheckBoxTwoText());
             // If API is greater than or equal to 26, justify the text
             MainActivity.justifyText(secondCheckBox);
+
+            // Set a tag to the CheckBox so it can be recognized by the listener
+            secondCheckBox.setTag(pPosition);
+
+            // Set the proper listener
+            secondCheckBox.setOnCheckedChangeListener(mCheckBoxTwoListener);
+
+            // Update the UI by loading the state of the CheckBox
+            secondCheckBox.setChecked(loadCheckBoxTwo(secondCheckBox.getTag().toString()));
         }
 
         // Find the third CheckBox in the question_layout.xml layout with the ID checkbox_three.
@@ -237,6 +525,15 @@ public class QuestionAdapter extends ArrayAdapter {
             thirdCheckBox.setText(currentQuestion.getCheckBoxThreeText());
             // If API is greater than or equal to 26, justify the text
             MainActivity.justifyText(thirdCheckBox);
+
+            // Set a tag to the CheckBox so it can be recognized by the listener
+            thirdCheckBox.setTag(pPosition);
+
+            // Set the proper listener
+            thirdCheckBox.setOnCheckedChangeListener(mCheckBoxThreeListener);
+
+            // Update the UI by loading the state of the CheckBox
+            thirdCheckBox.setChecked(loadCheckBoxThree(thirdCheckBox.getTag().toString()));
         }
 
         // Find the fourth CheckBox in the question_layout.xml layout with the ID checkbox_four.
@@ -250,6 +547,15 @@ public class QuestionAdapter extends ArrayAdapter {
             fourthCheckBox.setText(currentQuestion.getCheckBoxFourText());
             // If API is greater than or equal to 26, justify the text
             MainActivity.justifyText(fourthCheckBox);
+
+            // Set a tag to the CheckBox so it can be recognized by the listener
+            fourthCheckBox.setTag(pPosition);
+
+            // Set the proper listener
+            fourthCheckBox.setOnCheckedChangeListener(mCheckBoxFourListener);
+
+            // Update the UI by loading the state of the CheckBox
+            fourthCheckBox.setChecked(loadCheckBoxFour(fourthCheckBox.getTag().toString()));
         }
 
         // Find the fifth CheckBox in the question_layout.xml layout with the ID checkbox_five.
@@ -263,6 +569,15 @@ public class QuestionAdapter extends ArrayAdapter {
             fifthCheckBox.setText(currentQuestion.getCheckBoxFiveText());
             // If API is greater than or equal to 26, justify the text
             MainActivity.justifyText(fifthCheckBox);
+
+            // Set a tag to the CheckBox so it can be recognized by the listener
+            fifthCheckBox.setTag(pPosition);
+
+            // Set the proper listener
+            fifthCheckBox.setOnCheckedChangeListener(mCheckBoxFiveListener);
+
+            // Update the UI by loading the state of the CheckBox
+            fifthCheckBox.setChecked(loadCheckBoxFive(fifthCheckBox.getTag().toString()));
         }
 
         // Find the sixth CheckBox in the question_layout.xml layout with the ID checkbox_six.
@@ -276,6 +591,15 @@ public class QuestionAdapter extends ArrayAdapter {
             sixthCheckBox.setText(currentQuestion.getCheckBoxSixText());
             // If API is greater than or equal to 26, justify the text
             MainActivity.justifyText(sixthCheckBox);
+
+            // Set a tag to the CheckBox so it can be recognized by the listener
+            sixthCheckBox.setTag(pPosition);
+
+            // Set the proper listener
+            sixthCheckBox.setOnCheckedChangeListener(mCheckBoxSixListener);
+
+            // Update the UI by loading the state of the CheckBox
+            sixthCheckBox.setChecked(loadCheckBoxSix(sixthCheckBox.getTag().toString()));
         }
 
         // Return the whole question layout layout so that it can be shown in the ListView
@@ -292,25 +616,25 @@ public class QuestionAdapter extends ArrayAdapter {
     private boolean loadRadioButtonOne(String pTag) {
         switch (pTag) {
             case "0":
-                return settings.getBoolean("QuestionOneRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionOneRadioButtonOne", false);
             case "1":
-                return settings.getBoolean("QuestionTwoRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionTwoRadioButtonOne", false);
             case "2":
-                return settings.getBoolean("QuestionThreeRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionThreeRadioButtonOne", false);
             case "3":
-                return settings.getBoolean("QuestionFourRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionFourRadioButtonOne", false);
             case "4":
-                return settings.getBoolean("QuestionFiveRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionFiveRadioButtonOne", false);
             case "5":
-                return settings.getBoolean("QuestionSixRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionSixRadioButtonOne", false);
             case "6":
-                return settings.getBoolean("QuestionSevenRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionSevenRadioButtonOne", false);
             case "7":
-                return settings.getBoolean("QuestionEightRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionEightRadioButtonOne", false);
             case "8":
-                return settings.getBoolean("QuestionNineRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionNineRadioButtonOne", false);
             case "9":
-                return settings.getBoolean("QuestionTenRadioButtonOne", false);
+                return mSettings.getBoolean("QuestionTenRadioButtonOne", false);
             default:
                 return false;
         }
@@ -325,25 +649,223 @@ public class QuestionAdapter extends ArrayAdapter {
     private boolean loadRadioButtonTwo(String pTag) {
         switch (pTag) {
             case "0":
-                return settings.getBoolean("QuestionOneRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionOneRadioButtonTwo", false);
             case "1":
-                return settings.getBoolean("QuestionTwoRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionTwoRadioButtonTwo", false);
             case "2":
-                return settings.getBoolean("QuestionThreeRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionThreeRadioButtonTwo", false);
             case "3":
-                return settings.getBoolean("QuestionFourRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionFourRadioButtonTwo", false);
             case "4":
-                return settings.getBoolean("QuestionFiveRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionFiveRadioButtonTwo", false);
             case "5":
-                return settings.getBoolean("QuestionSixRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionSixRadioButtonTwo", false);
             case "6":
-                return settings.getBoolean("QuestionSevenRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionSevenRadioButtonTwo", false);
             case "7":
-                return settings.getBoolean("QuestionEightRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionEightRadioButtonTwo", false);
             case "8":
-                return settings.getBoolean("QuestionNineRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionNineRadioButtonTwo", false);
             case "9":
-                return settings.getBoolean("QuestionTenRadioButtonTwo", false);
+                return mSettings.getBoolean("QuestionTenRadioButtonTwo", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the first CheckBox
+     *
+     * @param pTag The tag associated with the CheckBox loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadCheckBoxOne(String pTag) {
+        switch (pTag) {
+            case "0":
+                return mSettings.getBoolean("QuestionOneCheckBoxOne", false);
+            case "1":
+                return mSettings.getBoolean("QuestionTwoCheckBoxOne", false);
+            case "2":
+                return mSettings.getBoolean("QuestionThreeCheckBoxOne", false);
+            case "3":
+                return mSettings.getBoolean("QuestionFourCheckBoxOne", false);
+            case "4":
+                return mSettings.getBoolean("QuestionFiveCheckBoxOne", false);
+            case "5":
+                return mSettings.getBoolean("QuestionSixCheckBoxOne", false);
+            case "6":
+                return mSettings.getBoolean("QuestionSevenCheckBoxOne", false);
+            case "7":
+                return mSettings.getBoolean("QuestionEightCheckBoxOne", false);
+            case "8":
+                return mSettings.getBoolean("QuestionNineCheckBoxOne", false);
+            case "9":
+                return mSettings.getBoolean("QuestionTenCheckBoxOne", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the second CheckBox
+     *
+     * @param pTag The tag associated with the CheckBox loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadCheckBoxTwo(String pTag) {
+        switch (pTag) {
+            case "0":
+                return mSettings.getBoolean("QuestionOneCheckBoxTwo", false);
+            case "1":
+                return mSettings.getBoolean("QuestionTwoCheckBoxTwo", false);
+            case "2":
+                return mSettings.getBoolean("QuestionThreeCheckBoxTwo", false);
+            case "3":
+                return mSettings.getBoolean("QuestionFourCheckBoxTwo", false);
+            case "4":
+                return mSettings.getBoolean("QuestionFiveCheckBoxTwo", false);
+            case "5":
+                return mSettings.getBoolean("QuestionSixCheckBoxTwo", false);
+            case "6":
+                return mSettings.getBoolean("QuestionSevenCheckBoxTwo", false);
+            case "7":
+                return mSettings.getBoolean("QuestionEightCheckBoxTwo", false);
+            case "8":
+                return mSettings.getBoolean("QuestionNineCheckBoxTwo", false);
+            case "9":
+                return mSettings.getBoolean("QuestionTenCheckBoxTwo", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the third CheckBox
+     *
+     * @param pTag The tag associated with the CheckBox loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadCheckBoxThree(String pTag) {
+        switch (pTag) {
+            case "0":
+                return mSettings.getBoolean("QuestionOneCheckBoxThree", false);
+            case "1":
+                return mSettings.getBoolean("QuestionTwoCheckBoxThree", false);
+            case "2":
+                return mSettings.getBoolean("QuestionThreeCheckBoxThree", false);
+            case "3":
+                return mSettings.getBoolean("QuestionFourCheckBoxThree", false);
+            case "4":
+                return mSettings.getBoolean("QuestionFiveCheckBoxThree", false);
+            case "5":
+                return mSettings.getBoolean("QuestionSixCheckBoxThree", false);
+            case "6":
+                return mSettings.getBoolean("QuestionSevenCheckBoxThree", false);
+            case "7":
+                return mSettings.getBoolean("QuestionEightCheckBoxThree", false);
+            case "8":
+                return mSettings.getBoolean("QuestionNineCheckBoxThree", false);
+            case "9":
+                return mSettings.getBoolean("QuestionTenCheckBoxThree", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the fourth CheckBox
+     *
+     * @param pTag The tag associated with the CheckBox loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadCheckBoxFour(String pTag) {
+        switch (pTag) {
+            case "0":
+                return mSettings.getBoolean("QuestionOneCheckBoxFour", false);
+            case "1":
+                return mSettings.getBoolean("QuestionTwoCheckBoxFour", false);
+            case "2":
+                return mSettings.getBoolean("QuestionThreeCheckBoxFour", false);
+            case "3":
+                return mSettings.getBoolean("QuestionFourCheckBoxFour", false);
+            case "4":
+                return mSettings.getBoolean("QuestionFiveCheckBoxFour", false);
+            case "5":
+                return mSettings.getBoolean("QuestionSixCheckBoxFour", false);
+            case "6":
+                return mSettings.getBoolean("QuestionSevenCheckBoxFour", false);
+            case "7":
+                return mSettings.getBoolean("QuestionEightCheckBoxFour", false);
+            case "8":
+                return mSettings.getBoolean("QuestionNineCheckBoxFour", false);
+            case "9":
+                return mSettings.getBoolean("QuestionTenCheckBoxFour", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the fifth CheckBox
+     *
+     * @param pTag The tag associated with the CheckBox loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadCheckBoxFive(String pTag) {
+        switch (pTag) {
+            case "0":
+                return mSettings.getBoolean("QuestionOneCheckBoxFive", false);
+            case "1":
+                return mSettings.getBoolean("QuestionTwoCheckBoxFive", false);
+            case "2":
+                return mSettings.getBoolean("QuestionThreeCheckBoxFive", false);
+            case "3":
+                return mSettings.getBoolean("QuestionFourCheckBoxFive", false);
+            case "4":
+                return mSettings.getBoolean("QuestionFiveCheckBoxFive", false);
+            case "5":
+                return mSettings.getBoolean("QuestionSixCheckBoxFive", false);
+            case "6":
+                return mSettings.getBoolean("QuestionSevenCheckBoxFive", false);
+            case "7":
+                return mSettings.getBoolean("QuestionEightCheckBoxFive", false);
+            case "8":
+                return mSettings.getBoolean("QuestionNineCheckBoxFive", false);
+            case "9":
+                return mSettings.getBoolean("QuestionTenCheckBoxFive", false);
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * This method returns the saved value for the sixth CheckBox
+     *
+     * @param pTag The tag associated with the CheckBox loading the information
+     * @return The value stored for the tag indicated. If the value is not found, it returns false
+     */
+    private boolean loadCheckBoxSix(String pTag) {
+        switch (pTag) {
+            case "0":
+                return mSettings.getBoolean("QuestionOneCheckBoxSix", false);
+            case "1":
+                return mSettings.getBoolean("QuestionTwoCheckBoxSix", false);
+            case "2":
+                return mSettings.getBoolean("QuestionThreeCheckBoxSix", false);
+            case "3":
+                return mSettings.getBoolean("QuestionFourCheckBoxSix", false);
+            case "4":
+                return mSettings.getBoolean("QuestionFiveCheckBoxSix", false);
+            case "5":
+                return mSettings.getBoolean("QuestionSixCheckBoxSix", false);
+            case "6":
+                return mSettings.getBoolean("QuestionSevenCheckBoxSix", false);
+            case "7":
+                return mSettings.getBoolean("QuestionEightCheckBoxSix", false);
+            case "8":
+                return mSettings.getBoolean("QuestionNineCheckBoxSix", false);
+            case "9":
+                return mSettings.getBoolean("QuestionTenCheckBoxSix", false);
             default:
                 return false;
         }
