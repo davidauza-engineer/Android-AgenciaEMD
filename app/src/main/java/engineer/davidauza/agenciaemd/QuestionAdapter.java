@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * QuestionAdapter is an ArrayAdapter that can provide the layout for each list item based on a
  * data source, which is a list of Question objects.
  */
-public class QuestionAdapter extends ArrayAdapter {
+public class QuestionAdapter extends ArrayAdapter<Question> {
 
     // The name of the file to store the state so it can be recovered
     public static final String PREFS_NAME = "MyPrefsFile";

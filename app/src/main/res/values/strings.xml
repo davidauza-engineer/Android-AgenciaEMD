@@ -34,6 +34,7 @@
 
 
     <!-- Tejo Counter Layout Strings Start -->
+    <string name="tejo_activity_label">Puntaje Tejo</string>
     <string name="tejo_team_a">Equipo A</string>
     <string name="tejo_team_b">Equipo B</string>
     <string name="tejo_game_over">El juego ha terminado. Uno de los equipos ha alcanzado los 27
@@ -59,7 +60,10 @@
 
 
     <!-- Test Strings Start -->
+    <string name="test_activity_label">Test Estrategia Digital</string>
     <string name="test_end">Terminar</string>
+    <string name="test_company_name">Nombre de tu Empresa</string>
+    <string name="test_characters_limit">[Máximo 40 caracteres]</string>
     <!-- Question One Start -->
     <string name="test_question_one_header">Pregunta 1 de 10</string>
     <string name="test_question_one_body">Si cuentas con un sitio web, selecciona cada una de las
@@ -175,5 +179,9 @@
     <string name="test_question_ten_option_one">Sí</string>
     <string name="test_question_ten_option_two">No</string>
     <!-- Question Ten End -->
+
+    <!-- Test Results Strings Start -->
+    <string name="test_results_activity_label">Resultados</string>
+    <!-- Test Results Strings End -->
 
 </resources>
