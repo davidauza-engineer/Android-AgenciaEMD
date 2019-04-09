@@ -11,8 +11,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".TestResults"
-            android:label="@string/test_results_activity_label"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
+            android:label="@string/results_activity_label"
+            android:theme="@style/TestResults"></activity>
         <activity
             android:name=".TestActivity"
             android:label="@string/test_activity_label"

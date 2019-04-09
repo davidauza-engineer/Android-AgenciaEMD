@@ -181,7 +181,14 @@
     <!-- Question Ten End -->
 
     <!-- Test Results Strings Start -->
-    <string name="test_results_activity_label">Resultados</string>
+    <string name="results_activity_label">Resultados</string>
+    <string name="results_to">Respetados:</string>
+    <string name="results_score">Puntaje: </string>
+    <string name="results_total_score">de 100 puntos</string>
+    <string name="results_send">Enviar</string>
+    <string name="results_reset">Reiniciar</string>
+    <string name="results_back">Volver</string>
+    <string name="results_toast">¡Gracias!</string>
     <!-- Test Results Strings End -->
 
 </resources>

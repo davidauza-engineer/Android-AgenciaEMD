@@ -1,5 +1,6 @@
 package engineer.davidauza.agenciaemd;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -116,6 +117,23 @@ public class TejoCounter extends AppCompatActivity {
     }
 
     /**
+     * This method creates and styles a short toast
+     */
+    public static void createToastShort(Context pContext, int pMessage) {
+        Toast toast = Toast.makeText(pContext, pMessage, Toast.LENGTH_SHORT);
+        // If the user is using a version of Android greater than 21, style the toast
+        if (Build.VERSION.SDK_INT >= 21) {
+            View viewToast = toast.getView();
+            viewToast.setBackgroundTintList(ColorStateList.valueOf(pContext.getResources().
+                    getColor(R.color.colorAccent)));
+            TextView text = viewToast.findViewById(android.R.id.message);
+            text.setTextColor(pContext.getResources().getColor(R.color.colorPrimaryText));
+            text.setGravity(Gravity.CENTER_HORIZONTAL);
+        }
+        toast.show();
+    }
+
+    /**
      * This method add 9 points to Team A. This kind of scoring is called Moñona
      *
      * @param pView
@@ -131,7 +149,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -151,7 +169,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -171,7 +189,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -191,7 +209,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -211,7 +229,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -231,7 +249,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -251,7 +269,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -271,26 +289,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(R.string.tejo_game_over);
-        }
-    }
-
-    /**
-     * This method checks if the game has ended, by checking if either team has reached 27 points.
-     * If so it activates the corresponding TextView to let the user know which team had won the
-     * game.
-     */
-    private void checkForGameOver() {
-        if (mScoreTeamA >= 27 && !mGameOver) {
-            // This TextView is below the teamATextView and it is shown if team A wins the game
-            changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
-            mGameOver = true;
-            createToastShort(R.string.tejo_game_over);
-        } else if (mScoreTeamB >= 27 && !mGameOver) {
-            //This TextView is below the teamBTextView and it is shown if team B wins the game
-            changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
-            mGameOver = true;
-            createToastShort(R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_game_over);
         }
     }
 
@@ -360,6 +359,25 @@ public class TejoCounter extends AppCompatActivity {
     }
 
     /**
+     * This method checks if the game has ended, by checking if either team has reached 27 points.
+     * If so it activates the corresponding TextView to let the user know which team had won the
+     * game.
+     */
+    private void checkForGameOver() {
+        if (mScoreTeamA >= 27 && !mGameOver) {
+            // This TextView is below the teamATextView and it is shown if team A wins the game
+            changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
+            mGameOver = true;
+            createToastShort(this, R.string.tejo_game_over);
+        } else if (mScoreTeamB >= 27 && !mGameOver) {
+            //This TextView is below the teamBTextView and it is shown if team B wins the game
+            changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
+            mGameOver = true;
+            createToastShort(this, R.string.tejo_game_over);
+        }
+    }
+
+    /**
      * This method let the user share the scores by email
      */
     public void share(View pView) {
@@ -380,25 +398,8 @@ public class TejoCounter extends AppCompatActivity {
             startActivity(intent);
         } else {
             // Inform the user there is no email app installed on the phone
-            createToastShort(R.string.tejo_error_email);
+            createToastShort(this, R.string.tejo_error_email);
         }
-    }
-
-    /**
-     * This method creates and styles a short toast
-     */
-    private void createToastShort(int pMessage) {
-        Toast toast = Toast.makeText(this, pMessage, Toast.LENGTH_SHORT);
-        // If the user is using a version of Android greater than 21, style the toast
-        if (Build.VERSION.SDK_INT >= 21) {
-            View viewToast = toast.getView();
-            viewToast.setBackgroundTintList(ColorStateList.valueOf(getResources().
-                    getColor(R.color.colorAccent)));
-            TextView text = viewToast.findViewById(android.R.id.message);
-            text.setTextColor(getResources().getColor(R.color.colorPrimaryText));
-            text.setGravity(Gravity.CENTER_HORIZONTAL);
-        }
-        toast.show();
     }
 
     /**
