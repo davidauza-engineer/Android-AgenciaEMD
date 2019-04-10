@@ -197,7 +197,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/reset_button" />
+            app:layout_constraintTop_toBottomOf="@id/reset_button"
+            tools:text="[Copyright]" />
 
     </android.support.constraint.ConstraintLayout>
 

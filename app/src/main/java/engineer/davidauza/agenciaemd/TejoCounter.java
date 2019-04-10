@@ -390,16 +390,12 @@ public class TejoCounter extends AppCompatActivity {
             body += "  " + getString(R.string.tejo_winner);
         }
         body += getString(R.string.tejo_body_part_three);
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.tejo_email_subject));
-        intent.putExtra(Intent.EXTRA_TEXT, body);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            // Inform the user there is no email app installed on the phone
-            createToastShort(this, R.string.tejo_error_email);
-        }
+        TestResults.sendEmail(this,
+                null,
+                null,
+                getString(R.string.tejo_email_subject),
+                body,
+                R.string.tejo_error_email);
     }
 
     /**

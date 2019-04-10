@@ -179,7 +179,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/text_tejo" />
+            app:layout_constraintTop_toBottomOf="@id/text_tejo"
+            tools:text="[Copyright]" />
 
     </android.support.constraint.ConstraintLayout>
 

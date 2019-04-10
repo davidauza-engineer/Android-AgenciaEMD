@@ -12,68 +12,60 @@
 
         <TextView
             android:id="@+id/to"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
+            style="@style/TextViewsResults"
             android:text="@string/results_to"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/company_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:layout_constraintLeft_toLeftOf="@id/to"
-            app:layout_constraintTop_toBottomOf="@id/to"
+            style="@style/TextViewsResults"
+            android:hint="@string/results_company_name_hint"
             android:paddingRight="16dp"
-            tools:text="Agencia EMD" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/to" />
 
         <TextView
             android:id="@+id/score_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            style="@style/TextViewsResults"
             android:text="@string/results_score"
-            app:layout_constraintLeft_toLeftOf="@id/to"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/company_name" />
 
         <TextView
             android:id="@+id/company_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            style="@style/TextViewsResults"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="0dp"
             app:layout_constraintLeft_toRightOf="@id/score_text"
             app:layout_constraintTop_toTopOf="@id/score_text"
             tools:text="100" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            style="@style/TextViewsResults"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="0dp"
             android:text="@string/results_total_score"
             app:layout_constraintLeft_toRightOf="@id/company_score"
             app:layout_constraintTop_toTopOf="@id/score_text" />
 
         <TextView
             android:id="@+id/results_body"
+            style="@style/TextViewsResults"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
-            app:layout_constraintLeft_toLeftOf="@id/to"
+            app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/score_text"
             tools:text="[Results Body]" />
 
         <Button
             android:id="@+id/send_button"
+            style="@style/ButtonsResults"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:drawableLeft="@drawable/envelope"
-            android:drawablePadding="8dp"
+            android:onClick="sendTestResults"
             android:text="@string/results_send"
             app:layout_constraintLeft_toLeftOf="@id/reset_button"
             app:layout_constraintRight_toRightOf="@id/reset_button"
@@ -81,11 +73,8 @@
 
         <Button
             android:id="@+id/reset_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            style="@style/ButtonsResults"
             android:drawableLeft="@drawable/reset"
-            android:drawablePadding="8dp"
             android:text="@string/results_reset"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -93,11 +82,10 @@
 
         <Button
             android:id="@+id/back_button"
+            style="@style/ButtonsResults"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:drawableLeft="@drawable/undo"
-            android:drawablePadding="8dp"
+            android:onClick="goBack"
             android:text="@string/results_back"
             app:layout_constraintLeft_toLeftOf="@id/reset_button"
             app:layout_constraintRight_toRightOf="@id/reset_button"
@@ -107,9 +95,9 @@
             android:id="@+id/copyright"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginRight="48dp"
             android:layout_marginBottom="16dp"
             android:gravity="center_horizontal"
             android:textColor="@color/colorSecondaryText"
@@ -118,7 +106,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/back_button" />
+            app:layout_constraintTop_toBottomOf="@id/back_button"
+            tools:text="[Copyright]" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

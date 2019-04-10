@@ -1,8 +1,12 @@
 package engineer.davidauza.agenciaemd;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -14,6 +18,164 @@ public class TestResults extends AppCompatActivity {
     // The following array stores the corresponding score for each question. e.g.
     // scoreArray[0][0] stores the score for the question 1, option 1, and so on
     byte[][] scoreArray = new byte[10][6];
+
+    /**
+     * This method creates an email intent
+     *
+     * @param pContext        The context of the activity trying to create the email
+     * @param pTo             The email address to send the email
+     * @param pCc             The email address to send the email in CC mode
+     * @param pSubject        The subject of the email
+     * @param pBody           The body text of the email
+     * @param pErrorMessageId The error message in case the user does not have an email app
+     */
+    public static void sendEmail(Context pContext,
+                                 String[] pTo,
+                                 String[] pCc,
+                                 String pSubject,
+                                 String pBody,
+                                 int pErrorMessageId) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, pTo);
+        intent.putExtra(Intent.EXTRA_CC, pCc);
+        intent.putExtra(Intent.EXTRA_SUBJECT, pSubject);
+        intent.putExtra(Intent.EXTRA_TEXT, pBody);
+        if (intent.resolveActivity(pContext.getPackageManager()) != null) {
+            pContext.startActivity(intent);
+        } else {
+            TejoCounter.createToastShort(pContext, pErrorMessageId);
+        }
+    }
+
+    /**
+     * This method returns the score for a given question. It is used for questions with four
+     * CheckBoxes.
+     *
+     * @param pQuestionIndex The index of the question related to the scoreArray
+     * @param pOptionOne     True if the CheckBox One is checked, false if it is not
+     * @param pOptionTwo     True if the CheckBox Two is checked, false if it is not
+     * @param pOptionThree   True if the CheckBox Three is checked, false if it is not
+     * @param pOptionFour    True if the CheckBox Four is checked, false if it is not
+     * @return The score according to the options selected by the user
+     */
+    private byte getScore(byte pQuestionIndex,
+                          boolean pOptionOne,
+                          boolean pOptionTwo,
+                          boolean pOptionThree,
+                          boolean pOptionFour) {
+        byte scoreToReturn = 0;
+        byte optionIndex = 0;
+
+        // If the user selected the first CheckBox, add its corresponding score
+        if (pOptionOne) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the second CheckBox, add its corresponding score
+        if (pOptionTwo) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the third CheckBox, add its corresponding score
+        if (pOptionThree) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the fourth CheckBox, add its corresponding score
+        if (pOptionFour) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+
+        return scoreToReturn;
+    }
+
+    /**
+     * This method returns the score for a given question. It is used for questions with two
+     * RadioButtons.
+     *
+     * @param pQuestionIndex The index of the question related to the scoreArray
+     * @param pOptionOne     True if the RadioButton One is checked, false if it is not. As there
+     *                       are only two RadioButtons per question, and the first one is always a
+     *                       Yes option which add 10 points, we only need to check if the
+     *                       first one is checked to be able to decide which value to return
+     * @return The score according to the options selected by the user
+     */
+    private byte getScore(byte pQuestionIndex,
+                          boolean pOptionOne) {
+        byte optionIndex = 0;
+
+        if (pOptionOne) {
+            return scoreArray[pQuestionIndex][optionIndex];
+        } else {
+            optionIndex++;
+            return scoreArray[pQuestionIndex][optionIndex];
+        }
+    }
+
+    /**
+     * This method returns the score for a given question. It is used for questions with six
+     * CheckBoxes.
+     *
+     * @param pQuestionIndex The index of the question related to the scoreArray
+     * @param pOptionOne     True if the CheckBox One is checked, false if it is not
+     * @param pOptionTwo     True if the CheckBox Two is checked, false if it is not
+     * @param pOptionThree   True if the CheckBox Three is checked, false if it is not
+     * @param pOptionFour    True if the CheckBox Four is checked, false if it is not
+     * @param pOptionFive    True if the CheckBox Five is checked, false if it is not
+     * @param pOptionSix     True if the CheckBox Six is checked, false if it is not
+     * @return The score according to the options selected by the user
+     */
+    private byte getScore(byte pQuestionIndex,
+                          boolean pOptionOne,
+                          boolean pOptionTwo,
+                          boolean pOptionThree,
+                          boolean pOptionFour,
+                          boolean pOptionFive,
+                          boolean pOptionSix) {
+        byte scoreToReturn = 0;
+        byte optionIndex = 0;
+
+        // If the user selected the first CheckBox, add its corresponding score
+        if (pOptionOne) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the second CheckBox, add its corresponding score
+        if (pOptionTwo) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the third CheckBox, add its corresponding score
+        if (pOptionThree) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the fourth CheckBox, add its corresponding score
+        if (pOptionFour) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the fifth CheckBox, add its corresponding score
+        if (pOptionFive) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+        optionIndex++;
+
+        // If the user selected the sixth CheckBox, add its corresponding score
+        if (pOptionSix) {
+            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+        }
+
+        return scoreToReturn;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,13 +317,24 @@ public class TestResults extends AppCompatActivity {
         score += getScore((byte) 9,
                 settings.getBoolean("QuestionTenRadioButtonOne", false));
 
+        // Get the company name and set it up
+        TextView companyName = findViewById(R.id.company_name);
+        companyName.setText(settings.getString("mCompanyName", ""));
+
         // Set the score in its corresponding TextView
         TextView scoreTextView = findViewById(R.id.company_score);
         scoreTextView.setText(Byte.toString(score));
 
-        // Get the company name and set it up
-        TextView companyName = findViewById(R.id.company_name);
-        companyName.setText(settings.getString("mCompanyName", ""));
+        // Set the results text
+        TextView resultsBodyTextView = findViewById(R.id.results_body);
+        if (score <= 40) {
+            resultsBodyTextView.setText(R.string.results_under_forty_one);
+        } else if (score <= 80) {
+            resultsBodyTextView.setText(R.string.results_under_eighty_one);
+        } else {
+            resultsBodyTextView.setText(R.string.results_under_one_hundred_one);
+        }
+        MainActivity.justifyText(resultsBodyTextView);
 
         // Set Copyright TextView
         TextView copyright = findViewById(R.id.copyright);
@@ -169,131 +342,45 @@ public class TestResults extends AppCompatActivity {
     }
 
     /**
-     * This method returns the score for a given question. It is used for questions with four
-     * CheckBoxes.
+     * This method creates an email to share the results of the test with the company
      *
-     * @param pQuestionIndex The index of the question related to the scoreArray
-     * @param pOptionOne     True if the CheckBox One is checked, false if it is not
-     * @param pOptionTwo     True if the CheckBox Two is checked, false if it is not
-     * @param pOptionThree   True if the CheckBox Three is checked, false if it is not
-     * @param pOptionFour    True if the CheckBox Four is checked, false if it is not
-     * @return The score according to the options selected by the user
+     * @param pView The send button
      */
-    private byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne,
-                          boolean pOptionTwo,
-                          boolean pOptionThree,
-                          boolean pOptionFour) {
-        byte scoreToReturn = 0;
-        byte optionIndex = 0;
-
-        // If the user selected the first CheckBox, add its corresponding score
-        if (pOptionOne) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the second CheckBox, add its corresponding score
-        if (pOptionTwo) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the third CheckBox, add its corresponding score
-        if (pOptionThree) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the fourth CheckBox, add its corresponding score
-        if (pOptionFour) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-
-        return scoreToReturn;
-    }
-
-    /**
-     * This method returns the score for a given question. It is used for questions with two
-     * RadioButtons.
-     *
-     * @param pQuestionIndex The index of the question related to the scoreArray
-     * @param pOptionOne     True if the RadioButton One is checked, false if it is not. As there
-     *                       are only two RadioButtons per question, and the first one is always a
-     *                       Yes option which add 10 points, we only need to check if the
-     *                       first one is checked to be able to decide which value to return
-     * @return The score according to the options selected by the user
-     */
-    private byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne) {
-        byte optionIndex = 0;
-
-        if (pOptionOne) {
-            return scoreArray[pQuestionIndex][optionIndex];
+    public void sendTestResults(View pView) {
+        TextView companyName = findViewById(R.id.company_name);
+        boolean hasName = !companyName.getText().equals("");
+        TextView scoreTextView = findViewById(R.id.company_score);
+        TextView resultsBodyTextView = findViewById(R.id.results_body);
+        String body = getString(R.string.results_email_intro) +
+                "\n\n\n" + getString(R.string.results_to);
+        if (hasName) {
+            body += "\n\n" + companyName.getText();
         } else {
-            optionIndex++;
-            return scoreArray[pQuestionIndex][optionIndex];
+            body += "\n\n" + getString(R.string.results_company_name_hint);
         }
+        body += "\n\n" + getString(R.string.results_score) + " " + scoreTextView.getText() + " " +
+                getString(R.string.results_total_score) +
+                "\n\n" + resultsBodyTextView.getText() +
+                "\n\n\n" + getString(R.string.results_email_regards);
+        if (hasName) {
+            body += "\n\n" + companyName.getText();
+        } else {
+            body += "\n\n" + getString(R.string.results_company_name_hint);
+        }
+        sendEmail(this,
+                new String[]{getString(R.string.results_email_to)},
+                new String[]{getString(R.string.results_email_cc)},
+                getString(R.string.results_email_subject),
+                body,
+                R.string.results_error_email);
     }
 
     /**
-     * This method returns the score for a given question. It is used for questions with six
-     * CheckBoxes.
+     * This method finishes the Activity
      *
-     * @param pQuestionIndex The index of the question related to the scoreArray
-     * @param pOptionOne     True if the CheckBox One is checked, false if it is not
-     * @param pOptionTwo     True if the CheckBox Two is checked, false if it is not
-     * @param pOptionThree   True if the CheckBox Three is checked, false if it is not
-     * @param pOptionFour    True if the CheckBox Four is checked, false if it is not
-     * @param pOptionFive    True if the CheckBox Five is checked, false if it is not
-     * @param pOptionSix     True if the CheckBox Six is checked, false if it is not
-     * @return The score according to the options selected by the user
+     * @param pView The back button
      */
-    private byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne,
-                          boolean pOptionTwo,
-                          boolean pOptionThree,
-                          boolean pOptionFour,
-                          boolean pOptionFive,
-                          boolean pOptionSix) {
-        byte scoreToReturn = 0;
-        byte optionIndex = 0;
-
-        // If the user selected the first CheckBox, add its corresponding score
-        if (pOptionOne) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the second CheckBox, add its corresponding score
-        if (pOptionTwo) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the third CheckBox, add its corresponding score
-        if (pOptionThree) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the fourth CheckBox, add its corresponding score
-        if (pOptionFour) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the fifth CheckBox, add its corresponding score
-        if (pOptionFive) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-        optionIndex++;
-
-        // If the user selected the sixth CheckBox, add its corresponding score
-        if (pOptionSix) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
-        }
-
-        return scoreToReturn;
+    public void goBack(View pView) {
+        finish();
     }
 }

@@ -12,17 +12,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * This method justifies the text if the API is greater than or equal to 26
-     *
-     * @param pTextView The TextView to justify
-     */
-    public static void justifyText(TextView pTextView) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            pTextView.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
-        }
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +24,17 @@ public class MainActivity extends AppCompatActivity {
         // Set copyright text
         TextView copyrightTextView = findViewById(R.id.copyright);
         setCopyrightText(copyrightTextView);
+    }
+
+    /**
+     * This method justifies the text if the API is greater than or equal to 26
+     *
+     * @param pTextView The TextView to justify
+     */
+    public static void justifyText(TextView pTextView) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            pTextView.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+        }
     }
 
     /**

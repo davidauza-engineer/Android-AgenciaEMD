@@ -183,12 +183,46 @@
     <!-- Test Results Strings Start -->
     <string name="results_activity_label">Resultados</string>
     <string name="results_to">Señores</string>
-    <string name="results_score">Puntaje: </string>
+    <string name="results_company_name_hint">[Nombre de tu Empresa]</string>
+    <string name="results_score">Puntaje:</string>
     <string name="results_total_score">de 100 puntos</string>
     <string name="results_send">Enviar</string>
     <string name="results_reset">Reiniciar</string>
     <string name="results_back">Volver</string>
     <string name="results_toast">¡Gracias!</string>
+    <string name="results_under_forty_one">Tu puntaje indica que puedes no haber iniciado acciones
+        encaminadas hacia la digitalización de tu negocio, o que las has iniciado pero necesitas
+        fortalecer tus habilidades para producir mejores resultados. También puedes necesitar
+        incursionar en áreas que aún no has explorado. Somos tu mejor aliado para conseguir las
+        metas y resultados que tanto anhelas. Contáctanos para comenzar a trabajar juntos en la
+        consecución de resultados positivos para tu empresa.
+    </string>
+    <string name="results_under_eighty_one">Tu puntaje indica que has incursionado en el mundo
+        del marketing y las ventas digitales y quizá empiezas a cosechar algunos resultados
+        beneficiosos para tu empresa. Existe un gran abanico de oportunidades a tu alcance y
+        grandes espacios disponibles para seguir creciendo y generando buenos resultados. Nuestro
+        equipo está dispuesto a ayudarte a convertir los buenos resultados en resultados extra
+        ordinarios que tengan un impacto positivo realmente significativo para tu empresa.
+        Contáctanos y juntos lo haremos una realidad.
+    </string>
+    <string name="results_under_one_hundred_one">Tu puntaje indica que tienes una sólida presencia
+        en el mundo del marketing y las ventas digitales. Has trabajado fuertemente y tus resultados
+        son muy significativos. Nuestra experiencia ayudará a que tu empresa conserve las acciones
+        que han resultado efectivas, e implemente mejoras e innovaciones cuando el mercado así lo
+        requiera, manteniendo a tu empresa siempre vigente y a la vanguardia de las tendencias de
+        tu industria. Contáctanos y estaremos a tu lado para que sigas consolidándote como un líder
+        en el mundo del marketing y las ventas digitales.
+    </string>
+    <string name="results_email_to">hola@agenciaemd.com</string>
+    <string name="results_email_cc">gerencia@agenciaemd.com</string>
+    <string name="results_email_subject">Resultados Test Estrategia Digital</string>
+    <string name="results_error_email">Se necesita una aplicación de correo electrónico para
+        compartir los resultados.
+    </string>
+    <string name="results_email_intro">Cordial saludo,
+        \n\nEnviamos nuestros resultados para entrar en contacto con ustedes:
+    </string>
+    <string name="results_email_regards">Cordialmente,</string>
     <!-- Test Results Strings End -->
 
 </resources>

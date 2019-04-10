@@ -110,4 +110,23 @@
         <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
+    <!-- Style for the TextViews of the TestResults Activity -->
+    <style name="TextViewsResults">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <!-- Style for the Buttons of TestResults Activity -->
+    <style name="ButtonsResults">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:drawablePadding">8dp</item>
+    </style>
+
 </resources>
