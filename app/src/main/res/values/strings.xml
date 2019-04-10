@@ -182,7 +182,7 @@
 
     <!-- Test Results Strings Start -->
     <string name="results_activity_label">Resultados</string>
-    <string name="results_to">Respetados:</string>
+    <string name="results_to">Señores</string>
     <string name="results_score">Puntaje: </string>
     <string name="results_total_score">de 100 puntos</string>
     <string name="results_send">Enviar</string>
