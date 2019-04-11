@@ -146,7 +146,7 @@
     <string name="test_question_eight_header">Pregunta 8 de 10</string>
     <string name="test_question_eight_body">Si cuentas con aplicaciones móviles ¿En qué plataformas
         tienes publicadas dichas herramientas? De lo contrario, por favor presiona el botón
-        \"Finalizar\" para obtener tus resultados:
+        \"Terminar\" para obtener tus resultados:
     </string>
     <string name="test_question_eight_option_one">Google Play Store</string>
     <string name="test_question_eight_option_two">Apple App Store</string>
@@ -223,6 +223,10 @@
         \n\nEnviamos nuestros resultados para entrar en contacto con ustedes:
     </string>
     <string name="results_email_regards">Cordialmente,</string>
+    <string name="results_reset_title">¿Reiniciar el test?</string>
+    <string name="results_reset_body">Se borrarán todas las respuestas que seleccionaste.</string>
+    <string name="results_reset_no">Cancelar</string>
+    <string name="results_reset_yes">Proceder</string>
     <!-- Test Results Strings End -->
 
 </resources>

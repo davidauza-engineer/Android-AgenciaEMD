@@ -30,17 +30,8 @@ public class TestActivity extends AppCompatActivity {
     // EditText for company's name
     private EditText mCompanyNameEditText;
 
-    /**
-     * This method converts a value from dp to px
-     *
-     * @param pContext   The application's context
-     * @param pValueInDp The value in dp
-     * @return The corresponding value in px
-     */
-    public static float dpToPx(Context pContext, float pValueInDp) {
-        DisplayMetrics metrics = pContext.getResources().getDisplayMetrics();
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pValueInDp, metrics);
-    }
+    // This variable becomes true if the user resets its results in the ResultsResetDialog
+    public static boolean reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -218,6 +209,18 @@ public class TestActivity extends AppCompatActivity {
     }
 
     /**
+     * This method converts a value from dp to px
+     *
+     * @param pContext   The application's context
+     * @param pValueInDp The value in dp
+     * @return The corresponding value in px
+     */
+    public static float dpToPx(Context pContext, float pValueInDp) {
+        DisplayMetrics metrics = pContext.getResources().getDisplayMetrics();
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pValueInDp, metrics);
+    }
+
+    /**
      * This method starts the TestResults Activity. If the keyboard is open it sets the cursor to
      * the start of the text and sets it to not visible
      *
@@ -253,5 +256,22 @@ public class TestActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("mCompanyName", mCompanyNameEditText.getText().toString());
         editor.apply();
+    }
+
+    /**
+     * This method checks if the user did reset its results. If so it restarts the activity
+     */
+    @Override
+    protected void onResume() {
+        // If the user did reset its results, set reset to false, update UI accordingly and restart
+        // the activity
+        if (reset) {
+            reset = false;
+            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+            mCompanyNameEditText.setText(settings.getString("mCompanyName", ""));
+            mCompanyNameEditText.clearFocus();
+            recreate();
+        }
+        super.onResume();
     }
 }
