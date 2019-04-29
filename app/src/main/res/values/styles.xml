@@ -129,4 +129,31 @@
         <item name="android:drawablePadding">8dp</item>
     </style>
 
+    <!-- Style for the TextViews in the song_layout.xml file -->
+    <style name="SongSmallTextViews">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+    </style>
+
+    <!-- Style for the horizontal LinearLayouts in the song_layout.xml file -->
+    <style name="SongHorizontalLinearLayouts">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- Style for the TextViews in the song_layout.xml file -->
+    <style name="SongSmallTextViewsWithMarginRight">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+        <item name="android:layout_marginRight">8dp</item>
+    </style>
+
 </resources>

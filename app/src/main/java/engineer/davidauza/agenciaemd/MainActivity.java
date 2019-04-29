@@ -2,12 +2,13 @@ package engineer.davidauza.agenciaemd;
 
 import android.content.Intent;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.Layout;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,17 @@ public class MainActivity extends AppCompatActivity {
         // If the API is greater than or equal to 26 justify the text of the company's description
         TextView description = findViewById(R.id.description);
         justifyText(description);
+
+        // Set up the listener to the music_button
+        Button musicButton = findViewById(R.id.music_button);
+        musicButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MusicMenu.class);
+                startActivity(intent);
+            }
+        });
+
 
         // Set copyright text
         TextView copyrightTextView = findViewById(R.id.copyright);

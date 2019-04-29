@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -49,40 +49,6 @@ public class TestResults extends AppCompatActivity {
         }
     }
 
-    /**
-     * This method creates an email to share the results of the test with the company
-     *
-     * @param pView The send button
-     */
-    public void sendTestResults(View pView) {
-        TextView companyName = findViewById(R.id.company_name);
-        boolean hasName = !companyName.getText().equals("");
-        TextView scoreTextView = findViewById(R.id.company_score);
-        TextView resultsBodyTextView = findViewById(R.id.results_body);
-        String body = getString(R.string.results_email_intro) +
-                "\n\n\n" + getString(R.string.results_to);
-        if (hasName) {
-            body += "\n\n" + companyName.getText();
-        } else {
-            body += "\n\n" + getString(R.string.results_company_name_hint);
-        }
-        body += "\n\n" + getString(R.string.results_score) + " " + scoreTextView.getText() + " " +
-                getString(R.string.results_total_score) +
-                "\n\n" + resultsBodyTextView.getText() +
-                "\n\n\n" + getString(R.string.results_email_regards);
-        if (hasName) {
-            body += "\n\n" + companyName.getText();
-        } else {
-            body += "\n\n" + getString(R.string.results_company_name_hint);
-        }
-        sendEmail(this,
-                new String[]{getString(R.string.results_email_to)},
-                new String[]{getString(R.string.results_email_cc)},
-                getString(R.string.results_email_subject),
-                body,
-                R.string.results_error_email);
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -93,7 +59,7 @@ public class TestResults extends AppCompatActivity {
         scoreArray[0][0] = 3;
         // Option 2
         scoreArray[0][1] = 3;
-        // Option 3a
+        // Option 3
         scoreArray[0][2] = 2;
         // Option 4
         scoreArray[0][3] = 2;
@@ -302,29 +268,6 @@ public class TestResults extends AppCompatActivity {
     }
 
     /**
-     * This method returns the score for a given question. It is used for questions with two
-     * RadioButtons.
-     *
-     * @param pQuestionIndex The index of the question related to the scoreArray
-     * @param pOptionOne     True if the RadioButton One is checked, false if it is not. As there
-     *                       are only two RadioButtons per question, and the first one is always a
-     *                       Yes option which add 10 points, we only need to check if the
-     *                       first one is checked to be able to decide which value to return
-     * @return The score according to the options selected by the user
-     */
-    private byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne) {
-        byte optionIndex = 0;
-
-        if (pOptionOne) {
-            return scoreArray[pQuestionIndex][optionIndex];
-        } else {
-            optionIndex++;
-            return scoreArray[pQuestionIndex][optionIndex];
-        }
-    }
-
-    /**
      * This method returns the score for a given question. It is used for questions with six
      * CheckBoxes.
      *
@@ -400,5 +343,62 @@ public class TestResults extends AppCompatActivity {
     public void openDialog() {
         ResultsResetDialog dialog = new ResultsResetDialog();
         dialog.show(getSupportFragmentManager(), "ResultsDialog");
+    }
+
+    /**
+     * This method returns the score for a given question. It is used for questions with two
+     * RadioButtons.
+     *
+     * @param pQuestionIndex The index of the question related to the scoreArray
+     * @param pOptionOne     True if the RadioButton One is checked, false if it is not. As there
+     *                       are only two RadioButtons per question, and the first one is always a
+     *                       Yes option which add 10 points, we only need to check if the
+     *                       first one is checked to be able to decide which value to return
+     * @return The score according to the options selected by the user
+     */
+    private byte getScore(byte pQuestionIndex,
+                          boolean pOptionOne) {
+        byte optionIndex = 0;
+
+        if (pOptionOne) {
+            return scoreArray[pQuestionIndex][optionIndex];
+        } else {
+            optionIndex++;
+            return scoreArray[pQuestionIndex][optionIndex];
+        }
+    }
+
+    /**
+     * This method creates an email to share the results of the test with the company
+     *
+     * @param pView The send button
+     */
+    public void sendTestResults(View pView) {
+        TextView companyName = findViewById(R.id.company_name);
+        boolean hasName = !companyName.getText().equals("");
+        TextView scoreTextView = findViewById(R.id.company_score);
+        TextView resultsBodyTextView = findViewById(R.id.results_body);
+        String body = getString(R.string.results_email_intro) +
+                "\n\n\n" + getString(R.string.results_to);
+        if (hasName) {
+            body += "\n\n" + companyName.getText();
+        } else {
+            body += "\n\n" + getString(R.string.results_company_name_hint);
+        }
+        body += "\n\n" + getString(R.string.results_score) + " " + scoreTextView.getText() + " " +
+                getString(R.string.results_total_score) +
+                "\n\n" + resultsBodyTextView.getText() +
+                "\n\n\n" + getString(R.string.results_email_regards);
+        if (hasName) {
+            body += "\n\n" + companyName.getText();
+        } else {
+            body += "\n\n" + getString(R.string.results_company_name_hint);
+        }
+        sendEmail(this,
+                new String[]{getString(R.string.results_email_to)},
+                new String[]{getString(R.string.results_email_cc)},
+                getString(R.string.results_email_subject),
+                body,
+                R.string.results_error_email);
     }
 }

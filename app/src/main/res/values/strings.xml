@@ -30,6 +30,8 @@
     <string name="main_quiz_text">Conoce el estado de tu empresa en cuanto
         \nal uso estratégico de plataformas digitales
     </string>
+    <string name="main_music_button">Música Regional</string>
+    <string name="main_music_text">Escucha los himnos más emblemáticos\nde nuestra región</string>
     <!-- Main Layout Strings End -->
 
 
@@ -228,5 +230,13 @@
     <string name="results_reset_no">Cancelar</string>
     <string name="results_reset_yes">Proceder</string>
     <!-- Test Results Strings End -->
+
+    <!-- Music Menu Strings Start -->
+    <string name="music_menu_activity_label">Música Regional</string>
+    <string name="music_layout_lyrics">Letra:</string>
+    <string name="music_layout_music">Música:</string>
+    <string name="music_song_one_name">Himno de Colombia</string>
+    <string name="music_song_one_lyrics_composer">Rafael Núñez</string>
+    <string name="music_song_one_music_composer">Oreste Síndici</string>
 
 </resources>
