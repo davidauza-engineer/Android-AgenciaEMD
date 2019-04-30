@@ -1,51 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="8dp">
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="4dp">
 
-    <ImageView
-        android:id="@+id/song_picture"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:maxWidth="200dp"
-        tools:src="@drawable/logo" />
+        android:orientation="vertical"
+        android:padding="8dp">
 
-    <TextView
-        android:id="@+id/song_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:gravity="center"
-        android:textAppearance="?android:textAppearanceMedium"
-        tools:text="@string/music_song_one_name" />
-
-    <LinearLayout style="@style/SongHorizontalLinearLayouts">
+        <ImageView
+            android:id="@+id/song_picture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:maxWidth="150dp"
+            tools:src="@drawable/colombia_flag" />
 
         <TextView
-            style="@style/SongSmallTextViewsWithMarginRight"
-            android:text="@string/music_layout_lyrics" />
+            android:id="@+id/song_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorPrimaryText"
+            android:textStyle="bold"
+            tools:text="@string/music_song_one_name" />
 
-        <TextView
-            android:id="@+id/song_lyrics_composer"
-            style="@style/SongSmallTextViews"
-            tools:text="@string/music_song_one_lyrics_composer" />
+        <LinearLayout style="@style/SongHorizontalLinearLayouts">
+
+            <TextView
+                style="@style/SongSmallTextViews"
+                android:text="@string/music_layout_lyrics" />
+
+            <TextView
+                android:id="@+id/song_lyrics_composer"
+                style="@style/SongSmallTextViews"
+                android:singleLine="true"
+                tools:text="@string/music_song_one_lyrics_composer" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/SongHorizontalLinearLayouts">
+
+            <TextView
+                style="@style/SongSmallTextViews"
+                android:text="@string/music_layout_music" />
+
+            <TextView
+                android:id="@+id/song_music_composer"
+                style="@style/SongSmallTextViews"
+                android:singleLine="true"
+                tools:text="@string/music_song_one_music_composer" />
+
+        </LinearLayout>
+
     </LinearLayout>
-
-    <LinearLayout style="@style/SongHorizontalLinearLayouts">
-
-        <TextView
-            style="@style/SongSmallTextViewsWithMarginRight"
-            android:text="@string/music_layout_music" />
-
-        <TextView
-            android:id="@+id/song_music_composer"
-            style="@style/SongSmallTextViews"
-            tools:text="@string/music_song_one_music_composer" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</android.support.v7.widget.CardView>
