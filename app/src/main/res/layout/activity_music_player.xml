@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MusicPlayer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/song_name"
+            style="@style/SongName"
+            android:layout_margin="16dp"
+            android:textAppearance="?android:textAppearanceMedium"
+            tools:text="@string/music_song_one_name" />
+
+        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+
+            <TextView
+                style="@style/MusicPlayerTextViews"
+                android:text="@string/music_layout_lyrics" />
+
+            <TextView
+                android:id="@+id/song_lyrics_composer"
+                style="@style/MusicPlayerTextViews"
+                android:singleLine="true"
+                tools:text="@string/music_song_one_lyrics_composer" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+
+            <TextView
+                style="@style/MusicPlayerTextViews"
+                android:text="@string/music_layout_music" />
+
+            <TextView
+                android:id="@+id/song_music_composer"
+                style="@style/MusicPlayerTextViews"
+                android:singleLine="true"
+                tools:text="@string/music_song_one_music_composer" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/song_picture"
+            style="@style/SongPicture"
+            android:layout_gravity="center_horizontal"
+            android:maxWidth="200dp"
+            tools:src="@drawable/colombia_flag" />
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:max="100"
+            android:progress="0"
+            tools:progress="20" />
+
+        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+
+            <ImageView
+                style="@style/MusicPlayerIcons"
+                android:src="@drawable/undo" />
+
+            <ImageView
+                style="@style/MusicPlayerIcons"
+                android:src="@drawable/play_icon" />
+
+            <ImageView
+                style="@style/MusicPlayerIcons"
+                android:src="@drawable/reset" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+
+            <TextView
+                style="@style/MusicPlayerHelperText"
+                android:text="@string/music_player_helper_back" />
+
+            <TextView
+                style="@style/MusicPlayerHelperText"
+                android:text="@string/music_player_helper_play" />
+
+            <TextView
+                style="@style/MusicPlayerHelperText"
+                android:text="@string/music_player_helper_reset" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/copyright"
+            style="@style/CopyrightTextView"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            tools:text="[Copyright]" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".MusicPlayer"
+            android:label="@string/music_player_activity_label"
+            android:parentActivityName=".MusicMenu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MusicMenu" />
+        </activity>
+        <activity
             android:name=".MusicMenu"
             android:label="@string/music_menu_activity_label"
             android:parentActivityName=".MainActivity">

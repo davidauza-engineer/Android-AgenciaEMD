@@ -93,16 +93,10 @@
 
         <TextView
             android:id="@+id/copyright"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CopyrightTextView"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="56dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_horizontal"
-            android:textColor="@color/colorSecondaryText"
-            android:textColorLink="@android:color/holo_blue_light"
-            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

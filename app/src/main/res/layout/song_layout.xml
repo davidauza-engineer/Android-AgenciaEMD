@@ -15,21 +15,15 @@
 
         <ImageView
             android:id="@+id/song_picture"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
+            style="@style/SongPicture"
             android:maxWidth="150dp"
             tools:src="@drawable/colombia_flag" />
 
         <TextView
             android:id="@+id/song_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/SongName"
             android:layout_marginTop="8dp"
-            android:gravity="center"
             android:textAppearance="?android:textAppearanceSmall"
-            android:textColor="@color/colorPrimaryText"
-            android:textStyle="bold"
             tools:text="@string/music_song_one_name" />
 
         <LinearLayout style="@style/SongHorizontalLinearLayouts">

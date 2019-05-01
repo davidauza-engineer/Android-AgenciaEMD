@@ -145,4 +145,68 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
+    <!-- Style defined for Song Name TextViews in the song_layout.xml file and
+            activity_music_player.xml file -->
+    <style name="SongName">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style for the TextViews in the activity_music_player.xml file -->
+    <style name="MusicPlayerTextViews">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textAppearance">?android:textAppearanceMedium</item>
+    </style>
+
+    <!-- Style for the horizontal LinearLayouts in the activity_music_player.xml file -->
+    <style name="MusicPlayerHorizontalLinearLayouts">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_marginLeft">16dp</item>
+        <item name="android:layout_marginRight">16dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <!-- Style for Song Pircture ImageViews in the song_layout.xml file and
+        activity_music_player.xml file -->
+    <style name="SongPicture">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <!-- Style for control icons at activity_music_player.xml file -->
+    <style name="MusicPlayerIcons">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!-- Style for helper text below control icons at activity_music_player.xml file -->
+    <style name="MusicPlayerHelperText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:textAppearanceSmall</item>
+    </style>
+
+    <!-- Style for copyright TextViews at various activities -->
+    <style name="CopyrightTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorSecondaryText</item>
+        <item name="android:textColorLink">@android:color/holo_blue_light</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
 </resources>

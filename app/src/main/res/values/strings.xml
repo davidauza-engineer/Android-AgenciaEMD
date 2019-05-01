@@ -250,4 +250,12 @@
     <string name="music_song_four_music_composer">Luis Antonio Escobar</string>
     <!-- Music Menu Strings End -->
 
+    <!-- Music Player Strings Start -->
+    <string name="music_player_activity_label">Reproductor de Música</string>
+    <string name="music_player_helper_back">Volver</string>
+    <string name="music_player_helper_play">Reproducir</string>
+    <string name="music_player_helper_pause">Pausar</string>
+    <string name="music_player_helper_reset">Reiniciar</string>
+    <!-- Music Player Strings End -->
+
 </resources>

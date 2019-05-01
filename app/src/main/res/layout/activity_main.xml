@@ -167,9 +167,9 @@
             app:layout_constraintTop_toBottomOf="@id/music_button" />
 
         <Button
-            android:layout_width="0dp"
             android:id="@+id/tejo_button"
             style="@style/MainButtons"
+            android:layout_width="0dp"
             android:drawableLeft="@drawable/scoreboard"
             android:onClick="goToTejoActivity"
             android:text="@string/main_tejo"
@@ -187,14 +187,8 @@
 
         <TextView
             android:id="@+id/copyright"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/CopyrightTextView"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_horizontal"
-            android:textColor="@color/colorSecondaryText"
-            android:textColorLink="@android:color/holo_blue_light"
-            android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
