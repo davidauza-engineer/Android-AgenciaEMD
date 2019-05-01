@@ -60,7 +60,7 @@ public class TestResults extends AppCompatActivity {
     private byte[][] getScoreArray()
     {
         // Pretty simple way to check if the array has been filled or not
-        if (scoreArray[0][0] == 0){
+        if (scoreArray[0][0] == 0) {
             // Score for question 1
             //Option 1
             scoreArray[0][0] = 3;
