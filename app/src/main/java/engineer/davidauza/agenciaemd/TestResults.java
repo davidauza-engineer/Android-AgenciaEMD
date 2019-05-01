@@ -233,7 +233,7 @@ public class TestResults extends AppCompatActivity {
      * @param pOptionFour    True if the CheckBox Four is checked, false if it is not
      * @return The score according to the options selected by the user
      */
-    private byte getScore(byte pQuestionIndex,
+    public byte getScore(byte pQuestionIndex,
                           boolean pOptionOne,
                           boolean pOptionTwo,
                           boolean pOptionThree,
@@ -280,7 +280,7 @@ public class TestResults extends AppCompatActivity {
      * @param pOptionSix     True if the CheckBox Six is checked, false if it is not
      * @return The score according to the options selected by the user
      */
-    private byte getScore(byte pQuestionIndex,
+    public byte getScore(byte pQuestionIndex,
                           boolean pOptionOne,
                           boolean pOptionTwo,
                           boolean pOptionThree,
@@ -356,7 +356,7 @@ public class TestResults extends AppCompatActivity {
      *                       first one is checked to be able to decide which value to return
      * @return The score according to the options selected by the user
      */
-    private byte getScore(byte pQuestionIndex,
+    public byte getScore(byte pQuestionIndex,
                           boolean pOptionOne) {
         byte optionIndex = 0;
 
