@@ -15,9 +15,13 @@ import android.widget.TextView;
  */
 public class TestResults extends AppCompatActivity {
 
-    // Each question has a total of 10 points
-    // The following array stores the corresponding score for each question. e.g.
-    // scoreArray[0][0] stores the score for the question 1, option 1, and so on
+    /**
+     * Each question has a total of 10 points
+     * The following array stores the corresponding score for each question. e.g.
+     * scoreArray[0][0] stores the score for the question 1, option 1, and so on
+     *
+     * IMPORTANT: This property should never be accessed directly
+     */
     byte[][] scoreArray = new byte[10][6];
 
     /**
@@ -49,89 +53,101 @@ public class TestResults extends AppCompatActivity {
         }
     }
 
+    /**
+     * This function will only fill the array if it hasn't been fille before
+     * @return byte[][] -- Multidimensional array with question/answer indexes and scores
+     */
+    private byte[][] getScoreArray()
+    {
+        // Pretty simple way to check if the array has been filled or not
+        if (scoreArray[0][0] == 0){
+            // Score for question 1
+            //Option 1
+            scoreArray[0][0] = 3;
+            // Option 2
+            scoreArray[0][1] = 3;
+            // Option 3
+            scoreArray[0][2] = 2;
+            // Option 4
+            scoreArray[0][3] = 2;
+            // Score for question 2
+            // Option 1
+            scoreArray[1][0] = 10;
+            // Option 2
+            scoreArray[1][1] = 0;
+            // Score for question 3
+            // Option 1
+            scoreArray[2][0] = 10;
+            // Option 2
+            scoreArray[2][1] = 0;
+            // Score for question 4
+            // Option 1
+            scoreArray[3][0] = 3;
+            // Option 2
+            scoreArray[3][1] = 3;
+            // Option 3
+            scoreArray[3][2] = 1;
+            // Option 4
+            scoreArray[3][3] = 1;
+            // Option 5
+            scoreArray[3][4] = 1;
+            // Option 6
+            scoreArray[3][5] = 1;
+            // Score for question 5
+            // Option 1
+            scoreArray[4][0] = 3;
+            // Option 2
+            scoreArray[4][1] = 3;
+            // Option 3
+            scoreArray[4][2] = 2;
+            // Option 4
+            scoreArray[4][3] = 2;
+            // Score for question 6
+            // Option 1
+            scoreArray[5][0] = 10;
+            // Option 2
+            scoreArray[5][1] = 0;
+            // Score for question 7
+            // Option 1
+            scoreArray[6][0] = 10;
+            // Option 2
+            scoreArray[6][1] = 0;
+            // Score for question 8
+            // Option 1
+            scoreArray[7][0] = 3;
+            // Option 2
+            scoreArray[7][1] = 3;
+            // Option 3
+            scoreArray[7][2] = 1;
+            // Option 4
+            scoreArray[7][3] = 1;
+            // Option 5
+            scoreArray[7][4] = 1;
+            // Option 6
+            scoreArray[7][5] = 1;
+            // Score for question 9
+            // Option 1
+            scoreArray[8][0] = 3;
+            // Option 2
+            scoreArray[8][1] = 3;
+            // Option 3
+            scoreArray[8][2] = 2;
+            // Option 4
+            scoreArray[8][3] = 2;
+            // Score for question 10
+            // Option 1
+            scoreArray[9][0] = 10;
+            // Option 2
+            scoreArray[9][1] = 0;
+        }
+
+        return scoreArray;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_results);
-
-        // Score for question 1
-        //Option 1
-        scoreArray[0][0] = 3;
-        // Option 2
-        scoreArray[0][1] = 3;
-        // Option 3
-        scoreArray[0][2] = 2;
-        // Option 4
-        scoreArray[0][3] = 2;
-        // Score for question 2
-        // Option 1
-        scoreArray[1][0] = 10;
-        // Option 2
-        scoreArray[1][1] = 0;
-        // Score for question 3
-        // Option 1
-        scoreArray[2][0] = 10;
-        // Option 2
-        scoreArray[2][1] = 0;
-        // Score for question 4
-        // Option 1
-        scoreArray[3][0] = 3;
-        // Option 2
-        scoreArray[3][1] = 3;
-        // Option 3
-        scoreArray[3][2] = 1;
-        // Option 4
-        scoreArray[3][3] = 1;
-        // Option 5
-        scoreArray[3][4] = 1;
-        // Option 6
-        scoreArray[3][5] = 1;
-        // Score for question 5
-        // Option 1
-        scoreArray[4][0] = 3;
-        // Option 2
-        scoreArray[4][1] = 3;
-        // Option 3
-        scoreArray[4][2] = 2;
-        // Option 4
-        scoreArray[4][3] = 2;
-        // Score for question 6
-        // Option 1
-        scoreArray[5][0] = 10;
-        // Option 2
-        scoreArray[5][1] = 0;
-        // Score for question 7
-        // Option 1
-        scoreArray[6][0] = 10;
-        // Option 2
-        scoreArray[6][1] = 0;
-        // Score for question 8
-        // Option 1
-        scoreArray[7][0] = 3;
-        // Option 2
-        scoreArray[7][1] = 3;
-        // Option 3
-        scoreArray[7][2] = 1;
-        // Option 4
-        scoreArray[7][3] = 1;
-        // Option 5
-        scoreArray[7][4] = 1;
-        // Option 6
-        scoreArray[7][5] = 1;
-        // Score for question 9
-        // Option 1
-        scoreArray[8][0] = 3;
-        // Option 2
-        scoreArray[8][1] = 3;
-        // Option 3
-        scoreArray[8][2] = 2;
-        // Option 4
-        scoreArray[8][3] = 2;
-        // Score for question 10
-        // Option 1
-        scoreArray[9][0] = 10;
-        // Option 2
-        scoreArray[9][1] = 0;
 
         // Tracks the score based on the answers of the user
         byte score = 0;
@@ -243,25 +259,25 @@ public class TestResults extends AppCompatActivity {
 
         // If the user selected the first CheckBox, add its corresponding score
         if (pOptionOne) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the second CheckBox, add its corresponding score
         if (pOptionTwo) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the third CheckBox, add its corresponding score
         if (pOptionThree) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the fourth CheckBox, add its corresponding score
         if (pOptionFour) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
 
         return scoreToReturn;
@@ -292,37 +308,37 @@ public class TestResults extends AppCompatActivity {
 
         // If the user selected the first CheckBox, add its corresponding score
         if (pOptionOne) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the second CheckBox, add its corresponding score
         if (pOptionTwo) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the third CheckBox, add its corresponding score
         if (pOptionThree) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the fourth CheckBox, add its corresponding score
         if (pOptionFour) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the fifth CheckBox, add its corresponding score
         if (pOptionFive) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
         optionIndex++;
 
         // If the user selected the sixth CheckBox, add its corresponding score
         if (pOptionSix) {
-            scoreToReturn += scoreArray[pQuestionIndex][optionIndex];
+            scoreToReturn += getScoreArray()[pQuestionIndex][optionIndex];
         }
 
         return scoreToReturn;
@@ -361,10 +377,10 @@ public class TestResults extends AppCompatActivity {
         byte optionIndex = 0;
 
         if (pOptionOne) {
-            return scoreArray[pQuestionIndex][optionIndex];
+            return getScoreArray()[pQuestionIndex][optionIndex];
         } else {
             optionIndex++;
-            return scoreArray[pQuestionIndex][optionIndex];
+            return getScoreArray()[pQuestionIndex][optionIndex];
         }
     }
 
