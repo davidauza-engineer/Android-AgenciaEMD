@@ -34,6 +34,11 @@ public class MusicPlayer extends AppCompatActivity {
     private AudioManager mAudioManager;
 
     /**
+     * Tracks if the audio focus has been granted
+     */
+    private boolean hasAudioFocus;
+
+    /**
      * This listener gets triggered whenever the audio focus changes (i.e., we lose or gain audio
      * focus because of another app or device).
      */
@@ -45,9 +50,7 @@ public class MusicPlayer extends AppCompatActivity {
                         case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT:
                             // The AUDIOFOCUS_LOSS_TRANSIENT case means that we've lost audio
                             // focus for a short amount of time.
-
-                            // Pause playback
-                            mMediaPlayer.pause();
+                            pausePlayback();
                             break;
                         case AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK:
                             // The AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK case means that our app is
@@ -60,7 +63,7 @@ public class MusicPlayer extends AppCompatActivity {
                             if (mMediaPlayer.isPlaying()) {
                                 mMediaPlayer.setVolume(1.0f, 1.0f);
                             } else {
-                                mMediaPlayer.start();
+                                startPlayback();
                             }
                             break;
                         case AudioManager.AUDIOFOCUS_LOSS:
@@ -122,20 +125,18 @@ public class MusicPlayer extends AppCompatActivity {
 
                     if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                         // We have audio focus now.
+                        hasAudioFocus = true;
 
                         // Create and setup the {@link MediaPlayer} for the audio resource
                         // associated with the current song
                         mMediaPlayer = MediaPlayer.create(MusicPlayer.this, getSong());
 
                         // Start the audio file
-                        mMediaPlayer.start();
+                        startPlayback();
 
                         // Set up a listener on the media player, so that we can stop and release
                         // the media player once the sound has finished playing.
                         mMediaPlayer.setOnCompletionListener(mCompletionListener);
-
-                        updatePlayPauseViews(R.drawable.pause_icon,
-                                R.string.music_player_helper_pause);
 
                         setUpSeekBar();
                     } else {
@@ -145,14 +146,30 @@ public class MusicPlayer extends AppCompatActivity {
                                 R.string.music_player_focus_not_granted);
                     }
                 } else {
+                    // The media player is not null, the player has been initialized
                     if (mMediaPlayer.isPlaying()) {
-                        mMediaPlayer.pause();
-                        updatePlayPauseViews(R.drawable.play_icon,
-                                R.string.music_player_helper_play);
+                        pausePlayback();
                     } else {
-                        mMediaPlayer.start();
-                        updatePlayPauseViews(R.drawable.pause_icon,
-                                R.string.music_player_helper_pause);
+                        // If the play button is clicked check if there is audio focus
+                        if (hasAudioFocus) {
+                            startPlayback();
+                        } else {
+                            // There is no audio focus so try to obtain it
+                            int result = mAudioManager.
+                                    requestAudioFocus(mOnAudioFocusChangeListener,
+                                            AudioManager.STREAM_MUSIC,
+                                            AudioManager.AUDIOFOCUS_GAIN);
+
+                            if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                                hasAudioFocus = true;
+                                startPlayback();
+                            } else {
+                                // The focus was not granted for some reason, so display a toast
+                                // letting the user know it is not possible to play music right now.
+                                TejoCounter.createToastShort(MusicPlayer.this,
+                                        R.string.music_player_focus_not_granted);
+                            }
+                        }
                     }
                 }
             }
@@ -213,9 +230,12 @@ public class MusicPlayer extends AppCompatActivity {
         // If a song is currently being played pause it
         if (mMediaPlayer != null) {
             if (mMediaPlayer.isPlaying()) {
-                mMediaPlayer.pause();
-                updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
+                pausePlayback();
             }
+            // Abandon audio focus when paused to stop getting callbacks from the
+            // AudioFocusChangeListener
+            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
+            hasAudioFocus = false;
         }
     }
 
@@ -249,6 +269,7 @@ public class MusicPlayer extends AppCompatActivity {
     //Todo orientation resume here
     //todo image resources
     //todo seek bar set by the user
+    // todo add timer to seekbar
 
 
     @Override
@@ -305,5 +326,21 @@ public class MusicPlayer extends AppCompatActivity {
         playPauseImageView.setImageResource(pImageResource);
         TextView playPauseHelper = findViewById(R.id.play_pause_helper);
         playPauseHelper.setText(pStringResorce);
+    }
+
+    /**
+     * This method resumes the playback of the media player.
+     */
+    private void startPlayback() {
+        mMediaPlayer.start();
+        updatePlayPauseViews(R.drawable.pause_icon, R.string.music_player_helper_pause);
+    }
+
+    /**
+     * This method pauses the playback of the media player.
+     */
+    private void pausePlayback() {
+        mMediaPlayer.pause();
+        updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
     }
 }
