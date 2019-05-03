@@ -19,7 +19,7 @@ public class TestResults extends AppCompatActivity {
      * Each question has a total of 10 points
      * The following array stores the corresponding score for each question. e.g.
      * scoreArray[0][0] stores the score for the question 1, option 1, and so on
-     *
+     * <p>
      * IMPORTANT: This property should never be accessed directly
      */
     byte[][] scoreArray = new byte[10][6];
@@ -54,11 +54,11 @@ public class TestResults extends AppCompatActivity {
     }
 
     /**
-     * This function will only fill the array if it hasn't been fille before
+     * This function will only fill the array if it hasn't been filled before
+     *
      * @return byte[][] -- Multidimensional array with question/answer indexes and scores
      */
-    private byte[][] getScoreArray()
-    {
+    private byte[][] getScoreArray() {
         // Pretty simple way to check if the array has been filled or not
         if (scoreArray[0][0] == 0) {
             // Score for question 1
@@ -250,10 +250,10 @@ public class TestResults extends AppCompatActivity {
      * @return The score according to the options selected by the user
      */
     public byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne,
-                          boolean pOptionTwo,
-                          boolean pOptionThree,
-                          boolean pOptionFour) {
+                         boolean pOptionOne,
+                         boolean pOptionTwo,
+                         boolean pOptionThree,
+                         boolean pOptionFour) {
         byte scoreToReturn = 0;
         byte optionIndex = 0;
 
@@ -297,12 +297,12 @@ public class TestResults extends AppCompatActivity {
      * @return The score according to the options selected by the user
      */
     public byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne,
-                          boolean pOptionTwo,
-                          boolean pOptionThree,
-                          boolean pOptionFour,
-                          boolean pOptionFive,
-                          boolean pOptionSix) {
+                         boolean pOptionOne,
+                         boolean pOptionTwo,
+                         boolean pOptionThree,
+                         boolean pOptionFour,
+                         boolean pOptionFive,
+                         boolean pOptionSix) {
         byte scoreToReturn = 0;
         byte optionIndex = 0;
 
@@ -373,7 +373,7 @@ public class TestResults extends AppCompatActivity {
      * @return The score according to the options selected by the user
      */
     public byte getScore(byte pQuestionIndex,
-                          boolean pOptionOne) {
+                         boolean pOptionOne) {
         byte optionIndex = 0;
 
         if (pOptionOne) {

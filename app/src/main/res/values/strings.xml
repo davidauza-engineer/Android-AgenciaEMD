@@ -256,6 +256,9 @@
     <string name="music_player_helper_play">Reproducir</string>
     <string name="music_player_helper_pause">Pausar</string>
     <string name="music_player_helper_reset">Reiniciar</string>
+    <string name="music_player_focus_not_granted">No se puede reproducir música en este momento.
+         Por favor intenta más tarde.
+    </string>
     <!-- Music Player Strings End -->
 
 </resources>

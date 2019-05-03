@@ -184,9 +184,11 @@
 
     <!-- Style for control icons at activity_music_player.xml file -->
     <style name="MusicPlayerIcons">
-        <item name="android:layout_width">24dp</item>
-        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:scaleType">center</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
     <!-- Style for helper text below control icons at activity_music_player.xml file -->
