@@ -7,9 +7,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import engineer.davidauza.agenciaemd.utils.TimeFormatter;
 
 public class MusicPlayer extends AppCompatActivity {
 
@@ -212,6 +215,12 @@ public class MusicPlayer extends AppCompatActivity {
         ImageView songPictureImageView = findViewById(R.id.song_picture);
         songPictureImageView.
                 setImageResource(getIntent().getIntExtra("SONG_PICTURE", R.drawable.logo));
+
+        // Song's duration
+        TextView timerRightTextView = findViewById(R.id.timer_right);
+        String songDurationInSeconds =
+                TimeFormatter.toMmSs(MediaPlayer.create(this, getSong()).getDuration());
+        timerRightTextView.setText(songDurationInSeconds);
     }
 
     /**
@@ -269,7 +278,6 @@ public class MusicPlayer extends AppCompatActivity {
     //Todo orientation resume here
     //todo image resources
     //todo seek bar set by the user
-    // todo add timer to seekbar
 
 
     @Override
@@ -291,14 +299,17 @@ public class MusicPlayer extends AppCompatActivity {
         mSeekBar = findViewById(R.id.bar);
         mSeekBar.setMax(mMediaPlayer.getDuration() / 1000);
         mHandler = new Handler();
+        final TextView leftTimerTextView = findViewById(R.id.timer_left);
         MusicPlayer.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 //todo is running
                 //Log.e("Log", "Running");
                 if (mMediaPlayer != null) {
-                    int mCurrentPosition = mMediaPlayer.getCurrentPosition() / 1000;
+                    int mCurrentPosition = mMediaPlayer.getCurrentPosition();
+                    leftTimerTextView.setText(TimeFormatter.toMmSs(mCurrentPosition));
                     //Log.e("Updating", Integer.toString(mCurrentPosition));
+                    mCurrentPosition /= 1000;
                     mSeekBar.setProgress(mCurrentPosition);
                     mHandler.postDelayed(this, 1000);
                     //Log.e("Updating", "Scheduled");
@@ -311,8 +322,12 @@ public class MusicPlayer extends AppCompatActivity {
      * This method resets the SeekBar to its initial status
      */
     private void resetSeekBar() {
+        TextView leftTimerTextView = findViewById(R.id.timer_left);
+        leftTimerTextView.setText("00:00");
         mSeekBar.setProgress(0);
         updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
+        // Once the media player is reset, the screen is able to automatically turn off once again
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     /**
@@ -334,6 +349,8 @@ public class MusicPlayer extends AppCompatActivity {
     private void startPlayback() {
         mMediaPlayer.start();
         updatePlayPauseViews(R.drawable.pause_icon, R.string.music_player_helper_pause);
+        // Prevent screen from turning off once the media player is playing
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 
     /**
@@ -342,5 +359,8 @@ public class MusicPlayer extends AppCompatActivity {
     private void pausePlayback() {
         mMediaPlayer.pause();
         updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
+        // Once the media player is paused by some reason, the screen is able to automatically turn
+        // off once again
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
 }

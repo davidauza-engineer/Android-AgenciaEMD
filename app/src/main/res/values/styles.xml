@@ -211,4 +211,11 @@
         <item name="android:textSize">10sp</item>
     </style>
 
+    <!-- Style for timer TextViews at activity_music_player.xml file -->
+    <style name="SongTimer">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
 </resources>
