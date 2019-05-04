@@ -49,7 +49,7 @@
             android:id="@+id/song_picture"
             style="@style/SongPicture"
             android:layout_gravity="center_horizontal"
-            android:maxWidth="200dp"
+            android:maxWidth="195dp"
             tools:src="@drawable/colombia_flag" />
 
         <SeekBar
@@ -86,38 +86,51 @@
         <LinearLayout
             style="@style/MusicPlayerHorizontalLinearLayouts"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="0dp">
 
-            <ImageView
-                android:id="@+id/back_image_view"
-                style="@style/MusicPlayerIcons"
-                android:src="@drawable/undo" />
+            <LinearLayout
+                android:id="@+id/back_linear_layout"
+                style="@style/LinearLayoutsIconsMusicPlayer">
 
-            <ImageView
-                android:id="@+id/play_pause"
-                style="@style/MusicPlayerIcons"
-                android:src="@drawable/play_icon" />
+                <ImageView
+                    style="@style/MusicPlayerIcons"
+                    android:src="@drawable/undo" />
 
-            <ImageView
-                android:id="@+id/reset_image_view"
-                style="@style/MusicPlayerIcons"
-                android:src="@drawable/reset" />
-        </LinearLayout>
+                <TextView
+                    style="@style/MusicPlayerHelperText"
+                    android:text="@string/music_player_helper_back" />
 
-        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+            </LinearLayout>
 
-            <TextView
-                style="@style/MusicPlayerHelperText"
-                android:text="@string/music_player_helper_back" />
+            <LinearLayout
+                android:id="@+id/play_pause_linear_layout"
+                style="@style/LinearLayoutsIconsMusicPlayer">
 
-            <TextView
-                android:id="@+id/play_pause_helper"
-                style="@style/MusicPlayerHelperText"
-                android:text="@string/music_player_helper_play" />
+                <ImageView
+                    android:id="@+id/play_pause_icon"
+                    style="@style/MusicPlayerIcons"
+                    android:src="@drawable/play_icon" />
 
-            <TextView
-                style="@style/MusicPlayerHelperText"
-                android:text="@string/music_player_helper_reset" />
+                <TextView
+                    android:id="@+id/play_pause_helper"
+                    style="@style/MusicPlayerHelperText"
+                    android:text="@string/music_player_helper_play" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/reset_linear_layout"
+                style="@style/LinearLayoutsIconsMusicPlayer">
+
+                <ImageView
+                    style="@style/MusicPlayerIcons"
+                    android:src="@drawable/reset" />
+
+                <TextView
+                    style="@style/MusicPlayerHelperText"
+                    android:text="@string/music_player_helper_reset" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -125,7 +138,7 @@
             android:id="@+id/copyright"
             style="@style/CopyrightTextView"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="72dp"
             tools:text="[Copyright]" />
 
     </LinearLayout>

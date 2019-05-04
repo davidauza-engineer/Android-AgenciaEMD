@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -107,18 +108,18 @@ public class MusicPlayer extends AppCompatActivity {
 
         populateSongInfo();
 
-        // Set up back ImageView
-        ImageView backImageView = findViewById(R.id.back_image_view);
-        backImageView.setOnClickListener(new View.OnClickListener() {
+        // Set up back LinearLayout click behavior
+        LinearLayout backLinearLayout = findViewById(R.id.back_linear_layout);
+        backLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
 
-        // Set up the play / pause ImageView
-        final ImageView playPauseImageView = findViewById(R.id.play_pause);
-        playPauseImageView.setOnClickListener(new View.OnClickListener() {
+        // Set up the play / pause Linear Layout
+        final LinearLayout playPauseLinearLayout = findViewById(R.id.play_pause_linear_layout);
+        playPauseLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mMediaPlayer == null) {
@@ -178,9 +179,9 @@ public class MusicPlayer extends AppCompatActivity {
             }
         });
 
-        // Set up reset ImageView
-        ImageView resetImageView = findViewById(R.id.reset_image_view);
-        resetImageView.setOnClickListener(new View.OnClickListener() {
+        // Set up reset LinearLayout
+        LinearLayout resetLinearLayout = findViewById(R.id.reset_linear_layout);
+        resetLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mMediaPlayer != null) {
@@ -337,7 +338,7 @@ public class MusicPlayer extends AppCompatActivity {
      * @param pStringResorce The string ID to setup.
      */
     private void updatePlayPauseViews(int pImageResource, int pStringResorce) {
-        ImageView playPauseImageView = findViewById(R.id.play_pause);
+        ImageView playPauseImageView = findViewById(R.id.play_pause_icon);
         playPauseImageView.setImageResource(pImageResource);
         TextView playPauseHelper = findViewById(R.id.play_pause_helper);
         playPauseHelper.setText(pStringResorce);
