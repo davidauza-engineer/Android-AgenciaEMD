@@ -25,7 +25,7 @@ public class MusicPlayer extends AppCompatActivity {
     /**
      * Handler to be able to update the SeekBar once a song is being played
      */
-    private Handler mHandler;
+    private Handler mHandler = new Handler();
 
     /**
      * Handles playback of the sound file
@@ -40,7 +40,12 @@ public class MusicPlayer extends AppCompatActivity {
     /**
      * Tracks if the audio focus has been granted
      */
-    private boolean hasAudioFocus;
+    private boolean mHasAudioFocus;
+
+    /**
+     * The timer to the left of the SeekBar
+     */
+    private TextView leftTimerTextView;
 
     /**
      * This listener gets triggered whenever the audio focus changes (i.e., we lose or gain audio
@@ -75,7 +80,10 @@ public class MusicPlayer extends AppCompatActivity {
 
                             // Stop playback and clean up resources
                             resetSeekBar();
-                            releaseMediaPlayer();
+                            // Regardless of whether or not we were granted audio focus, abandon it.
+                            // This also unregisters the AudioFocusChangeListener so we don't get
+                            // anymore callbacks.
+                            mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
                             break;
                         default:
                             break;
@@ -94,7 +102,10 @@ public class MusicPlayer extends AppCompatActivity {
                     // Now that the sound file has finished playing, release the media player
                     // resources.
                     resetSeekBar();
-                    releaseMediaPlayer();
+                    // Regardless of whether or not we were granted audio focus, abandon it. This
+                    // also unregisters the AudioFocusChangeListener so we don't get anymore
+                    // callbacks.
+                    mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
                 }
             };
 
@@ -106,7 +117,13 @@ public class MusicPlayer extends AppCompatActivity {
         // Create and setup the {@link AudioManager} to request audio focus
         mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
+        setUpMediaPlayer();
+
         populateSongInfo();
+
+        setUpSeekBar();
+
+        leftTimerTextView = findViewById(R.id.timer_left);
 
         // Set up back LinearLayout click behavior
         LinearLayout backLinearLayout = findViewById(R.id.back_linear_layout);
@@ -122,27 +139,17 @@ public class MusicPlayer extends AppCompatActivity {
         playPauseLinearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mMediaPlayer == null) {
+                if (!mHasAudioFocus) {
                     // Request audio focus in order to play the audio file.
                     int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
                             AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
 
                     if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
                         // We have audio focus now.
-                        hasAudioFocus = true;
-
-                        // Create and setup the {@link MediaPlayer} for the audio resource
-                        // associated with the current song
-                        mMediaPlayer = MediaPlayer.create(MusicPlayer.this, getSong());
+                        mHasAudioFocus = true;
 
                         // Start the audio file
                         startPlayback();
-
-                        // Set up a listener on the media player, so that we can stop and release
-                        // the media player once the sound has finished playing.
-                        mMediaPlayer.setOnCompletionListener(mCompletionListener);
-
-                        setUpSeekBar();
                     } else {
                         // The focus was not granted for some reason, so display a toast letting
                         // the user know it is not possible to play music right now.
@@ -150,30 +157,11 @@ public class MusicPlayer extends AppCompatActivity {
                                 R.string.music_player_focus_not_granted);
                     }
                 } else {
-                    // The media player is not null, the player has been initialized
+                    // We already have audio focus
                     if (mMediaPlayer.isPlaying()) {
                         pausePlayback();
                     } else {
-                        // If the play button is clicked check if there is audio focus
-                        if (hasAudioFocus) {
-                            startPlayback();
-                        } else {
-                            // There is no audio focus so try to obtain it
-                            int result = mAudioManager.
-                                    requestAudioFocus(mOnAudioFocusChangeListener,
-                                            AudioManager.STREAM_MUSIC,
-                                            AudioManager.AUDIOFOCUS_GAIN);
-
-                            if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                                hasAudioFocus = true;
-                                startPlayback();
-                            } else {
-                                // The focus was not granted for some reason, so display a toast
-                                // letting the user know it is not possible to play music right now.
-                                TejoCounter.createToastShort(MusicPlayer.this,
-                                        R.string.music_player_focus_not_granted);
-                            }
-                        }
+                        startPlayback();
                     }
                 }
             }
@@ -186,6 +174,8 @@ public class MusicPlayer extends AppCompatActivity {
             public void onClick(View v) {
                 if (mMediaPlayer != null) {
                     mMediaPlayer.seekTo(0);
+                    updateLeftTimer(getString(R.string.music_player_start_time));
+                    mSeekBar.setProgress(0);
                 }
             }
         });
@@ -220,7 +210,7 @@ public class MusicPlayer extends AppCompatActivity {
         // Song's duration
         TextView timerRightTextView = findViewById(R.id.timer_right);
         String songDurationInSeconds =
-                TimeFormatter.toMmSs(MediaPlayer.create(this, getSong()).getDuration());
+                TimeFormatter.toMmSs(mMediaPlayer.getDuration());
         timerRightTextView.setText(songDurationInSeconds);
     }
 
@@ -245,7 +235,7 @@ public class MusicPlayer extends AppCompatActivity {
             // Abandon audio focus when paused to stop getting callbacks from the
             // AudioFocusChangeListener
             mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
-            hasAudioFocus = false;
+            mHasAudioFocus = false;
         }
     }
 
@@ -259,7 +249,6 @@ public class MusicPlayer extends AppCompatActivity {
      * Clean up the media player by releasing its resources.
      */
     private void releaseMediaPlayer() {
-        // If the media player is not null, then it may be currently playing a song.
         if (mMediaPlayer != null) {
             // Regardless of the current state of the media player, release its resources because
             // we no longer need it.
@@ -277,8 +266,6 @@ public class MusicPlayer extends AppCompatActivity {
     }
 
     //Todo orientation resume here
-    //todo image resources
-    //todo seek bar set by the user
 
 
     @Override
@@ -293,28 +280,28 @@ public class MusicPlayer extends AppCompatActivity {
     }
 
     /**
-     * Set up the SeekBar so it is displayed according to the song's progress.
+     * This method sets up the SeekBar
      */
     private void setUpSeekBar() {
-        // Find the SeekBar
         mSeekBar = findViewById(R.id.bar);
         mSeekBar.setMax(mMediaPlayer.getDuration() / 1000);
-        mHandler = new Handler();
-        final TextView leftTimerTextView = findViewById(R.id.timer_left);
-        MusicPlayer.this.runOnUiThread(new Runnable() {
+        mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void run() {
-                //todo is running
-                //Log.e("Log", "Running");
-                if (mMediaPlayer != null) {
-                    int mCurrentPosition = mMediaPlayer.getCurrentPosition();
-                    leftTimerTextView.setText(TimeFormatter.toMmSs(mCurrentPosition));
-                    //Log.e("Updating", Integer.toString(mCurrentPosition));
-                    mCurrentPosition /= 1000;
-                    mSeekBar.setProgress(mCurrentPosition);
-                    mHandler.postDelayed(this, 1000);
-                    //Log.e("Updating", "Scheduled");
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (mMediaPlayer != null && fromUser) {
+                    mMediaPlayer.seekTo(progress * 1000);
+                    updateLeftTimer(mMediaPlayer.getCurrentPosition());
                 }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
             }
         });
     }
@@ -323,8 +310,7 @@ public class MusicPlayer extends AppCompatActivity {
      * This method resets the SeekBar to its initial status
      */
     private void resetSeekBar() {
-        TextView leftTimerTextView = findViewById(R.id.timer_left);
-        leftTimerTextView.setText("00:00");
+        updateLeftTimer(getString(R.string.music_player_start_time));
         mSeekBar.setProgress(0);
         updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
         // Once the media player is reset, the screen is able to automatically turn off once again
@@ -352,6 +338,7 @@ public class MusicPlayer extends AppCompatActivity {
         updatePlayPauseViews(R.drawable.pause_icon, R.string.music_player_helper_pause);
         // Prevent screen from turning off once the media player is playing
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        startUIUpdater();
     }
 
     /**
@@ -363,5 +350,57 @@ public class MusicPlayer extends AppCompatActivity {
         // Once the media player is paused by some reason, the screen is able to automatically turn
         // off once again
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
+    /**
+     * This method sets up the media player.
+     */
+    private void setUpMediaPlayer() {
+        // Create and setup the {@link MediaPlayer} for the audio resource
+        // associated with the current song
+        mMediaPlayer = MediaPlayer.create(MusicPlayer.this, getSong());
+
+        // Set up a listener on the media player, so that we can stop and release
+        // the media player once the sound has finished playing.
+        mMediaPlayer.setOnCompletionListener(mCompletionListener);
+    }
+
+    /**
+     * This method updates the left timer TextView below the SeekBar.
+     *
+     * @param pCurrentPosition The current position of the media player.
+     */
+    private void updateLeftTimer(int pCurrentPosition) {
+        leftTimerTextView.setText(TimeFormatter.toMmSs(pCurrentPosition));
+    }
+
+    /**
+     * This method updates the left timer TextView below the SeekBar.
+     *
+     * @param pTime A String containing the time to be set up in the TextView in the format mm:ss
+     */
+    private void updateLeftTimer(String pTime) {
+        leftTimerTextView.setText(pTime);
+    }
+
+    /**
+     * This method updates the SeekBar and left timer TextView according to the media player
+     * progress.
+     */
+    private void startUIUpdater() {
+        MusicPlayer.this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if (mMediaPlayer != null) {
+                    if (mMediaPlayer.isPlaying()) {
+                        int currentPosition = mMediaPlayer.getCurrentPosition();
+                        updateLeftTimer(currentPosition);
+                        currentPosition /= 1000;
+                        mSeekBar.setProgress(currentPosition);
+                        mHandler.postDelayed(this, 1000);
+                    }
+                }
+            }
+        });
     }
 }

@@ -259,6 +259,7 @@
     <string name="music_player_focus_not_granted">No se puede reproducir música en este momento.
          Por favor intenta más tarde.
     </string>
+    <string name="music_player_start_time" translatable="false">00:00</string>
     <!-- Music Player Strings End -->
 
 </resources>
