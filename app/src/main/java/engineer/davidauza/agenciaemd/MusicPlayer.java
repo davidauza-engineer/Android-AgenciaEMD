@@ -104,8 +104,6 @@ public class MusicPlayer extends AppCompatActivity {
             new MediaPlayer.OnCompletionListener() {
                 @Override
                 public void onCompletion(MediaPlayer mp) {
-                    // Now that the sound file has finished playing, release the media player
-                    // resources.
                     resetSeekBar();
                     // Regardless of whether or not we were granted audio focus, abandon it. This
                     // also unregisters the AudioFocusChangeListener so we don't get anymore
