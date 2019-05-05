@@ -48,6 +48,11 @@ public class MusicPlayer extends AppCompatActivity {
     private TextView leftTimerTextView;
 
     /**
+     * Keeps track if the media player was playing a song before a orientation change
+     */
+    private boolean wasPlaying;
+
+    /**
      * This listener gets triggered whenever the audio focus changes (i.e., we lose or gain audio
      * focus because of another app or device).
      */
@@ -140,21 +145,9 @@ public class MusicPlayer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (!mHasAudioFocus) {
-                    // Request audio focus in order to play the audio file.
-                    int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
-                            AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
-
-                    if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                        // We have audio focus now.
-                        mHasAudioFocus = true;
-
-                        // Start the audio file
+                    requestAudioFocus();
+                    if (mHasAudioFocus) {
                         startPlayback();
-                    } else {
-                        // The focus was not granted for some reason, so display a toast letting
-                        // the user know it is not possible to play music right now.
-                        TejoCounter.createToastShort(MusicPlayer.this,
-                                R.string.music_player_focus_not_granted);
                     }
                 } else {
                     // We already have audio focus
@@ -231,6 +224,7 @@ public class MusicPlayer extends AppCompatActivity {
         if (mMediaPlayer != null) {
             if (mMediaPlayer.isPlaying()) {
                 pausePlayback();
+                wasPlaying = true;
             }
             // Abandon audio focus when paused to stop getting callbacks from the
             // AudioFocusChangeListener
@@ -265,17 +259,26 @@ public class MusicPlayer extends AppCompatActivity {
         }
     }
 
-    //Todo orientation resume here
-
-
     @Override
     protected void onSaveInstanceState(Bundle outState) {
+        outState.putBoolean("wasPlaying", wasPlaying);
+        outState.putInt("position", mMediaPlayer.getCurrentPosition());
         super.onSaveInstanceState(outState);
-
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        int position = savedInstanceState.getInt("position");
+        boolean wasPlaying = savedInstanceState.getBoolean("wasPlaying");
+        mMediaPlayer.seekTo(position);
+        updateLeftTimer(position);
+        mSeekBar.setProgress(position / 1000);
+        if (wasPlaying) {
+            requestAudioFocus();
+            if (mHasAudioFocus) {
+                startPlayback();
+            }
+        }
         super.onRestoreInstanceState(savedInstanceState);
     }
 
@@ -402,5 +405,24 @@ public class MusicPlayer extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    /**
+     * This method requests for audio focus.
+     */
+    private void requestAudioFocus() {
+        // Request audio focus in order to play the audio file.
+        int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
+                AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN);
+
+        if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+            // We have audio focus now.
+            mHasAudioFocus = true;
+        } else {
+            // The focus was not granted for some reason, so display a toast letting the user
+            // know it is not possible to play music right now.
+            TejoCounter.createToastShort(MusicPlayer.this,
+                    R.string.music_player_focus_not_granted);
+        }
     }
 }
