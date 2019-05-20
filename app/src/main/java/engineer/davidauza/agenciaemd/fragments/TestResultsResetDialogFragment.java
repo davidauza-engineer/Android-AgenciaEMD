@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -7,24 +7,28 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialogFragment;
 
+import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.activities.TestMainActivity;
+import engineer.davidauza.agenciaemd.adapters.QuestionAdapter;
+
 /**
  * This class handles the Dialog created when the user wants to reset its answers
  */
-public class ResultsResetDialog extends AppCompatDialogFragment {
+public class TestResultsResetDialogFragment extends AppCompatDialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(R.string.results_reset_title);
-        builder.setMessage(R.string.results_reset_body);
-        builder.setNegativeButton(R.string.results_reset_no,
+        builder.setTitle(R.string.test_results_reset_title);
+        builder.setMessage(R.string.test_results_reset_body);
+        builder.setNegativeButton(R.string.test_results_reset_no,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dismiss();
                     }
                 });
-        builder.setPositiveButton(R.string.results_reset_yes,
+        builder.setPositiveButton(R.string.test_results_reset_yes,
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -83,12 +87,12 @@ public class ResultsResetDialog extends AppCompatDialogFragment {
 
                         editor.apply();
 
-                        // Finish the TestResults Activity
+                        // Finish the TestResultsActivity Activity
                         getActivity().finish();
 
-                        // Set reset to true in TestActivity so the Activity gets restarted when
+                        // Set reset to true in TestMainActivity so the Activity gets restarted when
                         // resumed
-                        TestActivity.reset = true;
+                        TestMainActivity.reset = true;
                     }
                 });
         return builder.create();

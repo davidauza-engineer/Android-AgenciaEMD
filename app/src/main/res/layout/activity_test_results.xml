@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TestResults">
+    tools:context=".activities.TestResultsActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,29 +12,29 @@
 
         <TextView
             android:id="@+id/to"
-            style="@style/TextViewsResults"
-            android:text="@string/results_to"
+            style="@style/TestResultsTextViewsStyle"
+            android:text="@string/test_results_to"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/company_name"
-            style="@style/TextViewsResults"
-            android:hint="@string/results_company_name_hint"
+            style="@style/TestResultsTextViewsStyle"
+            android:hint="@string/test_results_company_name_hint"
             android:paddingRight="16dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/to" />
 
         <TextView
             android:id="@+id/score_text"
-            style="@style/TextViewsResults"
-            android:text="@string/results_score"
+            style="@style/TestResultsTextViewsStyle"
+            android:text="@string/test_results_score"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/company_name" />
 
         <TextView
             android:id="@+id/company_score"
-            style="@style/TextViewsResults"
+            style="@style/TestResultsTextViewsStyle"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="0dp"
             app:layout_constraintLeft_toRightOf="@id/score_text"
@@ -42,16 +42,16 @@
             tools:text="100" />
 
         <TextView
-            style="@style/TextViewsResults"
+            style="@style/TestResultsTextViewsStyle"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="0dp"
-            android:text="@string/results_total_score"
+            android:text="@string/test_results_total_score"
             app:layout_constraintLeft_toRightOf="@id/company_score"
             app:layout_constraintTop_toTopOf="@id/score_text" />
 
         <TextView
             android:id="@+id/results_body"
-            style="@style/TextViewsResults"
+            style="@style/TestResultsTextViewsStyle"
             android:layout_width="0dp"
             android:layout_marginRight="16dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -61,39 +61,39 @@
 
         <Button
             android:id="@+id/send_button"
-            style="@style/ButtonsResults"
+            style="@style/TestResultsButtonsStyle"
             android:layout_width="0dp"
             android:layout_marginTop="32dp"
-            android:drawableLeft="@drawable/envelope"
+            android:drawableLeft="@drawable/ic_envelope"
             android:onClick="sendTestResults"
-            android:text="@string/results_send"
+            android:text="@string/test_results_send"
             app:layout_constraintLeft_toLeftOf="@id/reset_button"
             app:layout_constraintRight_toRightOf="@id/reset_button"
             app:layout_constraintTop_toBottomOf="@id/results_body" />
 
         <Button
             android:id="@+id/reset_button"
-            style="@style/ButtonsResults"
-            android:drawableLeft="@drawable/reset"
-            android:text="@string/results_reset"
+            style="@style/TestResultsButtonsStyle"
+            android:drawableLeft="@drawable/ic_reset"
+            android:text="@string/test_results_reset"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/send_button" />
 
         <Button
             android:id="@+id/back_button"
-            style="@style/ButtonsResults"
+            style="@style/TestResultsButtonsStyle"
             android:layout_width="0dp"
-            android:drawableLeft="@drawable/undo"
+            android:drawableLeft="@drawable/ic_back"
             android:onClick="goBack"
-            android:text="@string/results_back"
+            android:text="@string/test_results_back"
             app:layout_constraintLeft_toLeftOf="@id/reset_button"
             app:layout_constraintRight_toRightOf="@id/reset_button"
             app:layout_constraintTop_toBottomOf="@id/reset_button" />
 
         <TextView
             android:id="@+id/copyright"
-            style="@style/CopyrightTextView"
+            style="@style/MainCopyrightTextViewStyle"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="32dp"
             android:layout_marginRight="56dp"

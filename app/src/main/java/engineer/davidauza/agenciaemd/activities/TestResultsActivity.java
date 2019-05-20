@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,16 +10,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.adapters.QuestionAdapter;
+import engineer.davidauza.agenciaemd.fragments.TestResultsResetDialogFragment;
+
 /**
  * This class calculates the results of the test based on the answers provided by the user
  */
-public class TestResults extends AppCompatActivity {
+public class TestResultsActivity extends AppCompatActivity {
 
     /**
      * Each question has a total of 10 points
      * The following array stores the corresponding score for each question. e.g.
      * scoreArray[0][0] stores the score for the question 1, option 1, and so on
-     * <p>
+     *
      * IMPORTANT: This property should never be accessed directly
      */
     byte[][] scoreArray = new byte[10][6];
@@ -49,7 +53,7 @@ public class TestResults extends AppCompatActivity {
         if (intent.resolveActivity(pContext.getPackageManager()) != null) {
             pContext.startActivity(intent);
         } else {
-            TejoCounter.createToastShort(pContext, pErrorMessageId);
+            TejoCounterActivity.createToastShort(pContext, pErrorMessageId);
         }
     }
 
@@ -152,7 +156,7 @@ public class TestResults extends AppCompatActivity {
         // Tracks the score based on the answers of the user
         byte score = 0;
 
-        // Get the SharedPreferences file from TestActivity class to be able to access its data
+        // Get the SharedPreferences file from TestMainActivity class to be able to access its data
         SharedPreferences settings = getSharedPreferences(QuestionAdapter.PREFS_NAME, 0);
 
         // Add the score corresponding to question One
@@ -216,11 +220,11 @@ public class TestResults extends AppCompatActivity {
         // Set the results text
         TextView resultsBodyTextView = findViewById(R.id.results_body);
         if (score <= 40) {
-            resultsBodyTextView.setText(R.string.results_under_forty_one);
+            resultsBodyTextView.setText(R.string.test_results_under_forty_one);
         } else if (score <= 80) {
-            resultsBodyTextView.setText(R.string.results_under_eighty_one);
+            resultsBodyTextView.setText(R.string.test_results_under_eighty_one);
         } else {
-            resultsBodyTextView.setText(R.string.results_under_one_hundred_one);
+            resultsBodyTextView.setText(R.string.test_results_under_one_hundred_one);
         }
         MainActivity.justifyText(resultsBodyTextView);
 
@@ -357,7 +361,7 @@ public class TestResults extends AppCompatActivity {
      * This method opens a dialog to confirm if the user really wants to reset its results
      */
     public void openDialog() {
-        ResultsResetDialog dialog = new ResultsResetDialog();
+        TestResultsResetDialogFragment dialog = new TestResultsResetDialogFragment();
         dialog.show(getSupportFragmentManager(), "ResultsDialog");
     }
 
@@ -394,27 +398,27 @@ public class TestResults extends AppCompatActivity {
         boolean hasName = !companyName.getText().equals("");
         TextView scoreTextView = findViewById(R.id.company_score);
         TextView resultsBodyTextView = findViewById(R.id.results_body);
-        String body = getString(R.string.results_email_intro) +
-                "\n\n\n" + getString(R.string.results_to);
+        String body = getString(R.string.test_results_email_intro) +
+                "\n\n\n" + getString(R.string.test_results_to);
         if (hasName) {
             body += "\n\n" + companyName.getText();
         } else {
-            body += "\n\n" + getString(R.string.results_company_name_hint);
+            body += "\n\n" + getString(R.string.test_results_company_name_hint);
         }
-        body += "\n\n" + getString(R.string.results_score) + " " + scoreTextView.getText() + " " +
-                getString(R.string.results_total_score) +
+        body += "\n\n" + getString(R.string.test_results_score) + " " + scoreTextView.getText() + " " +
+                getString(R.string.test_results_total_score) +
                 "\n\n" + resultsBodyTextView.getText() +
-                "\n\n\n" + getString(R.string.results_email_regards);
+                "\n\n\n" + getString(R.string.test_results_email_regards);
         if (hasName) {
             body += "\n\n" + companyName.getText();
         } else {
-            body += "\n\n" + getString(R.string.results_company_name_hint);
+            body += "\n\n" + getString(R.string.test_results_company_name_hint);
         }
         sendEmail(this,
-                new String[]{getString(R.string.results_email_to)},
-                new String[]{getString(R.string.results_email_cc)},
-                getString(R.string.results_email_subject),
+                new String[]{getString(R.string.test_results_email_to)},
+                new String[]{getString(R.string.test_results_email_cc)},
+                getString(R.string.test_results_email_subject),
                 body,
-                R.string.results_error_email);
+                R.string.test_results_error_email);
     }
 }

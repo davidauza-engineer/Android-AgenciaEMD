@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.activities;
 
 import android.content.Intent;
 import android.os.Build;
@@ -10,6 +10,8 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import engineer.davidauza.agenciaemd.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         musicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MusicMenu.class);
+                Intent intent = new Intent(MainActivity.this, MusicMenuActivity.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
      * This method starts the tejo counter's activity
      */
     public void goToTejoActivity(View pView) {
-        Intent intent = new Intent(this, TejoCounter.class);
+        Intent intent = new Intent(this, TejoCounterActivity.class);
         startActivity(intent);
     }
 
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
      * This method starts the Test Activity
      */
     public void goToTestActivity(View view) {
-        Intent intent = new Intent(this, TestActivity.class);
+        Intent intent = new Intent(this, TestMainActivity.class);
         startActivity(intent);
     }
 }

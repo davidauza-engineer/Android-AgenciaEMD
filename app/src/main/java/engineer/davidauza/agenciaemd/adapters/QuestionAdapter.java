@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.adapters;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -13,6 +13,10 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+
+import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.activities.MainActivity;
+import engineer.davidauza.agenciaemd.models.Question;
 
 /**
  * QuestionAdapter is an ArrayAdapter that can provide the layout for each list item based on a
@@ -400,37 +404,35 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
     @Override
     public View getView(final int pPosition, View pConvertView, ViewGroup pParent) {
 
-        View listItemView = pConvertView;
-
         // Inflate the View
-        listItemView = LayoutInflater.from(getContext()).
-                inflate(R.layout.question_layout, pParent, false);
+        pConvertView = LayoutInflater.from(getContext()).
+                inflate(R.layout.item_question, pParent, false);
 
         // Get the Question object located at this position in the list
         Question currentQuestion = (Question) getItem(pPosition);
 
-        // Find the header TextView in the question_layout.xml layout with the ID question_header.
-        TextView headerTextView = listItemView.findViewById(R.id.question_header);
+        // Find the header TextView in the item_question.xmlayout with the ID question_header.
+        TextView headerTextView = pConvertView.findViewById(R.id.question_header);
         // Get the Question header from the currentQuestion object and set this text on the header
         // TextView.
         headerTextView.setText(currentQuestion.getQuestionHeader());
 
-        // Find the ImageView in the question_layout.xml layout with the ID question_picture.
-        ImageView imageView = listItemView.findViewById(R.id.question_picture);
+        // Find the ImageView in the item_questionml layout with the ID question_picture.
+        ImageView imageView = pConvertView.findViewById(R.id.question_picture);
         // Display the provided image based on the resource ID.
         imageView.setImageResource(currentQuestion.getImageResourceId());
 
-        // Find the body TextView in the question_layout.xml layout with the ID question_body.
-        TextView bodyTextView = listItemView.findViewById(R.id.question_body);
+        // Find the body TextView in the item_questionml layout with the ID question_body.
+        TextView bodyTextView = pConvertView.findViewById(R.id.question_body);
         // Get the Question body from the currentQuestion object and set this text on the body
         // TextView.
         bodyTextView.setText(currentQuestion.getQuestionBody());
         // If API is greater than or equal to 26, justify the text
         MainActivity.justifyText(bodyTextView);
 
-        // Find the first RadioButton in the question_layout.xml layout with the ID
+        // Find the first RadioButton in the item_question.xmlayout with the ID
         // yes_radio_button.
-        RadioButton firstRadioButton = listItemView.findViewById(R.id.yes_radio_button);
+        RadioButton firstRadioButton = pConvertView.findViewById(R.id.yes_radio_button);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getRadioButtonOneText() == null) {
             // If text has not been provided, hide the RadioButton
@@ -449,9 +451,9 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             firstRadioButton.setChecked(loadRadioButtonOne(firstRadioButton.getTag().toString()));
         }
 
-        // Find the second RadioButton in the question_layout.xml layout with the ID
+        // Find the second RadioButton in the item_question.xmlayout with the ID
         // no_radio_button.
-        RadioButton secondRadioButton = listItemView.findViewById(R.id.no_radio_button);
+        RadioButton secondRadioButton = pConvertView.findViewById(R.id.no_radio_button);
         // Check if a String has been provided for field or not
         if (currentQuestion.getRadioButtonTwoText() == null) {
             // If text has not been provided, hide the RadioButton
@@ -470,8 +472,8 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             secondRadioButton.setChecked(loadRadioButtonTwo(secondRadioButton.getTag().toString()));
         }
 
-        // Find the first CheckBox in the question_layout.xml layout with the ID checkbox_one.
-        CheckBox firstCheckBox = listItemView.findViewById(R.id.checkbox_one);
+        // Find the first CheckBox in the item_questionml layout with the ID checkbox_one.
+        CheckBox firstCheckBox = pConvertView.findViewById(R.id.checkbox_one);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxOneText() == null) {
             // If text has not been provided, hide the CheckBox
@@ -492,8 +494,8 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             firstCheckBox.setChecked(loadCheckBoxOne(firstCheckBox.getTag().toString()));
         }
 
-        // Find the second CheckBox in the question_layout.xml layout with the ID checkbox_two.
-        CheckBox secondCheckBox = listItemView.findViewById(R.id.checkbox_two);
+        // Find the second CheckBox in the item_question.xmlayout with the ID checkbox_two.
+        CheckBox secondCheckBox = pConvertView.findViewById(R.id.checkbox_two);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxTwoText() == null) {
             // If text has not been provided, hide the CheckBox
@@ -514,8 +516,8 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             secondCheckBox.setChecked(loadCheckBoxTwo(secondCheckBox.getTag().toString()));
         }
 
-        // Find the third CheckBox in the question_layout.xml layout with the ID checkbox_three.
-        CheckBox thirdCheckBox = listItemView.findViewById(R.id.checkbox_three);
+        // Find the third CheckBox in the item_questionml layout with the ID checkbox_three.
+        CheckBox thirdCheckBox = pConvertView.findViewById(R.id.checkbox_three);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxThreeText() == null) {
             // If text has not been provided, hide the CheckBox
@@ -536,8 +538,8 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             thirdCheckBox.setChecked(loadCheckBoxThree(thirdCheckBox.getTag().toString()));
         }
 
-        // Find the fourth CheckBox in the question_layout.xml layout with the ID checkbox_four.
-        CheckBox fourthCheckBox = listItemView.findViewById(R.id.checkbox_four);
+        // Find the fourth CheckBox in the item_questionml layout with the ID checkbox_four.
+        CheckBox fourthCheckBox = pConvertView.findViewById(R.id.checkbox_four);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxFourText() == null) {
             // If text has not been provided, hide the CheckBox
@@ -558,8 +560,8 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             fourthCheckBox.setChecked(loadCheckBoxFour(fourthCheckBox.getTag().toString()));
         }
 
-        // Find the fifth CheckBox in the question_layout.xml layout with the ID checkbox_five.
-        CheckBox fifthCheckBox = listItemView.findViewById(R.id.checkbox_five);
+        // Find the fifth CheckBox in the item_questionml layout with the ID checkbox_five.
+        CheckBox fifthCheckBox = pConvertView.findViewById(R.id.checkbox_five);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxFiveText() == null) {
             // If text has not been provided, hide the CheckBox
@@ -580,8 +582,8 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
             fifthCheckBox.setChecked(loadCheckBoxFive(fifthCheckBox.getTag().toString()));
         }
 
-        // Find the sixth CheckBox in the question_layout.xml layout with the ID checkbox_six.
-        CheckBox sixthCheckBox = listItemView.findViewById(R.id.checkbox_six);
+        // Find the sixth CheckBox in the item_question.xmlayout with the ID checkbox_six.
+        CheckBox sixthCheckBox = pConvertView.findViewById(R.id.checkbox_six);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxSixText() == null) {
             // If text has not been provided, hide the CheckBox
@@ -603,7 +605,7 @@ public class QuestionAdapter extends ArrayAdapter<Question> {
         }
 
         // Return the whole question layout layout so that it can be shown in the ListView
-        return listItemView;
+        return pConvertView;
     }
 
 

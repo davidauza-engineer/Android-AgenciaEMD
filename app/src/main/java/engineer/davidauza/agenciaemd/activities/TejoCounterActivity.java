@@ -1,20 +1,20 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
-import android.net.Uri;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TejoCounter extends AppCompatActivity {
+import engineer.davidauza.agenciaemd.R;
+
+public class TejoCounterActivity extends AppCompatActivity {
 
     // The name of the file to store the state so it can be recovered
     public static final String PREFS_NAME = "MyPrefsFile";
@@ -149,7 +149,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -169,7 +169,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -189,7 +189,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -209,7 +209,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -229,7 +229,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -249,7 +249,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -269,7 +269,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamA, mTeamATextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -289,7 +289,7 @@ public class TejoCounter extends AppCompatActivity {
             displayScore(mScoreTeamB, mTeamBTextView);
             checkForGameOver();
         } else {
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -368,12 +368,12 @@ public class TejoCounter extends AppCompatActivity {
             // This TextView is below the teamATextView and it is shown if team A wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_a_text_view, 1);
             mGameOver = true;
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         } else if (mScoreTeamB >= 27 && !mGameOver) {
             //This TextView is below the teamBTextView and it is shown if team B wins the game
             changeWinnerTextViewAlpha(R.id.winner_team_b_text_view, 1);
             mGameOver = true;
-            createToastShort(this, R.string.tejo_game_over);
+            createToastShort(this, R.string.tejo_counter_game_over);
         }
     }
 
@@ -381,21 +381,21 @@ public class TejoCounter extends AppCompatActivity {
      * This method let the user share the scores by email
      */
     public void share(View pView) {
-        String body = getString(R.string.tejo_body_part_one) + "  " + mScoreTeamA;
+        String body = getString(R.string.tejo_counter_body_part_one) + "  " + mScoreTeamA;
         if (mGameOver && mScoreTeamA >= 27) {
-            body += "  " + getString(R.string.tejo_winner);
+            body += "  " + getString(R.string.tejo_counter_winner);
         }
-        body += getString(R.string.tejo_body_part_two) + "  " + mScoreTeamB;
+        body += getString(R.string.tejo_counter_body_part_two) + "  " + mScoreTeamB;
         if (mGameOver && mScoreTeamB >= 27) {
-            body += "  " + getString(R.string.tejo_winner);
+            body += "  " + getString(R.string.tejo_counter_winner);
         }
-        body += getString(R.string.tejo_body_part_three);
-        TestResults.sendEmail(this,
+        body += getString(R.string.tejo_counter_body_part_three);
+        TestResultsActivity.sendEmail(this,
                 null,
                 null,
-                getString(R.string.tejo_email_subject),
+                getString(R.string.tejo_counter_email_subject),
                 body,
-                R.string.tejo_error_email);
+                R.string.tejo_counter_error_email);
     }
 
     /**

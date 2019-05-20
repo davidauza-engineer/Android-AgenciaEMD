@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:adjustViewBounds="true"
             android:maxWidth="200dp"
-            android:src="@drawable/logo"
+            android:src="@drawable/img_company_logo"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/subtitle" />
@@ -63,26 +63,26 @@
 
         <Button
             android:id="@+id/quiz_button"
-            style="@style/MainButtons"
-            android:drawableLeft="@drawable/quiz"
+            style="@style/MainButtonsStyle"
+            android:drawableLeft="@drawable/ic_test"
             android:onClick="goToTestActivity"
-            android:text="@string/main_quiz"
+            android:text="@string/main_test"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description" />
 
         <TextView
             android:id="@+id/quiz_text"
-            style="@style/MainTextBelowButtons"
-            android:text="@string/main_quiz_text"
+            style="@style/MainTextBelowButtonsStyle"
+            android:text="@string/main_test_text"
             app:layout_constraintLeft_toLeftOf="@id/quiz_button"
             app:layout_constraintRight_toRightOf="@id/quiz_button"
             app:layout_constraintTop_toBottomOf="@id/quiz_button" />
 
         <Button
             android:id="@+id/web_button"
-            style="@style/MainButtons"
-            android:drawableLeft="@drawable/internet"
+            style="@style/MainButtonsStyle"
+            android:drawableLeft="@drawable/ic_internet"
             android:text="@string/main_about_us"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/find_us_button"
@@ -90,7 +90,7 @@
 
         <TextView
             android:id="@+id/web_address"
-            style="@style/MainTextBelowButtons"
+            style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_web_address"
             app:layout_constraintLeft_toLeftOf="@id/web_button"
             app:layout_constraintRight_toRightOf="@id/web_button"
@@ -98,9 +98,9 @@
 
         <Button
             android:id="@+id/call_us_button"
-            style="@style/MainButtons"
+            style="@style/MainButtonsStyle"
             android:layout_width="0dp"
-            android:drawableLeft="@drawable/call"
+            android:drawableLeft="@drawable/ic_call"
             android:text="@string/main_call_us"
             app:layout_constraintLeft_toLeftOf="@id/web_button"
             app:layout_constraintRight_toRightOf="@id/web_button"
@@ -108,7 +108,7 @@
 
         <TextView
             android:id="@+id/phone_number"
-            style="@style/MainTextBelowButtons"
+            style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_cellphone"
             app:layout_constraintLeft_toLeftOf="@id/call_us_button"
             app:layout_constraintRight_toRightOf="@id/call_us_button"
@@ -116,9 +116,9 @@
 
         <Button
             android:id="@+id/email_button"
-            style="@style/MainButtons"
+            style="@style/MainButtonsStyle"
             android:layout_width="0dp"
-            android:drawableLeft="@drawable/envelope"
+            android:drawableLeft="@drawable/ic_envelope"
             android:text="@string/main_write_us"
             app:layout_constraintLeft_toLeftOf="@id/find_us_button"
             app:layout_constraintRight_toRightOf="@id/find_us_button"
@@ -126,7 +126,7 @@
 
         <TextView
             android:id="@+id/email_address"
-            style="@style/MainTextBelowButtons"
+            style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_email"
             app:layout_constraintLeft_toLeftOf="@id/email_button"
             app:layout_constraintRight_toRightOf="@id/email_button"
@@ -134,8 +134,8 @@
 
         <Button
             android:id="@+id/find_us_button"
-            style="@style/MainButtons"
-            android:drawableLeft="@drawable/placeholder"
+            style="@style/MainButtonsStyle"
+            android:drawableLeft="@drawable/ic_placeholder"
             android:text="@string/main_find_us"
             app:layout_constraintLeft_toRightOf="@id/web_button"
             app:layout_constraintRight_toRightOf="parent"
@@ -143,7 +143,7 @@
 
         <TextView
             android:id="@+id/address"
-            style="@style/MainTextBelowButtons"
+            style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_address"
             app:layout_constraintLeft_toLeftOf="@id/find_us_button"
             app:layout_constraintRight_toRightOf="@id/find_us_button"
@@ -151,9 +151,9 @@
 
         <Button
             android:id="@+id/music_button"
-            style="@style/MainButtons"
+            style="@style/MainButtonsStyle"
             android:layout_width="0dp"
-            android:drawableLeft="@drawable/music"
+            android:drawableLeft="@drawable/ic_music"
             android:text="@string/main_music_button"
             app:layout_constraintLeft_toLeftOf="@id/quiz_button"
             app:layout_constraintRight_toRightOf="@id/quiz_button"
@@ -161,7 +161,7 @@
 
         <TextView
             android:id="@+id/text_music"
-            style="@style/MainTextBelowButtons"
+            style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_music_text"
             app:layout_constraintLeft_toLeftOf="@id/music_button"
             app:layout_constraintRight_toRightOf="@id/music_button"
@@ -169,9 +169,9 @@
 
         <Button
             android:id="@+id/tejo_button"
-            style="@style/MainButtons"
+            style="@style/MainButtonsStyle"
             android:layout_width="0dp"
-            android:drawableLeft="@drawable/scoreboard"
+            android:drawableLeft="@drawable/ic_scoreboard"
             android:onClick="goToTejoActivity"
             android:text="@string/main_tejo"
             app:layout_constraintLeft_toLeftOf="@id/quiz_button"
@@ -180,7 +180,7 @@
 
         <TextView
             android:id="@+id/text_tejo"
-            style="@style/MainTextBelowButtons"
+            style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_tejo_text"
             app:layout_constraintLeft_toLeftOf="@id/tejo_button"
             app:layout_constraintRight_toRightOf="@id/tejo_button"
@@ -188,7 +188,7 @@
 
         <TextView
             android:id="@+id/copyright"
-            style="@style/CopyrightTextView"
+            style="@style/MainCopyrightTextViewStyle"
             android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

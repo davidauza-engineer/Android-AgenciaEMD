@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MusicMenu">
+    tools:context=".activities.MusicMenuActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/music_header"
+        android:text="@string/music_menu_header"
         android:textAppearance="?android:textAppearanceMedium"
         android:textColor="@color/colorPrimaryText" />
 

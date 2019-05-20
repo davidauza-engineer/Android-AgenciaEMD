@@ -1,13 +1,13 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.activities;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
+import android.os.Bundle;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.KeyEvent;
@@ -21,7 +21,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class TestActivity extends AppCompatActivity {
+import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.adapters.QuestionAdapter;
+import engineer.davidauza.agenciaemd.models.Question;
+
+public class TestMainActivity extends AppCompatActivity {
 
     // The name of the file to store the state so it can be recovered
     public static final String PREFS_NAME = "MyPrefsFile";
@@ -30,13 +34,13 @@ public class TestActivity extends AppCompatActivity {
     // EditText for company's name
     private EditText mCompanyNameEditText;
 
-    // This variable becomes true if the user resets its results in the ResultsResetDialog
+    // This variable becomes true if the user resets its results in the TestResultsResetDialogFragment
     public static boolean reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_test_main);
 
         // Set the EditText content
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -111,78 +115,78 @@ public class TestActivity extends AppCompatActivity {
         // Create the list of questions
         final ArrayList<Question> questions = new ArrayList<Question>();
         // Question one
-        questions.add(new Question(getString(R.string.test_question_one_header),
-                R.drawable.question_one, getString(R.string.test_question_one_body),
-                getString(R.string.test_question_one_option_one),
-                getString(R.string.test_question_one_option_two),
-                getString(R.string.test_question_one_option_three),
-                getString(R.string.test_question_one_option_four)));
+        questions.add(new Question(getString(R.string.test_main_question_one_header),
+                R.drawable.img_question_one, getString(R.string.test_main_question_one_body),
+                getString(R.string.test_main_question_one_option_one),
+                getString(R.string.test_main_question_one_option_two),
+                getString(R.string.test_main_question_one_option_three),
+                getString(R.string.test_main_question_one_option_four)));
         // Question two
-        questions.add(new Question(getString(R.string.test_question_two_header),
-                R.drawable.question_two,
-                getString(R.string.test_question_two_body),
-                getString(R.string.test_question_two_option_one),
-                getString(R.string.test_question_two_option_two)));
+        questions.add(new Question(getString(R.string.test_main_question_two_header),
+                R.drawable.img_question_two,
+                getString(R.string.test_main_question_two_body),
+                getString(R.string.test_main_question_two_option_one),
+                getString(R.string.test_main_question_two_option_two)));
         // Question three
-        questions.add(new Question(getString(R.string.test_question_three_header),
-                R.drawable.question_three,
-                getString(R.string.test_question_three_body),
-                getString(R.string.test_question_three_option_one),
-                getString(R.string.test_question_three_option_two)));
+        questions.add(new Question(getString(R.string.test_main_question_three_header),
+                R.drawable.img_question_three,
+                getString(R.string.test_main_question_three_body),
+                getString(R.string.test_main_question_three_option_one),
+                getString(R.string.test_main_question_three_option_two)));
         // Question four
-        questions.add(new Question(getString(R.string.test_question_four_header),
-                R.drawable.question_four,
-                getString(R.string.test_question_four_body),
-                getString(R.string.test_question_four_option_one),
-                getString(R.string.test_question_four_option_two),
-                getString(R.string.test_question_four_option_three),
-                getString(R.string.test_question_four_option_four),
-                getString(R.string.test_question_four_option_five),
-                getString(R.string.test_question_four_option_six)));
+        questions.add(new Question(getString(R.string.test_main_question_four_header),
+                R.drawable.img_question_four,
+                getString(R.string.test_main_question_four_body),
+                getString(R.string.test_main_question_four_option_one),
+                getString(R.string.test_main_question_four_option_two),
+                getString(R.string.test_main_question_four_option_three),
+                getString(R.string.test_main_question_four_option_four),
+                getString(R.string.test_main_question_four_option_five),
+                getString(R.string.test_main_question_four_option_six)));
         // Question five
-        questions.add(new Question(getString(R.string.test_question_five_header),
-                R.drawable.question_five,
-                getString(R.string.test_question_five_body),
-                getString(R.string.test_question_five_option_one),
-                getString(R.string.test_question_five_option_two),
-                getString(R.string.test_question_five_option_three),
-                getString(R.string.test_question_five_option_four)));
+        questions.add(new Question(getString(R.string.test_main_question_five_header),
+                R.drawable.img_question_five,
+                getString(R.string.test_main_question_five_body),
+                getString(R.string.test_main_question_five_option_one),
+                getString(R.string.test_main_question_five_option_two),
+                getString(R.string.test_main_question_five_option_three),
+                getString(R.string.test_main_question_five_option_four)));
         // Question six
-        questions.add(new Question(getString(R.string.test_question_six_header),
-                R.drawable.question_six,
-                getString(R.string.test_question_six_body),
-                getString(R.string.test_question_six_option_one),
-                getString(R.string.test_question_six_option_two)));
+        questions.add(new Question(getString(R.string.test_main_question_six_header),
+                R.drawable.img_question_six,
+                getString(R.string.test_main_question_six_body),
+                getString(R.string.test_main_question_six_option_one),
+                getString(R.string.test_main_question_six_option_two)));
         // Question seven
-        questions.add(new Question(getString(R.string.test_question_seven_header),
-                R.drawable.question_seven,
-                getString(R.string.test_question_seven_body),
-                getString(R.string.test_question_seven_option_one),
-                getString(R.string.test_question_seven_option_two)));
+        questions.add(new Question(getString(R.string.test_main_question_seven_header),
+                R.drawable.img_question_seven,
+                getString(R.string.test_main_question_seven_body),
+                getString(R.string.test_main_question_seven_option_one),
+                getString(R.string.test_main_question_seven_option_two)));
         // Question eight
-        questions.add(new Question(getString(R.string.test_question_eight_header),
-                R.drawable.question_eight,
-                getString(R.string.test_question_eight_body),
-                getString(R.string.test_question_eight_option_one),
-                getString(R.string.test_question_eight_option_two),
-                getString(R.string.test_question_eight_option_three),
-                getString(R.string.test_question_eight_option_four),
-                getString(R.string.test_question_eight_option_five),
-                getString(R.string.test_question_eight_option_six)));
+        questions.add(new Question(getString(R.string.test_main_question_eight_header),
+                R.drawable.img_question_eight,
+                getString(R.string.test_main_question_eight_body),
+                getString(R.string.test_main_question_eight_option_one),
+                getString(R.string.test_main_question_eight_option_two),
+                getString(R.string.test_main_question_eight_option_three),
+                getString(R.string.test_main_question_eight_option_four),
+                getString(R.string.test_main_question_eight_option_five),
+                getString(R.string.test_main_question_eight_option_six)));
         // Question nine
-        questions.add(new Question(getString(R.string.test_question_nine_header),
-                R.drawable.question_nine,
-                getString(R.string.test_question_nine_body),
-                getString(R.string.test_question_nine_option_one),
-                getString(R.string.test_question_nine_option_two),
-                getString(R.string.test_question_nine_option_three),
-                getString(R.string.test_question_nine_option_four)));
+        questions.add(new Question(getString(R.string.test_main_question_nine_header),
+                R.drawable.img_question_nine,
+                getString(R.string.test_main_question_nine_body),
+                getString(R.string.test_main_question_nine_option_one),
+                getString(R.string.test_main_question_nine_option_two),
+                getString(R.string.test_main_question_nine_option_three),
+                getString(R.string.test_main_question_nine_option_four)));
         // Question ten
-        questions.add(new Question(getString(R.string.test_question_ten_header),
-                R.drawable.question_ten,
-                getString(R.string.test_question_ten_body),
-                getString(R.string.test_question_ten_option_one),
-                getString(R.string.test_question_ten_option_two)));
+        questions.add(new Question(getString(R.string.test_main_question_ten_header),
+                R.drawable.img_question_ten,
+                getString(R.string.test_main_question_ten_body),
+                getString(R.string.test_main_question_ten_option_one),
+                getString(R.string.test_main_question_ten_option_two)));
 
 
         // Create a QuestionAdapter, whose data source is a list of Questions. The adapter knows
@@ -191,7 +195,7 @@ public class TestActivity extends AppCompatActivity {
 
         // Find the ListView object in the view hierarchy of the Activity. There should be a
         // ListView with the ID called list_of_questions, which is declared in the
-        // activity_test.xml layout file.
+        // activity_test_main.xmln.xml layout file.
         ListView listView = findViewById(R.id.list_of_questions);
 
         // Make the ListView use the QuestionAdapter created above, so that the ListView will
@@ -221,7 +225,7 @@ public class TestActivity extends AppCompatActivity {
     }
 
     /**
-     * This method starts the TestResults Activity. If the keyboard is open it sets the cursor to
+     * This method starts the TestResultsActivity Activity. If the keyboard is open it sets the cursor to
      * the start of the text and sets it to not visible
      *
      * @param view The button calling the method
@@ -232,8 +236,8 @@ public class TestActivity extends AppCompatActivity {
             adjustCursor(0, false);
         }
         // Create a toast with a thank you message
-        TejoCounter.createToastShort(this, R.string.results_toast);
-        Intent intent = new Intent(this, TestResults.class);
+        TejoCounterActivity.createToastShort(this, R.string.test_results_toast);
+        Intent intent = new Intent(this, TestResultsActivity.class);
         startActivity(intent);
     }
 

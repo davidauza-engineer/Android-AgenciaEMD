@@ -9,8 +9,8 @@
         <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
-    <!-- Style for the buttons of the main layout. -->
-    <style name="MainButtons">
+    <!-- Style for the buttons of activity_main.xml -->
+    <style name="MainButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">32dp</item>
@@ -18,8 +18,8 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <!-- Style for the TextViews below the buttons of the main layout. -->
-    <style name="MainTextBelowButtons">
+    <!-- Style for the TextViews below the buttons of activity_main.xml -->
+    <style name="MainTextBelowButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
@@ -27,8 +27,8 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
-    <!-- Style for the team title TextViews at Tejo Counter layout- -->
-    <style name="TejoTeamHeaders">
+    <!-- Style for the team title TextViews at activity_tejo_counter.xml -->
+    <style name="TejoCounterTeamHeadersStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">16dp</item>
@@ -36,8 +36,8 @@
         <item name="android:textColor">@color/colorSecondaryText</item>
     </style>
 
-    <!-- Style for the score's TextViews at Tejo Counter Layout. -->
-    <style name="TejoScoreTextViews">
+    <!-- Style for the score's TextViews at activity_tejo_counter.xml -->
+    <style name="TejoCounterScoreTextViewsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">16dp</item>
@@ -46,8 +46,8 @@
         <item name="android:paddingBottom">16dp</item>
     </style>
 
-    <!-- Style for the buttons at Tejo Counter layout -->
-    <style name="TejoButtonsForEachTeam">
+    <!-- Style for the buttons at activity_tejo_counter.xml -->
+    <style name="TejoCounterButtonsForEachTeamStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
@@ -58,18 +58,18 @@
     </style>
 
     <!-- Style fot TextViews which become visible if a team reaches 27 points and hence wins the
-            game at Tejo Counter layout -->
-    <style name="TejoWinnerTextViews">
+            game at activity_tejo_counter.xml -->
+    <style name="TejoCounterWinnerTextViewsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@android:color/holo_green_dark</item>
-        <item name="android:text">@string/tejo_winner</item>
+        <item name="android:text">@string/tejo_counter_winner</item>
         <item name="android:textStyle">bold</item>
         <item name="android:alpha">0</item>
     </style>
 
-    <!-- Style for the buttons at the bottom of the Tejo Counter layout. -->
-    <style name="TejoMenuButtons">
+    <!-- Style for the buttons at the bottom of activity_tejo_counter.xml -->
+    <style name="TejoCounterMenuButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
@@ -79,16 +79,16 @@
         <item name="android:paddingLeft">24dp</item>
     </style>
 
-    <!-- Style for the RadioButtons at questions layout. -->
-    <style name="QuestionRadioButtons">
+    <!-- Style for the RadioButtons at item_question.xml -->
+    <style name="QuestionRadioButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
-    <!-- Style for the CheckBoxes at questions_layout. -->
-    <style name="QuestionCheckBoxes">
+    <!-- Style for the CheckBoxes at item_question.xml -->
+    <style name="QuestionCheckBoxesStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">24dp</item>
@@ -101,8 +101,8 @@
         <item name="android:textColor">@color/colorPrimaryText</item>
     </style>
 
-    <!-- Style for the TestResults Activity -->
-    <style name="TestResults" parent="Theme.AppCompat.Light.Dialog">
+    <!-- Style for the TestResultsActivity -->
+    <style name="TestResultsStyle" parent="Theme.AppCompat.Light.Dialog">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -110,8 +110,8 @@
         <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
-    <!-- Style for the TextViews of the TestResults Activity -->
-    <style name="TextViewsResults">
+    <!-- Style for the TextViews of the activity_test_results.xml -->
+    <style name="TestResultsTextViewsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginLeft">16dp</item>
@@ -120,8 +120,8 @@
         <item name="android:textColor">@color/colorPrimaryText</item>
     </style>
 
-    <!-- Style for the Buttons of TestResults Activity -->
-    <style name="ButtonsResults">
+    <!-- Style for the Buttons of activity_test_results.xml -->
+    <style name="TestResultsButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAllCaps">true</item>
@@ -129,25 +129,25 @@
         <item name="android:drawablePadding">8dp</item>
     </style>
 
-    <!-- Style for the TextViews in the song_layout.xml file -->
-    <style name="SongSmallTextViews">
+    <!-- Style for the TextViews in item_song.xml -->
+    <style name="SongSmallTextViewsStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
-    <!-- Style for the horizontal LinearLayouts in the song_layout.xml file -->
-    <style name="SongHorizontalLinearLayouts">
+    <!-- Style for the horizontal LinearLayouts in item_song.xml -->
+    <style name="SongHorizontalLinearLayoutsStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
 
-    <!-- Style defined for Song Name TextViews in the song_layout.xml file and
+    <!-- Style defined for Song Name TextViews in the item_song.xml file and
             activity_music_player.xml file -->
-    <style name="SongName">
+    <style name="SongNameStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
@@ -157,14 +157,14 @@
     </style>
 
     <!-- Style for the TextViews in the activity_music_player.xml file -->
-    <style name="MusicPlayerTextViews">
+    <style name="MusicPlayerTextViewsStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
     <!-- Style for the horizontal LinearLayouts in the activity_music_player.xml file -->
-    <style name="MusicPlayerHorizontalLinearLayouts">
+    <style name="MusicPlayerHorizontalLinearLayoutsStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
@@ -174,23 +174,23 @@
         <item name="android:layout_marginBottom">16dp</item>
     </style>
 
-    <!-- Style for Song Pircture ImageViews in the song_layout.xml file and
-        activity_music_player.xml file -->
-    <style name="SongPicture">
+    <!-- Style for Song Picture ImageViews in the item_song.xml file and activity_music_player.xml
+            file -->
+    <style name="SongPictureStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:adjustViewBounds">true</item>
     </style>
 
     <!-- Style for control icons at activity_music_player.xml file -->
-    <style name="MusicPlayerIcons">
+    <style name="MusicPlayerIconsStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">34dp</item>
         <item name="android:scaleType">center</item>
     </style>
 
     <!-- Style for helper text below control icons at activity_music_player.xml file -->
-    <style name="MusicPlayerHelperText">
+    <style name="MusicPlayerHelperTextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
@@ -198,7 +198,7 @@
     </style>
 
     <!-- Style for copyright TextViews at various activities -->
-    <style name="CopyrightTextView">
+    <style name="MainCopyrightTextViewStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">16dp</item>
@@ -209,16 +209,16 @@
     </style>
 
     <!-- Style for timer TextViews at activity_music_player.xml file -->
-    <style name="SongTimer">
+    <style name="MusicPlayerSongTimerStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
-    <!-- Style for the vertical linear layouts containing the icons at activity_music_player.xml
-        file -->
-    <style name="LinearLayoutsIconsMusicPlayer">
+    <!-- Style for the vertical LinearLayouts containing the icons at activity_music_player.xml
+            file -->
+    <style name="MusicPlayerLinearLayoutsIconsStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>

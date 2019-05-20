@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.models;
 
 /**
  * This class represents a question.

@@ -16,41 +16,41 @@
 
         <ImageView
             android:id="@+id/song_picture"
-            style="@style/SongPicture"
+            style="@style/SongPictureStyle"
             android:maxWidth="150dp"
-            tools:src="@drawable/colombia_flag" />
+            tools:src="@drawable/img_colombia_flag" />
 
         <TextView
             android:id="@+id/song_name"
-            style="@style/SongName"
+            style="@style/SongNameStyle"
             android:layout_marginTop="8dp"
             android:textAppearance="?android:textAppearanceSmall"
-            tools:text="@string/music_song_one_name" />
+            tools:text="@string/music_menu_song_one_name" />
 
-        <LinearLayout style="@style/SongHorizontalLinearLayouts">
+        <LinearLayout style="@style/SongHorizontalLinearLayoutsStyle">
 
             <TextView
-                style="@style/SongSmallTextViews"
-                android:text="@string/music_layout_lyrics" />
+                style="@style/SongSmallTextViewsStyle"
+                android:text="@string/music_menu_layout_lyrics" />
 
             <TextView
                 android:id="@+id/song_lyrics_composer"
-                style="@style/SongSmallTextViews"
+                style="@style/SongSmallTextViewsStyle"
                 android:singleLine="true"
-                tools:text="@string/music_song_one_lyrics_composer" />
+                tools:text="@string/music_menu_song_one_lyrics_composer" />
         </LinearLayout>
 
-        <LinearLayout style="@style/SongHorizontalLinearLayouts">
+        <LinearLayout style="@style/SongHorizontalLinearLayoutsStyle">
 
             <TextView
-                style="@style/SongSmallTextViews"
-                android:text="@string/music_layout_music" />
+                style="@style/SongSmallTextViewsStyle"
+                android:text="@string/music_menu_layout_music" />
 
             <TextView
                 android:id="@+id/song_music_composer"
-                style="@style/SongSmallTextViews"
+                style="@style/SongSmallTextViewsStyle"
                 android:singleLine="true"
-                tools:text="@string/music_song_one_music_composer" />
+                tools:text="@string/music_menu_song_one_music_composer" />
 
         </LinearLayout>
 

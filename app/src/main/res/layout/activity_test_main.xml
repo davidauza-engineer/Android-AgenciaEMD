@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    tools:context=".TestActivity">
+    tools:context=".activities.TestMainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,13 +22,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
-            app:helperText="@string/test_characters_limit">
+            app:helperText="@string/test_main_characters_limit">
 
             <EditText
                 android:id="@+id/company_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="@string/test_company_name"
+                android:hint="@string/test_main_company_name"
                 android:imeOptions="actionDone"
                 android:inputType="textCapSentences"
                 android:maxLength="40"
@@ -42,10 +42,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="8dp"
-            android:drawableLeft="@drawable/quiz"
+            android:drawableLeft="@drawable/ic_test"
             android:drawablePadding="8dp"
             android:onClick="goToTestResultsActivity"
-            android:text="@string/test_end" />
+            android:text="@string/test_main_end" />
 
     </LinearLayout>
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MusicPlayer">
+    tools:context=".activities.MusicPlayerActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,44 +13,44 @@
 
         <TextView
             android:id="@+id/song_name"
-            style="@style/SongName"
+            style="@style/SongNameStyle"
             android:layout_margin="16dp"
             android:textAppearance="?android:textAppearanceMedium"
-            tools:text="@string/music_song_one_name" />
+            tools:text="@string/music_menu_song_one_name" />
 
-        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayoutsStyle">
 
             <TextView
-                style="@style/MusicPlayerTextViews"
-                android:text="@string/music_layout_lyrics" />
+                style="@style/MusicPlayerTextViewsStyle"
+                android:text="@string/music_menu_layout_lyrics" />
 
             <TextView
                 android:id="@+id/song_lyrics_composer"
-                style="@style/MusicPlayerTextViews"
+                style="@style/MusicPlayerTextViewsStyle"
                 android:singleLine="true"
-                tools:text="@string/music_song_one_lyrics_composer" />
+                tools:text="@string/music_menu_song_one_lyrics_composer" />
         </LinearLayout>
 
-        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayouts">
+        <LinearLayout style="@style/MusicPlayerHorizontalLinearLayoutsStyle">
 
             <TextView
-                style="@style/MusicPlayerTextViews"
-                android:text="@string/music_layout_music" />
+                style="@style/MusicPlayerTextViewsStyle"
+                android:text="@string/music_menu_layout_music" />
 
             <TextView
                 android:id="@+id/song_music_composer"
-                style="@style/MusicPlayerTextViews"
+                style="@style/MusicPlayerTextViewsStyle"
                 android:singleLine="true"
-                tools:text="@string/music_song_one_music_composer" />
+                tools:text="@string/music_menu_song_one_music_composer" />
 
         </LinearLayout>
 
         <ImageView
             android:id="@+id/song_picture"
-            style="@style/SongPicture"
+            style="@style/SongPictureStyle"
             android:layout_gravity="center_horizontal"
             android:maxWidth="195dp"
-            tools:src="@drawable/colombia_flag" />
+            tools:src="@drawable/img_colombia_flag" />
 
         <SeekBar
             android:id="@+id/bar"
@@ -70,64 +70,64 @@
 
             <TextView
                 android:id="@+id/timer_left"
-                style="@style/SongTimer"
+                style="@style/MusicPlayerSongTimerStyle"
                 android:gravity="start"
                 android:text="@string/music_player_start_time"
                 tools:text="00:25" />
 
             <TextView
                 android:id="@+id/timer_right"
-                style="@style/SongTimer"
+                style="@style/MusicPlayerSongTimerStyle"
                 android:gravity="end"
                 tools:text="01:49" />
 
         </LinearLayout>
 
         <LinearLayout
-            style="@style/MusicPlayerHorizontalLinearLayouts"
+            style="@style/MusicPlayerHorizontalLinearLayoutsStyle"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="0dp">
 
             <LinearLayout
                 android:id="@+id/back_linear_layout"
-                style="@style/LinearLayoutsIconsMusicPlayer">
+                style="@style/MusicPlayerLinearLayoutsIconsStyle">
 
                 <ImageView
-                    style="@style/MusicPlayerIcons"
-                    android:src="@drawable/undo" />
+                    style="@style/MusicPlayerIconsStyle"
+                    android:src="@drawable/ic_back" />
 
                 <TextView
-                    style="@style/MusicPlayerHelperText"
+                    style="@style/MusicPlayerHelperTextStyle"
                     android:text="@string/music_player_helper_back" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/play_pause_linear_layout"
-                style="@style/LinearLayoutsIconsMusicPlayer">
+                style="@style/MusicPlayerLinearLayoutsIconsStyle">
 
                 <ImageView
                     android:id="@+id/play_pause_icon"
-                    style="@style/MusicPlayerIcons"
-                    android:src="@drawable/play_icon" />
+                    style="@style/MusicPlayerIconsStyle"
+                    android:src="@drawable/ic_play" />
 
                 <TextView
                     android:id="@+id/play_pause_helper"
-                    style="@style/MusicPlayerHelperText"
+                    style="@style/MusicPlayerHelperTextStyle"
                     android:text="@string/music_player_helper_play" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/reset_linear_layout"
-                style="@style/LinearLayoutsIconsMusicPlayer">
+                style="@style/MusicPlayerLinearLayoutsIconsStyle">
 
                 <ImageView
-                    style="@style/MusicPlayerIcons"
-                    android:src="@drawable/reset" />
+                    style="@style/MusicPlayerIconsStyle"
+                    android:src="@drawable/ic_reset" />
 
                 <TextView
-                    style="@style/MusicPlayerHelperText"
+                    style="@style/MusicPlayerHelperTextStyle"
                     android:text="@string/music_player_helper_reset" />
 
             </LinearLayout>
@@ -136,7 +136,7 @@
 
         <TextView
             android:id="@+id/copyright"
-            style="@style/CopyrightTextView"
+            style="@style/MainCopyrightTextViewStyle"
             android:layout_gravity="center"
             android:layout_marginTop="72dp"
             tools:text="[Copyright]" />

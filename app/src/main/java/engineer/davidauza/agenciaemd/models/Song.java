@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.models;
 
 /**
  * {@link Song} represents a song that the user can listen to.

@@ -1,4 +1,4 @@
-package engineer.davidauza.agenciaemd;
+package engineer.davidauza.agenciaemd.activities;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -13,9 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.utils.TimeFormatter;
 
-public class MusicPlayer extends AppCompatActivity {
+public class MusicPlayerActivity extends AppCompatActivity {
 
     /**
      * SeekBar to show the progress of the song
@@ -45,12 +46,12 @@ public class MusicPlayer extends AppCompatActivity {
     /**
      * The timer to the left of the SeekBar
      */
-    private TextView leftTimerTextView;
+    private TextView mLeftTimerTextView;
 
     /**
      * Keeps track if the media player was playing a song before a orientation change
      */
-    private boolean wasPlaying;
+    private boolean mWasPlaying;
 
     /**
      * This listener gets triggered whenever the audio focus changes (i.e., we lose or gain audio
@@ -126,7 +127,7 @@ public class MusicPlayer extends AppCompatActivity {
 
         setUpSeekBar();
 
-        leftTimerTextView = findViewById(R.id.timer_left);
+        mLeftTimerTextView = findViewById(R.id.timer_left);
 
         // Set up back LinearLayout click behavior
         LinearLayout backLinearLayout = findViewById(R.id.back_linear_layout);
@@ -196,7 +197,7 @@ public class MusicPlayer extends AppCompatActivity {
         // Song's image
         ImageView songPictureImageView = findViewById(R.id.song_picture);
         songPictureImageView.
-                setImageResource(getIntent().getIntExtra("SONG_PICTURE", R.drawable.logo));
+                setImageResource(getIntent().getIntExtra("SONG_PICTURE", R.drawable.img_company_logo));
 
         // Song's duration
         TextView timerRightTextView = findViewById(R.id.timer_right);
@@ -207,7 +208,7 @@ public class MusicPlayer extends AppCompatActivity {
 
     /**
      * This method gets the intent related to the audio resource ID, passed when the user selected
-     * a song in the MusicMenu Activity.
+     * a song in the MusicMenuActivity Activity.
      *
      * @return The audio resource ID corresponding to the song previously selected by the user.
      */
@@ -222,7 +223,7 @@ public class MusicPlayer extends AppCompatActivity {
         if (mMediaPlayer != null) {
             if (mMediaPlayer.isPlaying()) {
                 pausePlayback();
-                wasPlaying = true;
+                mWasPlaying = true;
             }
             // Abandon audio focus when paused to stop getting callbacks from the
             // AudioFocusChangeListener
@@ -257,17 +258,25 @@ public class MusicPlayer extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method saves the state of the activity. It is used to recover the state once an
+     * orientation change occurs.
+     */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        outState.putBoolean("wasPlaying", wasPlaying);
+        outState.putBoolean("mWasPlaying", mWasPlaying);
         outState.putInt("position", mMediaPlayer.getCurrentPosition());
         super.onSaveInstanceState(outState);
     }
 
+    /**
+     * This method loads the state of the activity. It is used to recover the state once an
+     * orientation change occurs.
+     */
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         int position = savedInstanceState.getInt("position");
-        boolean wasPlaying = savedInstanceState.getBoolean("wasPlaying");
+        boolean wasPlaying = savedInstanceState.getBoolean("mWasPlaying");
         mMediaPlayer.seekTo(position);
         updateLeftTimer(position);
         mSeekBar.setProgress(position / 1000);
@@ -313,7 +322,7 @@ public class MusicPlayer extends AppCompatActivity {
     private void resetSeekBar() {
         updateLeftTimer(getString(R.string.music_player_start_time));
         mSeekBar.setProgress(0);
-        updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
+        updatePlayPauseViews(R.drawable.ic_play, R.string.music_player_helper_play);
         // Once the media player is reset, the screen is able to automatically turn off once again
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
     }
@@ -336,7 +345,7 @@ public class MusicPlayer extends AppCompatActivity {
      */
     private void startPlayback() {
         mMediaPlayer.start();
-        updatePlayPauseViews(R.drawable.pause_icon, R.string.music_player_helper_pause);
+        updatePlayPauseViews(R.drawable.ic_pause, R.string.music_player_helper_pause);
         // Prevent screen from turning off once the media player is playing
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         startUIUpdater();
@@ -347,7 +356,7 @@ public class MusicPlayer extends AppCompatActivity {
      */
     private void pausePlayback() {
         mMediaPlayer.pause();
-        updatePlayPauseViews(R.drawable.play_icon, R.string.music_player_helper_play);
+        updatePlayPauseViews(R.drawable.ic_play, R.string.music_player_helper_play);
         // Once the media player is paused by some reason, the screen is able to automatically turn
         // off once again
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -359,7 +368,7 @@ public class MusicPlayer extends AppCompatActivity {
     private void setUpMediaPlayer() {
         // Create and setup the {@link MediaPlayer} for the audio resource
         // associated with the current song
-        mMediaPlayer = MediaPlayer.create(MusicPlayer.this, getSong());
+        mMediaPlayer = MediaPlayer.create(MusicPlayerActivity.this, getSong());
 
         // Set up a listener on the media player, so that we can stop and release
         // the media player once the sound has finished playing.
@@ -372,7 +381,7 @@ public class MusicPlayer extends AppCompatActivity {
      * @param pCurrentPosition The current position of the media player.
      */
     private void updateLeftTimer(int pCurrentPosition) {
-        leftTimerTextView.setText(TimeFormatter.toMmSs(pCurrentPosition));
+        mLeftTimerTextView.setText(TimeFormatter.toMmSs(pCurrentPosition));
     }
 
     /**
@@ -381,7 +390,7 @@ public class MusicPlayer extends AppCompatActivity {
      * @param pTime A String containing the time to be set up in the TextView in the format mm:ss
      */
     private void updateLeftTimer(String pTime) {
-        leftTimerTextView.setText(pTime);
+        mLeftTimerTextView.setText(pTime);
     }
 
     /**
@@ -389,7 +398,7 @@ public class MusicPlayer extends AppCompatActivity {
      * progress.
      */
     private void startUIUpdater() {
-        MusicPlayer.this.runOnUiThread(new Runnable() {
+        MusicPlayerActivity.this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 if (mMediaPlayer != null) {
@@ -419,7 +428,7 @@ public class MusicPlayer extends AppCompatActivity {
         } else {
             // The focus was not granted for some reason, so display a toast letting the user
             // know it is not possible to play music right now.
-            TejoCounter.createToastShort(MusicPlayer.this,
+            TejoCounterActivity.createToastShort(MusicPlayerActivity.this,
                     R.string.music_player_focus_not_granted);
         }
     }
