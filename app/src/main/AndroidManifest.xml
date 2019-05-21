@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".activities.TourGuideActivity"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/TourGuideActivityStyle">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.MainActivity" />
+        </activity>
+        <activity
             android:name=".activities.MusicPlayerActivity"
             android:label="@string/music_player_activity_label"
             android:parentActivityName=".activities.MusicMenuActivity">
@@ -28,7 +36,7 @@
         <activity
             android:name=".activities.TestResultsActivity"
             android:label="@string/test_results_activity_label"
-            android:theme="@style/TestResultsStyle" />
+            android:theme="@style/TestResultsActivityStyle" />
         <activity
             android:name=".activities.TestMainActivity"
             android:label="@string/test_main_activity_label"

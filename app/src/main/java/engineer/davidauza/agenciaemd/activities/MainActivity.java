@@ -15,29 +15,19 @@ import engineer.davidauza.agenciaemd.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    /**
+     * This method sets the copyright text and links
+     */
+    public static void setCopyrightText(TextView pCopyrightTextView) {
+        String copyrightText =
+                "Copyright 2019 <a href=\"https://davidauza.engineer\">David Auza</a>" +
+                        "<br /><a href=\"http://agenciaemd.com\">Agencia EMD</a> " +
+                        "<br />Todos los derechos reservados" +
+                        "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
+                        " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
 
-        // If the API is greater than or equal to 26 justify the text of the company's description
-        TextView description = findViewById(R.id.description);
-        justifyText(description);
-
-        // Set up the listener to the music_button
-        Button musicButton = findViewById(R.id.btn_music_menu);
-        musicButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MusicMenuActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-        // Set copyright text
-        TextView copyrightTextView = findViewById(R.id.copyright);
-        setCopyrightText(copyrightTextView);
+        pCopyrightTextView.setText(Html.fromHtml(copyrightText));
+        pCopyrightTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     /**
@@ -51,18 +41,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * This method sets the copyright text and links
-     */
-    public static void setCopyrightText(TextView pCopyrightTextView) {
-        String copyrightText = "Copyright 2019 <a href=\"https://davidauza.engineer\">David Auza</a>" +
-                "<br /><a href=\"http://agenciaemd.com\">Agencia EMD</a> " +
-                "<br />Todos los derechos reservados" +
-                "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
-                " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        pCopyrightTextView.setText(Html.fromHtml(copyrightText));
-        pCopyrightTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        // If the API is greater than or equal to 26 justify the text of the company's description
+        TextView description = findViewById(R.id.description);
+        justifyText(description);
+
+        // Set up the listener to the btn_music_menu button
+        Button musicMenuButton = findViewById(R.id.btn_music_menu);
+        musicMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =
+                        new Intent(MainActivity.this, MusicMenuActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        setUpTourGuideButton();
+
+        // Set copyright text
+        TextView copyrightTextView = findViewById(R.id.copyright);
+        setCopyrightText(copyrightTextView);
     }
 
     /**
@@ -79,5 +82,20 @@ public class MainActivity extends AppCompatActivity {
     public void goToTestActivity(View view) {
         Intent intent = new Intent(this, TestMainActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * This method sets up a listener to the btn_tour_guide button
+     */
+    private void setUpTourGuideButton() {
+        Button tourGuideButton = findViewById(R.id.btn_tour_guide);
+        tourGuideButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =
+                        new Intent(MainActivity.this, TourGuideActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

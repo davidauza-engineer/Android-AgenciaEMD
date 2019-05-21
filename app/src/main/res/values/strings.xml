@@ -275,4 +275,9 @@
     <!-- Music Player Layout Strings End -->
 
 
+    <!-- Tour Guide Layout Strings Start -->
+    <string name="tour_guide_activity_label">Conoce Boyacá</string>
+    <!-- Tour Guide Layout Strings End -->
+
+
 </resources>

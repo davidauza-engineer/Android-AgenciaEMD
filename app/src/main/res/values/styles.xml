@@ -102,7 +102,7 @@
     </style>
 
     <!-- Style for the TestResultsActivity -->
-    <style name="TestResultsStyle" parent="Theme.AppCompat.Light.Dialog">
+    <style name="TestResultsActivityStyle" parent="Theme.AppCompat.Light.Dialog">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -224,6 +224,15 @@
         <item name="android:layout_weight">1</item>
         <item name="android:orientation">vertical</item>
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <!-- Style for the TourGuideActivity -->
+    <style name="TourGuideActivityStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
 
 </resources>
