@@ -53,16 +53,16 @@
             android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginRight="16dp"
+            android:gravity="center_horizontal"
             android:text="@string/main_description"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/colorPrimaryText"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:gravity="center_horizontal"
             app:layout_constraintTop_toBottomOf="@id/logo" />
 
         <Button
-            android:id="@+id/quiz_button"
+            android:id="@+id/btn_test"
             style="@style/MainButtonsStyle"
             android:drawableLeft="@drawable/ic_test"
             android:onClick="goToTestActivity"
@@ -75,9 +75,9 @@
             android:id="@+id/quiz_text"
             style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_test_text"
-            app:layout_constraintLeft_toLeftOf="@id/quiz_button"
-            app:layout_constraintRight_toRightOf="@id/quiz_button"
-            app:layout_constraintTop_toBottomOf="@id/quiz_button" />
+            app:layout_constraintLeft_toLeftOf="@id/btn_test"
+            app:layout_constraintRight_toRightOf="@id/btn_test"
+            app:layout_constraintTop_toBottomOf="@id/btn_test" />
 
         <Button
             android:id="@+id/web_button"
@@ -142,7 +142,7 @@
             app:layout_constraintTop_toBottomOf="@id/email_address" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/lbl_address"
             style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_address"
             app:layout_constraintLeft_toLeftOf="@id/find_us_button"
@@ -150,22 +150,40 @@
             app:layout_constraintTop_toBottomOf="@id/find_us_button" />
 
         <Button
-            android:id="@+id/music_button"
+            android:id="@+id/btn_tour_guide"
+            style="@style/MainButtonsStyle"
+            android:layout_width="0dp"
+            android:drawableLeft="@drawable/ic_map"
+            android:text="@string/main_tour_guide_button"
+            app:layout_constraintLeft_toLeftOf="@id/btn_test"
+            app:layout_constraintRight_toRightOf="@id/btn_test"
+            app:layout_constraintTop_toBottomOf="@id/lbl_address" />
+
+        <TextView
+            android:id="@+id/lbl_tour_guide"
+            style="@style/MainTextBelowButtonsStyle"
+            android:text="@string/main_tour_guide_text"
+            app:layout_constraintLeft_toLeftOf="@id/btn_tour_guide"
+            app:layout_constraintRight_toRightOf="@id/btn_tour_guide"
+            app:layout_constraintTop_toBottomOf="@id/btn_tour_guide" />
+
+        <Button
+            android:id="@+id/btn_music_menu"
             style="@style/MainButtonsStyle"
             android:layout_width="0dp"
             android:drawableLeft="@drawable/ic_music"
             android:text="@string/main_music_button"
-            app:layout_constraintLeft_toLeftOf="@id/quiz_button"
-            app:layout_constraintRight_toRightOf="@id/quiz_button"
-            app:layout_constraintTop_toBottomOf="@id/address" />
+            app:layout_constraintLeft_toLeftOf="@id/btn_test"
+            app:layout_constraintRight_toRightOf="@id/btn_test"
+            app:layout_constraintTop_toBottomOf="@id/lbl_tour_guide" />
 
         <TextView
-            android:id="@+id/text_music"
+            android:id="@+id/lbl_music_menu"
             style="@style/MainTextBelowButtonsStyle"
             android:text="@string/main_music_text"
-            app:layout_constraintLeft_toLeftOf="@id/music_button"
-            app:layout_constraintRight_toRightOf="@id/music_button"
-            app:layout_constraintTop_toBottomOf="@id/music_button" />
+            app:layout_constraintLeft_toLeftOf="@id/btn_music_menu"
+            app:layout_constraintRight_toRightOf="@id/btn_music_menu"
+            app:layout_constraintTop_toBottomOf="@id/btn_music_menu" />
 
         <Button
             android:id="@+id/tejo_button"
@@ -174,9 +192,9 @@
             android:drawableLeft="@drawable/ic_scoreboard"
             android:onClick="goToTejoActivity"
             android:text="@string/main_tejo"
-            app:layout_constraintLeft_toLeftOf="@id/quiz_button"
-            app:layout_constraintRight_toRightOf="@id/quiz_button"
-            app:layout_constraintTop_toBottomOf="@id/text_music" />
+            app:layout_constraintLeft_toLeftOf="@id/btn_test"
+            app:layout_constraintRight_toRightOf="@id/btn_test"
+            app:layout_constraintTop_toBottomOf="@id/lbl_music_menu" />
 
         <TextView
             android:id="@+id/text_tejo"

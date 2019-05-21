@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         justifyText(description);
 
         // Set up the listener to the music_button
-        Button musicButton = findViewById(R.id.music_button);
+        Button musicButton = findViewById(R.id.btn_music_menu);
         musicButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -33,6 +33,10 @@
     </string>
     <string name="main_music_button">Música Regional</string>
     <string name="main_music_text">Escucha los himnos más emblemáticos\nde nuestra región</string>
+    <string name="main_tour_guide_button">Conoce Boyacá</string>
+    <string name="main_tour_guide_text">Encuentra los lugares más interesantes
+        \npara conocer en nuestro departamento
+    </string>
     <!-- Main Layout Strings End -->
 
 
