@@ -40,48 +40,48 @@ public class TestResultsResetDialogFragment extends AppCompatDialogFragment {
                         editor.putString("mCompanyName", "");
                         // Need to reflect changes immediately
                         editor.commit();
-                        //Question One
+                        //MainTestQuestion One
                         editor.putBoolean("QuestionOneCheckBoxOne", false);
                         editor.putBoolean("QuestionOneCheckBoxTwo", false);
                         editor.putBoolean("QuestionOneCheckBoxThree", false);
                         editor.putBoolean("QuestionOneCheckBoxFour", false);
-                        // Question Two
+                        // MainTestQuestion Two
                         editor.putBoolean("QuestionTwoRadioButtonOne", false);
                         editor.putBoolean("QuestionTwoRadioButtonTwo", false);
-                        //Question Three
+                        //MainTestQuestion Three
                         editor.putBoolean("QuestionThreeRadioButtonOne", false);
                         editor.putBoolean("QuestionThreeRadioButtonTwo", false);
-                        // Question Four
+                        // MainTestQuestion Four
                         editor.putBoolean("QuestionFourCheckBoxOne", false);
                         editor.putBoolean("QuestionFourCheckBoxTwo", false);
                         editor.putBoolean("QuestionFourCheckBoxThree", false);
                         editor.putBoolean("QuestionFourCheckBoxFour", false);
                         editor.putBoolean("QuestionFourCheckBoxFive", false);
                         editor.putBoolean("QuestionFourCheckBoxSix", false);
-                        // Question Five
+                        // MainTestQuestion Five
                         editor.putBoolean("QuestionFiveCheckBoxOne", false);
                         editor.putBoolean("QuestionFiveCheckBoxTwo", false);
                         editor.putBoolean("QuestionFiveCheckBoxThree", false);
                         editor.putBoolean("QuestionFiveCheckBoxFour", false);
-                        // Question Six
+                        // MainTestQuestion Six
                         editor.putBoolean("QuestionSixRadioButtonOne", false);
                         editor.putBoolean("QuestionSixRadioButtonTwo", false);
-                        // Question Seven
+                        // MainTestQuestion Seven
                         editor.putBoolean("QuestionSevenRadioButtonOne", false);
                         editor.putBoolean("QuestionSevenRadioButtonTwo", false);
-                        // Question Eight
+                        // MainTestQuestion Eight
                         editor.putBoolean("QuestionEightCheckBoxOne", false);
                         editor.putBoolean("QuestionEightCheckBoxTwo", false);
                         editor.putBoolean("QuestionEightCheckBoxThree", false);
                         editor.putBoolean("QuestionEightCheckBoxFour", false);
                         editor.putBoolean("QuestionEightCheckBoxFive", false);
                         editor.putBoolean("QuestionEightCheckBoxSix", false);
-                        // Question Nine
+                        // MainTestQuestion Nine
                         editor.putBoolean("QuestionNineCheckBoxOne", false);
                         editor.putBoolean("QuestionNineCheckBoxTwo", false);
                         editor.putBoolean("QuestionNineCheckBoxThree", false);
                         editor.putBoolean("QuestionNineCheckBoxFour", false);
-                        // Question Ten
+                        // MainTestQuestion Ten
                         editor.putBoolean("QuestionTenRadioButtonOne", false);
                         editor.putBoolean("QuestionTenRadioButtonTwo", false);
 

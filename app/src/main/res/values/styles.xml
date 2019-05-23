@@ -79,7 +79,7 @@
         <item name="android:paddingLeft">24dp</item>
     </style>
 
-    <!-- Style for the RadioButtons at item_question.xml -->
+    <!-- Style for the RadioButtons at item_test_main_question.xmlestion.xml -->
     <style name="QuestionRadioButtonsStyle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -87,7 +87,7 @@
         <item name="android:textAppearance">?android:textAppearanceMedium</item>
     </style>
 
-    <!-- Style for the CheckBoxes at item_question.xml -->
+    <!-- Style for the CheckBoxes at item_test_main_question.xmlestion.xml -->
     <style name="QuestionCheckBoxesStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -129,7 +129,7 @@
         <item name="android:drawablePadding">8dp</item>
     </style>
 
-    <!-- Style for the TextViews in item_song.xml -->
+    <!-- Style for the TextViews in item_music_menu_song.xmlnu_song.xml -->
     <style name="SongSmallTextViewsStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
@@ -137,7 +137,7 @@
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
 
-    <!-- Style for the horizontal LinearLayouts in item_song.xml -->
+    <!-- Style for the horizontal LinearLayouts in item_music_menu_songc_menu_song.xml -->
     <style name="SongHorizontalLinearLayoutsStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -145,7 +145,7 @@
         <item name="android:gravity">center_horizontal</item>
     </style>
 
-    <!-- Style defined for Song Name TextViews in the item_song.xml file and
+    <!-- Style defined for MusicMenuSong Name TextViews in the item_music_menu_song.xmlnu_song.xml file and
             activity_music_player.xml file -->
     <style name="SongNameStyle">
         <item name="android:layout_width">match_parent</item>
@@ -174,7 +174,7 @@
         <item name="android:layout_marginBottom">16dp</item>
     </style>
 
-    <!-- Style for Song Picture ImageViews in the item_song.xml file and activity_music_player.xml
+    <!-- Style for MusicMenuSong Picture ImageViews in the item_music_menu_song.xmlnu_song.xml file and activity_music_player.xml
             file -->
     <style name="SongPictureStyle">
         <item name="android:layout_width">wrap_content</item>

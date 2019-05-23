@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.adapters.QuestionAdapter;
-import engineer.davidauza.agenciaemd.models.Question;
+import engineer.davidauza.agenciaemd.models.MainTestQuestion;
 
 public class TestMainActivity extends AppCompatActivity {
 
@@ -113,28 +113,28 @@ public class TestMainActivity extends AppCompatActivity {
         }
 
         // Create the list of questions
-        final ArrayList<Question> questions = new ArrayList<Question>();
-        // Question one
-        questions.add(new Question(getString(R.string.test_main_question_one_header),
+        final ArrayList<MainTestQuestion> questions = new ArrayList<MainTestQuestion>();
+        // MainTestQuestion one
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_one_header),
                 R.drawable.img_question_one, getString(R.string.test_main_question_one_body),
                 getString(R.string.test_main_question_one_option_one),
                 getString(R.string.test_main_question_one_option_two),
                 getString(R.string.test_main_question_one_option_three),
                 getString(R.string.test_main_question_one_option_four)));
-        // Question two
-        questions.add(new Question(getString(R.string.test_main_question_two_header),
+        // MainTestQuestion two
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_two_header),
                 R.drawable.img_question_two,
                 getString(R.string.test_main_question_two_body),
                 getString(R.string.test_main_question_two_option_one),
                 getString(R.string.test_main_question_two_option_two)));
-        // Question three
-        questions.add(new Question(getString(R.string.test_main_question_three_header),
+        // MainTestQuestion three
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_three_header),
                 R.drawable.img_question_three,
                 getString(R.string.test_main_question_three_body),
                 getString(R.string.test_main_question_three_option_one),
                 getString(R.string.test_main_question_three_option_two)));
-        // Question four
-        questions.add(new Question(getString(R.string.test_main_question_four_header),
+        // MainTestQuestion four
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_four_header),
                 R.drawable.img_question_four,
                 getString(R.string.test_main_question_four_body),
                 getString(R.string.test_main_question_four_option_one),
@@ -143,28 +143,28 @@ public class TestMainActivity extends AppCompatActivity {
                 getString(R.string.test_main_question_four_option_four),
                 getString(R.string.test_main_question_four_option_five),
                 getString(R.string.test_main_question_four_option_six)));
-        // Question five
-        questions.add(new Question(getString(R.string.test_main_question_five_header),
+        // MainTestQuestion five
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_five_header),
                 R.drawable.img_question_five,
                 getString(R.string.test_main_question_five_body),
                 getString(R.string.test_main_question_five_option_one),
                 getString(R.string.test_main_question_five_option_two),
                 getString(R.string.test_main_question_five_option_three),
                 getString(R.string.test_main_question_five_option_four)));
-        // Question six
-        questions.add(new Question(getString(R.string.test_main_question_six_header),
+        // MainTestQuestion six
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_six_header),
                 R.drawable.img_question_six,
                 getString(R.string.test_main_question_six_body),
                 getString(R.string.test_main_question_six_option_one),
                 getString(R.string.test_main_question_six_option_two)));
-        // Question seven
-        questions.add(new Question(getString(R.string.test_main_question_seven_header),
+        // MainTestQuestion seven
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_seven_header),
                 R.drawable.img_question_seven,
                 getString(R.string.test_main_question_seven_body),
                 getString(R.string.test_main_question_seven_option_one),
                 getString(R.string.test_main_question_seven_option_two)));
-        // Question eight
-        questions.add(new Question(getString(R.string.test_main_question_eight_header),
+        // MainTestQuestion eight
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_eight_header),
                 R.drawable.img_question_eight,
                 getString(R.string.test_main_question_eight_body),
                 getString(R.string.test_main_question_eight_option_one),
@@ -173,16 +173,16 @@ public class TestMainActivity extends AppCompatActivity {
                 getString(R.string.test_main_question_eight_option_four),
                 getString(R.string.test_main_question_eight_option_five),
                 getString(R.string.test_main_question_eight_option_six)));
-        // Question nine
-        questions.add(new Question(getString(R.string.test_main_question_nine_header),
+        // MainTestQuestion nine
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_nine_header),
                 R.drawable.img_question_nine,
                 getString(R.string.test_main_question_nine_body),
                 getString(R.string.test_main_question_nine_option_one),
                 getString(R.string.test_main_question_nine_option_two),
                 getString(R.string.test_main_question_nine_option_three),
                 getString(R.string.test_main_question_nine_option_four)));
-        // Question ten
-        questions.add(new Question(getString(R.string.test_main_question_ten_header),
+        // MainTestQuestion ten
+        questions.add(new MainTestQuestion(getString(R.string.test_main_question_ten_header),
                 R.drawable.img_question_ten,
                 getString(R.string.test_main_question_ten_body),
                 getString(R.string.test_main_question_ten_option_one),
@@ -199,7 +199,7 @@ public class TestMainActivity extends AppCompatActivity {
         ListView listView = findViewById(R.id.list_of_questions);
 
         // Make the ListView use the QuestionAdapter created above, so that the ListView will
-        // display list items for each Question in the list.
+        // display list items for each MainTestQuestion in the list.
         listView.setAdapter(adapter);
     }
 

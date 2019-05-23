@@ -72,7 +72,7 @@
     <string name="test_main_end">Terminar</string>
     <string name="test_main_company_name">Nombre de tu Empresa</string>
     <string name="test_main_characters_limit">[Máximo 40 caracteres]</string>
-    <!-- Question One Start -->
+    <!-- MainTestQuestion One Start -->
     <string name="test_main_question_one_header">Pregunta 1 de 10</string>
     <string name="test_main_question_one_body">Si cuentas con un sitio web, selecciona cada una de
         las funcionalidades con las que este cuenta, de lo contrario salta a la pregunta cuatro (4):
@@ -87,24 +87,24 @@
     <string name="test_main_question_one_option_four">Anuncios o servicios de terceros integrados
         (Google AdSense, Amazon Associates, Infolinks, etc.)
     </string>
-    <!-- Question One End -->
-    <!-- Question Two Start -->
+    <!-- MainTestQuestion One End -->
+    <!-- MainTestQuestion Two Start -->
     <string name="test_main_question_two_header">Pregunta 2 de 10</string>
     <string name="test_main_question_two_body">¿Sientes que tu sitio web tiene un impacto positivo
         significativo en las áreas de marketing y ventas de tu empresa?
     </string>
     <string name="test_main_question_two_option_one">Sí</string>
     <string name="test_main_question_two_option_two">No</string>
-    <!-- Question Two End -->
-    <!-- Question Three Start -->
+    <!-- MainTestQuestion Two End -->
+    <!-- MainTestQuestion Three Start -->
     <string name="test_main_question_three_header">Pregunta 3 de 10</string>
     <string name="test_main_question_three_body">¿Realizas campañas publicitarias o de promoción
         para posicionar la página web en motores de búsqueda, o en páginas de terceros?
     </string>
     <string name="test_main_question_three_option_one">Sí</string>
     <string name="test_main_question_three_option_two">No</string>
-    <!-- Question Three End -->
-    <!-- Question Four Start -->
+    <!-- MainTestQuestion Three End -->
+    <!-- MainTestQuestion Four Start -->
     <string name="test_main_question_four_header">Pregunta 4 de 10</string>
     <string name="test_main_question_four_body">Si haces uso de redes sociales, señala en cuáles
         plataformas haces gestión activa (entiéndase como publicación de contenido relevante de
@@ -118,8 +118,8 @@
     <string name="test_main_question_four_option_five">LinkedIn</string>
     <string name="test_main_question_four_option_six">Otras (Pinterest, Snapchat, Flickr, etc.)
     </string>
-    <!-- Question Four End -->
-    <!-- Question Five Start -->
+    <!-- MainTestQuestion Four End -->
+    <!-- MainTestQuestion Five Start -->
     <string name="test_main_question_five_header">Pregunta 5 de 10</string>
     <string name="test_main_question_five_body">Señala cuáles de las siguientes acciones llevas a
         cabo en tus cuentas de redes sociales:
@@ -134,24 +134,24 @@
     <string name="test_main_question_five_option_four">Utilización de servicios como el chat para
         mantenerte en contacto con tus clientes
     </string>
-    <!-- Question Five End -->
-    <!-- Question Six Start -->
+    <!-- MainTestQuestion Five End -->
+    <!-- MainTestQuestion Six Start -->
     <string name="test_main_question_six_header">Pregunta 6 de 10</string>
     <string name="test_main_question_six_body">¿Consideras que el uso de redes sociales tiene un
         impacto positivo significativo sobre las áreas de marketing y ventas de tu empresa?
     </string>
     <string name="test_main_question_six_option_one">Sí</string>
     <string name="test_main_question_six_option_two">No</string>
-    <!-- Question Six End -->
-    <!-- Question Seven Start -->
+    <!-- MainTestQuestion Six End -->
+    <!-- MainTestQuestion Seven Start -->
     <string name="test_main_question_seven_header">Pregunta 7 de 10</string>
     <string name="test_main_question_seven_body">¿Realizas campañas publicitarias pagas u orgánicas
         (no pagas) dentro de tus redes sociales para posicionar y exponer tu negocio?
     </string>
     <string name="test_main_question_seven_option_one">Sí</string>
     <string name="test_main_question_seven_option_two">No</string>
-    <!-- Question Seven End -->
-    <!-- Question Eight Start -->
+    <!-- MainTestQuestion Seven End -->
+    <!-- MainTestQuestion Eight Start -->
     <string name="test_main_question_eight_header">Pregunta 8 de 10</string>
     <string name="test_main_question_eight_body">Si cuentas con aplicaciones móviles ¿En qué
         plataformas tienes publicadas dichas herramientas? De lo contrario, por favor presiona el
@@ -163,8 +163,8 @@
     <string name="test_main_question_eight_option_four">Amazon App Store</string>
     <string name="test_main_question_eight_option_five">BlackBerry World</string>
     <string name="test_main_question_eight_option_six">Galaxy Store</string>
-    <!-- Question Eight End -->
-    <!-- Question Nine Start -->
+    <!-- MainTestQuestion Eight End -->
+    <!-- MainTestQuestion Nine Start -->
     <string name="test_main_question_nine_header">Pregunta 9 de 10</string>
     <string name="test_main_question_nine_body">¿Con qué funcionalidades cuentan dichas aplicaciones
         móviles?
@@ -179,15 +179,15 @@
     <string name="test_main_question_nine_option_four">Anuncios o servicios de terceros integrados
         (Google AdMob, Unity Ads, Chartboost, etc.)
     </string>
-    <!-- Question Nine End -->
-    <!-- Question Ten Start -->
+    <!-- MainTestQuestion Nine End -->
+    <!-- MainTestQuestion Ten Start -->
     <string name="test_main_question_ten_header">Pregunta 10 de 10</string>
     <string name="test_main_question_ten_body">Consideras que dichas aplicaciones tienen un impacto
         positivo significativo sobre las áreas de marketing y ventas de tu empresa?
     </string>
     <string name="test_main_question_ten_option_one">Sí</string>
     <string name="test_main_question_ten_option_two">No</string>
-    <!-- Question Ten End -->
+    <!-- MainTestQuestion Ten End -->
     <!-- Test Main Layout Strings End -->
 
 
@@ -277,6 +277,12 @@
 
     <!-- Tour Guide Layout Strings Start -->
     <string name="tour_guide_activity_label">Conoce Boyacá</string>
+    <string name="tour_guide_bundle_key">CategoryPage</string>
+    <string name="tour_guide_category_one">Arquitectura</string>
+    <string name="tour_guide_category_two">Ecoturismo</string>
+    <string name="tour_guide_category_three">Fuentes Termales</string>
+    <string name="tour_guide_category_four">Naturaleza</string>
+    <string name="tour_guide_category_five">Recreación al Aire Libre</string>
     <!-- Tour Guide Layout Strings End -->
 
 

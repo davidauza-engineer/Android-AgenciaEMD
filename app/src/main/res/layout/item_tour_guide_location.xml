@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ly_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardCornerRadius="4dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/img_location"
+            style="@style/SongPictureStyle"
+            android:maxWidth="150dp"
+            android:src="@drawable/img_boyaca_flag" />
+
+        <TextView
+            android:id="@+id/lbl_location_name"
+            style="@style/SongNameStyle"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?android:textAppearanceSmall"
+            tools:text="@string/music_menu_song_two_name" />
+
+        <TextView
+            android:id="@+id/lbl_location_description"
+            style="@style/SongSmallTextViewsStyle"
+            android:text="@string/music_player_focus_not_granted" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
