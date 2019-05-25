@@ -5,7 +5,7 @@
     android:id="@+id/ly_main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.TourGuideActivity">
+    tools:context=".activities.TourGuideMainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/ly_app_bar"
@@ -20,7 +20,7 @@
             android:background="@color/colorPrimary"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="@string/tour_guide_activity_label" />
+            app:title="@string/tour_guide_main_activity_label" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/ly_tabs"

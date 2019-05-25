@@ -131,8 +131,8 @@
 
     <!-- Style for the TextViews in item_music_menu_song.xmlnu_song.xml -->
     <style name="SongSmallTextViewsStyle">
-        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:textAppearance">?android:textAppearanceSmall</item>
     </style>
@@ -226,7 +226,7 @@
         <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
-    <!-- Style for the TourGuideActivity -->
+    <!-- Style for the TourGuideMainActivity -->
     <style name="TourGuideActivityStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>

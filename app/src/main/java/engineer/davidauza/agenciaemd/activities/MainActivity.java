@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent =
-                        new Intent(MainActivity.this, TourGuideActivity.class);
+                        new Intent(MainActivity.this, TourGuideMainActivity.class);
                 startActivity(intent);
             }
         });

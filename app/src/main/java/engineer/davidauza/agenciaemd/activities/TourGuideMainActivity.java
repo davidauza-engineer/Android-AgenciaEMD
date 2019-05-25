@@ -9,12 +9,12 @@ import android.support.v7.widget.Toolbar;
 import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.adapters.LocationCategoryAdapter;
 
-public class TourGuideActivity extends AppCompatActivity {
+public class TourGuideMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tour_guide);
+        setContentView(R.layout.activity_tour_guide_main);
         setUpToolBar();
         setUpViewPager();
     }
@@ -35,7 +35,7 @@ public class TourGuideActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.ly_view_pager);
         LocationCategoryAdapter adapter =
                 new LocationCategoryAdapter(getSupportFragmentManager(),
-                        TourGuideActivity.this);
+                        TourGuideMainActivity.this);
         viewPager.setAdapter(adapter);
         setUpTabLayout(viewPager);
     }

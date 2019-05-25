@@ -3,35 +3,62 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ly_card"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
+    android:layout_margin="8dp"
     android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="4dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="8dp">
 
-        <ImageView
-            android:id="@+id/img_location"
-            style="@style/SongPictureStyle"
-            android:maxWidth="150dp"
-            android:src="@drawable/img_boyaca_flag" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/lbl_location_name"
-            style="@style/SongNameStyle"
-            android:layout_marginTop="8dp"
-            android:textAppearance="?android:textAppearanceSmall"
-            tools:text="@string/music_menu_song_two_name" />
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/img_location_tunja" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@id/img_location"
+                android:alpha="0.3"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/lbl_location_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/img_location"
+                android:layout_margin="8dp"
+                android:gravity="start"
+                android:singleLine="true"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                tools:text="@string/tour_guide_main_location_tunja_name" />
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/lbl_location_description"
-            style="@style/SongSmallTextViewsStyle"
-            android:text="@string/music_player_focus_not_granted" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:gravity="start"
+            android:singleLine="true"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/colorPrimaryText"
+            tools:text="@string/tour_guide_main_location_tunja_description" />
 
     </LinearLayout>
 

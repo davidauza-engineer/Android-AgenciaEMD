@@ -18,7 +18,7 @@ import engineer.davidauza.agenciaemd.fragments.LocationsFragment;
 public class LocationCategoryAdapter extends FragmentPagerAdapter {
 
     /**
-     * Context of the TourGuideActivity
+     * Context of the TourGuideMainActivity
      */
     private Context mContext;
 
@@ -27,7 +27,7 @@ public class LocationCategoryAdapter extends FragmentPagerAdapter {
      *
      * @param pFragmentManager is the FragmentManager that will keep each fragment's state in the
      *                         adapter across swipes.
-     * @param pContext         is the Context of the TourGuideActivity.
+     * @param pContext         is the Context of the TourGuideMainActivity.
      */
     public LocationCategoryAdapter(FragmentManager pFragmentManager,
                                    Context pContext) {
@@ -42,8 +42,7 @@ public class LocationCategoryAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         LocationsFragment fragment = new LocationsFragment();
         Bundle bundle = new Bundle();
-        String bundleKey = mContext.getString(R.string.tour_guide_bundle_key);
-        bundle.putInt(bundleKey, i);
+        bundle.putInt(LocationsFragment.BUNDLE_KEY, i);
         fragment.setArguments(bundle);
         return fragment;
     }
@@ -63,15 +62,15 @@ public class LocationCategoryAdapter extends FragmentPagerAdapter {
         // Generate title based on item position
         switch (position) {
             case 0:
-                return mContext.getString(R.string.tour_guide_category_one);
+                return mContext.getString(R.string.tour_guide_main_category_one);
             case 1:
-                return mContext.getString(R.string.tour_guide_category_two);
+                return mContext.getString(R.string.tour_guide_main_category_two);
             case 2:
-                return mContext.getString(R.string.tour_guide_category_three);
+                return mContext.getString(R.string.tour_guide_main_category_three);
             case 3:
-                return mContext.getString(R.string.tour_guide_category_four);
+                return mContext.getString(R.string.tour_guide_main_category_four);
             default:
-                return mContext.getString(R.string.tour_guide_category_five);
+                return mContext.getString(R.string.tour_guide_main_category_five);
         }
     }
 }

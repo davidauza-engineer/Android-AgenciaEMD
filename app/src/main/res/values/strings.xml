@@ -275,15 +275,79 @@
     <!-- Music Player Layout Strings End -->
 
 
-    <!-- Tour Guide Layout Strings Start -->
-    <string name="tour_guide_activity_label">Conoce Boyacá</string>
-    <string name="tour_guide_bundle_key">CategoryPage</string>
-    <string name="tour_guide_category_one">Arquitectura</string>
-    <string name="tour_guide_category_two">Ecoturismo</string>
-    <string name="tour_guide_category_three">Fuentes Termales</string>
-    <string name="tour_guide_category_four">Naturaleza</string>
-    <string name="tour_guide_category_five">Recreación al Aire Libre</string>
-    <!-- Tour Guide Layout Strings End -->
+    <!-- Tour Guide Main Layout Strings Start -->
+    <string name="tour_guide_main_activity_label">Conoce Boyacá</string>
+    <string name="tour_guide_main_category_one">Arquitectura</string>
+    <string name="tour_guide_main_category_two">Ecoturismo</string>
+    <string name="tour_guide_main_category_three">Fuentes Termales</string>
+    <string name="tour_guide_main_category_four">Naturaleza</string>
+    <string name="tour_guide_main_category_five">Recreación al Aire Libre</string>
+    <string name="tour_guide_main_location_tunja_name">Tunja</string>
+    <string name="tour_guide_main_location_tunja_description">Iglesias, historia, coventos y
+        monumentos
+    </string>
+    <string name="tour_guide_main_location_chiquinquira_name">Chiquinquirá</string>
+    <string name="tour_guide_main_location_chiquinquira_description">Iglesias, monumentos, basílicas
+        e historia
+    </string>
+    <string name="tour_guide_main_location_paipa_name">Paipa</string>
+    <string name="tour_guide_main_location_paipa_description">Fuentes termales, monumentos, lagos, e
+        historia
+    </string>
+    <string name="tour_guide_main_location_villa_de_leyva_name">Villa de Leyva</string>
+    <string name="tour_guide_main_location_villa_de_leyva_description">Municipio colombiano conocido
+     por la vasta Plaza Mayor, edificios coloniales y la casa del primer congreso
+    </string>
+    <string name="tour_guide_main_location_soata_name">Soatá</string>
+    <string name="tour_guide_main_location_soata_description">Historia, avistamiento de aves, y
+        arquitectura
+    </string>
+    <string name="tour_guide_main_location_ramiriqui_name">Ramiriquí</string>
+    <string name="tour_guide_main_location_ramiriqui_description">Historia y ciclismo</string>
+    <string name="tour_guide_main_location_busbanza_name">Busbanzá</string>
+    <string name="tour_guide_main_location_busbanza_description">Iglesias, artesanías y ecoturismo
+    </string>
+    <string name="tour_guide_main_location_jenesano_name">Jenesano</string>
+    <string name="tour_guide_main_location_jenesano_description">Historia, deportes y naturaleza
+    </string>
+    <string name="tour_guide_main_location_zetaquira_name">Zetaquirá</string>
+    <string name="tour_guide_main_location_zetaquira_description">Fuentes termales, historia, y
+        cascadas
+    </string>
+    <string name="tour_guide_main_location_firavitoba_name">Firavitoba</string>
+    <string name="tour_guide_main_location_firavitoba_description">Historia y minería</string>
+    <string name="tour_guide_main_location_tasco_name">Tasco</string>
+    <string name="tour_guide_main_location_tasco_description">Historia</string>
+    <string name="tour_guide_main_location_tobasia_name">Tobasia</string>
+    <string name="tour_guide_main_location_tobasia_description">Historia y arquitectura</string>
+    <string name="tour_guide_main_location_cerinza_name">Cerinza</string>
+    <string name="tour_guide_main_location_cerinza_description">Artesanías, parques, historia y
+        naturaleza
+    </string>
+    <string name="tour_guide_main_location_santa_sofia_name">Santa Sofía</string>
+    <string name="tour_guide_main_location_santa_sofia_description">Cascadas e iglesias</string>
+    <string name="tour_guide_main_location_morca_name">Morcá</string>
+    <string name="tour_guide_main_location_morca_description">Iglesias</string>
+    <string name="tour_guide_main_location_belen_name">Belén</string>
+    <string name="tour_guide_main_location_belen_description">Excursionismo e iglesias</string>
+    <string name="tour_guide_main_location_paz_de_rio_name">Paz de Río</string>
+    <string name="tour_guide_main_location_paz_de_rio_description">Iglesias e historia</string>
+    <string name="tour_guide_main_location_santa_rosa_de_viterbo_name">Santa Rosa de Viterbo
+    </string>
+    <string name="tour_guide_main_location_santa_rosa_de_viterbo_description">Parapente, historia e
+        iglesias
+    </string>
+    <string name="tour_guide_main_location_rondon_name">Rondón</string>
+    <string name="tour_guide_main_location_rondon_description">Monumentos</string>
+    <string name="tour_guide_main_location_paya_name">Paya</string>
+    <string name="tour_guide_main_location_paya_description">Historia y monumentos</string>
+    <string name="tour_guide_main_location_jerico_name">Jericó</string>
+    <string name="tour_guide_main_location_jerico_description">Iglesias</string>
+    <string name="tour_guide_main_location_paramo_iguaque_name">Páramo Iguaque</string>
+    <string name="tour_guide_main_location_paramo_iguaque_description">Parque, reserva natural,
+        lago, y ecoturismo
+    </string>
+    <!-- Tour Guide Main Layout Strings End -->
 
 
 </resources>

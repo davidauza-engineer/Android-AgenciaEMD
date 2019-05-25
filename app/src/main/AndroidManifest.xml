@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.TourGuideDetailActivity"></activity>
         <activity
-            android:name=".activities.TourGuideActivity"
+            android:name=".activities.TourGuideMainActivity"
             android:parentActivityName=".activities.MainActivity"
             android:theme="@style/TourGuideActivityStyle">
             <meta-data
