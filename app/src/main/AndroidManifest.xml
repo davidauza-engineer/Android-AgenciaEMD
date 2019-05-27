@@ -9,11 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.TourGuideDetailActivity"></activity>
+        <activity
+            android:name=".activities.TourGuideDetailActivity"
+            android:parentActivityName=".activities.TourGuideMainActivity"
+            android:theme="@style/TourGuideDetailActivityStyle">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.TourGuideMainActivity" />
+        </activity>
         <activity
             android:name=".activities.TourGuideMainActivity"
             android:parentActivityName=".activities.MainActivity"
-            android:theme="@style/TourGuideActivityStyle">
+            android:theme="@style/TourGuideMainActivityStyle">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".activities.MainActivity" />
@@ -21,13 +28,13 @@
         <activity
             android:name=".activities.MusicPlayerActivity"
             android:label="@string/music_player_activity_label"
-            android:parentActivityName=".activities.MusicMenuActivity">
+            android:parentActivityName=".activities.MusicMainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activities.MusicMenuActivity" />
+                android:value=".activities.MusicMainActivity" />
         </activity>
         <activity
-            android:name=".activities.MusicMenuActivity"
+            android:name=".activities.MusicMainActivity"
             android:label="@string/music_menu_activity_label"
             android:parentActivityName=".activities.MainActivity">
             <meta-data

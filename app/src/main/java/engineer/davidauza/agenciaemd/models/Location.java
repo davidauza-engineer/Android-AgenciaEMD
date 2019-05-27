@@ -22,6 +22,9 @@ public class Location {
      */
     private String mDescription;
 
+    //TODO
+
+
     /**
      * Create a new {@link Location} object.
      *

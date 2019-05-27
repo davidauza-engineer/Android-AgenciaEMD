@@ -2,5 +2,6 @@
 <resources>
 
     <dimen name="material_design_tab_layout_left_offset">52dp</dimen>
+    <dimen name="detail_backdrop_height">256dp</dimen>
 
 </resources>

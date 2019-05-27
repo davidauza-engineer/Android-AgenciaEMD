@@ -10,7 +10,7 @@ import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.adapters.SongAdapter;
 import engineer.davidauza.agenciaemd.models.MusicMenuSong;
 
-public class MusicMenuActivity extends AppCompatActivity {
+public class MusicMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

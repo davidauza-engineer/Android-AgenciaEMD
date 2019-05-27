@@ -286,6 +286,16 @@
     <string name="tour_guide_main_location_tunja_description">Iglesias, historia, coventos y
         monumentos
     </string>
+    <string name="tour_guide_main_locantion_tunja_description_long">Tunja es un municipio
+        colombiano, capital del departamento de Boyacá, situado sobre la cordillera oriental de los
+        Andes a 115 km al noreste de Bogotá. Es la ciudad capital más alta del país. Tunja fue
+        construida sobre Hunza, una de las capitales de la confederación Muisca el 6 de agosto de
+        1539. Con su título de ciudad otorgado por la corona española, Tunja llegó a convertirse en
+        un fortín para colonos emigrantes de Castilla, Extremadura y Andalucía, y uno de los mayores
+        centros administrativos, judiciales, políticos y culturales del país. Durante el agitado
+        periodo de la independencia, se constituyó como capital de la recién creada República de
+        Tunja el 9 de diciembre de 1811.
+    ​​</string>
     <string name="tour_guide_main_location_chiquinquira_name" translatable="false">Chiquinquirá
     </string>
     <string name="tour_guide_main_location_chiquinquira_description">Iglesias, monumentos, basílicas

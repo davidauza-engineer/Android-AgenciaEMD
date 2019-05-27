@@ -208,7 +208,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
 
     /**
      * This method gets the intent related to the audio resource ID, passed when the user selected
-     * a song in the MusicMenuActivity Activity.
+     * a song in the MusicMainActivity Activity.
      *
      * @return The audio resource ID corresponding to the song previously selected by the user.
      */

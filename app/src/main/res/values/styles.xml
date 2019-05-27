@@ -227,12 +227,15 @@
     </style>
 
     <!-- Style for the TourGuideMainActivity -->
-    <style name="TourGuideActivityStyle" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="TourGuideMainActivityStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorButtonNormal">@color/colorAccent</item>
     </style>
+
+    <!-- Style for the TourGuideDetailActivity -->
+    <style name="TourGuideDetailActivityStyle" parent="TourGuideMainActivityStyle" />
 
 </resources>
