@@ -282,71 +282,186 @@
     <string name="tour_guide_main_category_three">Fuentes Termales</string>
     <string name="tour_guide_main_category_four">Naturaleza</string>
     <string name="tour_guide_main_category_five">Recreación al Aire Libre</string>
-    <string name="tour_guide_main_location_tunja_name">Tunja</string>
+    <string name="tour_guide_main_location_tunja_name" translatable="false">Tunja</string>
     <string name="tour_guide_main_location_tunja_description">Iglesias, historia, coventos y
         monumentos
     </string>
-    <string name="tour_guide_main_location_chiquinquira_name">Chiquinquirá</string>
+    <string name="tour_guide_main_location_chiquinquira_name" translatable="false">Chiquinquirá
+    </string>
     <string name="tour_guide_main_location_chiquinquira_description">Iglesias, monumentos, basílicas
         e historia
     </string>
-    <string name="tour_guide_main_location_paipa_name">Paipa</string>
+    <string name="tour_guide_main_location_paipa_name" translatable="false">Paipa</string>
     <string name="tour_guide_main_location_paipa_description">Fuentes termales, monumentos, lagos, e
         historia
     </string>
-    <string name="tour_guide_main_location_villa_de_leyva_name">Villa de Leyva</string>
+    <string name="tour_guide_main_location_villa_de_leyva_name" translatable="false">Villa de Leyva
+    </string>
     <string name="tour_guide_main_location_villa_de_leyva_description">Municipio colombiano conocido
      por la vasta Plaza Mayor, edificios coloniales y la casa del primer congreso
     </string>
-    <string name="tour_guide_main_location_soata_name">Soatá</string>
+    <string name="tour_guide_main_location_soata_name" translatable="false">Soatá</string>
     <string name="tour_guide_main_location_soata_description">Historia, avistamiento de aves, y
         arquitectura
     </string>
-    <string name="tour_guide_main_location_ramiriqui_name">Ramiriquí</string>
+    <string name="tour_guide_main_location_ramiriqui_name" translatable="false">Ramiriquí</string>
     <string name="tour_guide_main_location_ramiriqui_description">Historia y ciclismo</string>
-    <string name="tour_guide_main_location_busbanza_name">Busbanzá</string>
+    <string name="tour_guide_main_location_busbanza_name" translatable="false">Busbanzá</string>
     <string name="tour_guide_main_location_busbanza_description">Iglesias, artesanías y ecoturismo
     </string>
-    <string name="tour_guide_main_location_jenesano_name">Jenesano</string>
+    <string name="tour_guide_main_location_jenesano_name" translatable="false">Jenesano</string>
     <string name="tour_guide_main_location_jenesano_description">Historia, deportes y naturaleza
     </string>
-    <string name="tour_guide_main_location_zetaquira_name">Zetaquirá</string>
+    <string name="tour_guide_main_location_zetaquira_name" translatable="false">Zetaquirá</string>
     <string name="tour_guide_main_location_zetaquira_description">Fuentes termales, historia, y
         cascadas
     </string>
-    <string name="tour_guide_main_location_firavitoba_name">Firavitoba</string>
+    <string name="tour_guide_main_location_firavitoba_name" translatable="false">Firavitoba</string>
     <string name="tour_guide_main_location_firavitoba_description">Historia y minería</string>
-    <string name="tour_guide_main_location_tasco_name">Tasco</string>
+    <string name="tour_guide_main_location_tasco_name" translatable="false">Tasco</string>
     <string name="tour_guide_main_location_tasco_description">Historia</string>
-    <string name="tour_guide_main_location_tobasia_name">Tobasia</string>
+    <string name="tour_guide_main_location_tobasia_name" translatable="false">Tobasia</string>
     <string name="tour_guide_main_location_tobasia_description">Historia y arquitectura</string>
-    <string name="tour_guide_main_location_cerinza_name">Cerinza</string>
+    <string name="tour_guide_main_location_cerinza_name" translatable="false">Cerinza</string>
     <string name="tour_guide_main_location_cerinza_description">Artesanías, parques, historia y
         naturaleza
     </string>
-    <string name="tour_guide_main_location_santa_sofia_name">Santa Sofía</string>
+    <string name="tour_guide_main_location_santa_sofia_name" translatable="false">Santa Sofía
+    </string>
     <string name="tour_guide_main_location_santa_sofia_description">Cascadas e iglesias</string>
-    <string name="tour_guide_main_location_morca_name">Morcá</string>
+    <string name="tour_guide_main_location_morca_name" translatable="false">Morcá</string>
     <string name="tour_guide_main_location_morca_description">Iglesias</string>
-    <string name="tour_guide_main_location_belen_name">Belén</string>
+    <string name="tour_guide_main_location_belen_name" translatable="false">Belén</string>
     <string name="tour_guide_main_location_belen_description">Excursionismo e iglesias</string>
-    <string name="tour_guide_main_location_paz_de_rio_name">Paz de Río</string>
+    <string name="tour_guide_main_location_paz_de_rio_name" translatable="false">Paz de Río</string>
     <string name="tour_guide_main_location_paz_de_rio_description">Iglesias e historia</string>
-    <string name="tour_guide_main_location_santa_rosa_de_viterbo_name">Santa Rosa de Viterbo
+    <string name="tour_guide_main_location_santa_rosa_de_viterbo_name" translatable="false">Santa
+        Rosa de Viterbo
     </string>
     <string name="tour_guide_main_location_santa_rosa_de_viterbo_description">Parapente, historia e
         iglesias
     </string>
-    <string name="tour_guide_main_location_rondon_name">Rondón</string>
+    <string name="tour_guide_main_location_rondon_name" translatable="false">Rondón</string>
     <string name="tour_guide_main_location_rondon_description">Monumentos</string>
-    <string name="tour_guide_main_location_paya_name">Paya</string>
+    <string name="tour_guide_main_location_paya_name" translatable="false">Paya</string>
     <string name="tour_guide_main_location_paya_description">Historia y monumentos</string>
-    <string name="tour_guide_main_location_jerico_name">Jericó</string>
+    <string name="tour_guide_main_location_jerico_name" translatable="false">Jericó</string>
     <string name="tour_guide_main_location_jerico_description">Iglesias</string>
-    <string name="tour_guide_main_location_paramo_iguaque_name">Páramo Iguaque</string>
+    <string name="tour_guide_main_location_paramo_iguaque_name" translatable="false">Páramo Iguaque
+    </string>
     <string name="tour_guide_main_location_paramo_iguaque_description">Parque, reserva natural,
         lago, y ecoturismo
     </string>
+    <string name="tour_guide_main_location_arcabuco_name" translatable="false">Arcabuco</string>
+    <string name="tour_guide_main_location_arcabuco_description">Reserva natural, colibríes, y
+         parques
+    </string>
+    <string name="tour_guide_main_location_el_cocuy_name" translatable="false">El Cocuy</string>
+    <string name="tour_guide_main_location_el_cocuy_description">Parques, excursionismo, ecoturismo,
+        y glaciares
+    </string>
+    <string name="tour_guide_main_location_tenza_name" translatable="false">Tenza</string>
+    <string name="tour_guide_main_location_tenza_description">Ecoturismo y cascadas</string>
+    <string name="tour_guide_main_location_raquira_name" translatable="false">Ráquira</string>
+    <string name="tour_guide_main_location_raquira_description">Artesanías, cerámica, y ecoturismo
+    </string>
+    <string name="tour_guide_main_location_moniquira_name" translatable="false">Moniquirá</string>
+    <string name="tour_guide_main_location_moniquira_description">Cascadas, ecoturismo y naturaleza
+    </string>
+    <string name="tour_guide_main_location_garagoa_name" translatable="false">Garagoa</string>
+    <string name="tour_guide_main_location_garagoa_description">Ecoturismo, naturaleza, e historia
+    </string>
+    <string name="tour_guide_main_location_san_pablo_de_borbur_name" translatable="false">San Pablo
+        de Borbur</string>
+    <string name="tour_guide_main_location_san_pablo_de_borbur_description">Ecoturismo</string>
+    <string name="tour_guide_main_location_el_marfil_name" translatable="false">El Marfil</string>
+    <string name="tour_guide_main_location_el_marfil_description">Reservas naturales y naturaleza
+    </string>
+    <string name="tour_guide_main_location_puerto_pinzon_name" translatable="false">Puerto Pinzón
+    </string>
+    <string name="tour_guide_main_location_puerto_pinzon_description">Reservas naturales y montañas
+    </string>
+    <string name="tour_guide_main_location_iza_name" translatable="false">Iza</string>
+    <string name="tour_guide_main_location_iza_description">Fuentes termales y lagos</string>
+    <string name="tour_guide_main_location_guican_name" translatable="false">Güicán</string>
+    <string name="tour_guide_main_location_guican_description">Fuentes termales y glaciares</string>
+    <string name="tour_guide_main_location_cuitiva_name" translatable="false">Cuitiva</string>
+    <string name="tour_guide_main_location_cuitiva_description">Lagos, fuentes termales, e historia
+    </string>
+    <string name="tour_guide_main_location_chinavita_name" translatable="false">Chinavita</string>
+    <string name="tour_guide_main_location_chinavita_description">Fuentes termales y cámping
+    </string>
+    <string name="tour_guide_main_location_lago_tota_name" translatable="false">Lago Tota</string>
+    <string name="tour_guide_main_location_lago_tota_description">Pintoresco lago con cámping y
+        senderos
+    </string>
+    <string name="tour_guide_main_location_tota_name" translatable="false">Tota</string>
+    <string name="tour_guide_main_location_tota_description">Lagos</string>
+    <string name="tour_guide_main_location_aquitania_name" translatable="false">Aquitania</string>
+    <string name="tour_guide_main_location_aquitania_description">Lagos y trucha arcoiris</string>
+    <string name="tour_guide_main_location_gachantiva_name" translatable="false">Gachantivá</string>
+    <string name="tour_guide_main_location_gachantiva_description">Cascadas y naturaleza</string>
+    <string name="tour_guide_main_location_sogamoso_name" translatable="false">Sogamoso</string>
+    <string name="tour_guide_main_location_sogamoso_description">Museos, lagos, e historia</string>
+    <string name="tour_guide_main_location_mongui_name" translatable="false">Monguí</string>
+    <string name="tour_guide_main_location_mongui_description">Conventos, basílicas,
+        excursionismo, e historia
+    </string>
+    <string name="tour_guide_main_location_duitama_name" translatable="false">Duitama</string>
+    <string name="tour_guide_main_location_duitama_description">Ciclismo, naturaleza, parques,
+        historia, y arte
+    </string>
+    <string name="tour_guide_main_location_sachica_name" translatable="false">Sáchica</string>
+    <string name="tour_guide_main_location_sachica_description">Pintura e historia</string>
+    <string name="tour_guide_main_location_puerto_boyaca_name" translatable="false">Puerto Boyacá
+    </string>
+    <string name="tour_guide_main_location_puerto_boyaca_description">Historia, ríos, y naturaleza
+    </string>
+    <string name="tour_guide_main_location_cienaga_name" translatable="false">Ciénaga</string>
+    <string name="tour_guide_main_location_cienaga_description">Naturaleza y lagos</string>
+    <string name="tour_guide_main_location_socha_name" translatable="false">Socha</string>
+    <string name="tour_guide_main_location_socha_description">Historia, parques, minería, y cascadas
+    </string>
+    <string name="tour_guide_main_location_pajarito_name" translatable="false">Pajarito</string>
+    <string name="tour_guide_main_location_pajarito_description">Cascadas</string>
+    <string name="tour_guide_main_location_pisba_name" translatable="false">Pisba</string>
+    <string name="tour_guide_main_location_pisba_description">Parques, historia, naturaleza, y áreas
+        protegidas
+    </string>
+    <string name="tour_guide_main_location_pesca_name" translatable="false">Pesca</string>
+    <string name="tour_guide_main_location_pesca_description">Naturaleza</string>
+    <string name="tour_guide_main_location_tinjaca_name" translatable="false">Tinjacá</string>
+    <string name="tour_guide_main_location_tinjaca_description">Artesanías</string>
+    <string name="tour_guide_main_location_guateque_name" translatable="false">Guateque</string>
+    <string name="tour_guide_main_location_guateque_description">Cascadas</string>
+    <string name="tour_guide_main_location_saboya_name" translatable="false">Saboyá</string>
+    <string name="tour_guide_main_location_saboya_description">Naturaleza</string>
+    <string name="tour_guide_main_location_combita_name" translatable="false">Cómbita</string>
+    <string name="tour_guide_main_location_combita_description">Naturaleza y parques</string>
+    <string name="tour_guide_main_location_toca_name" translatable="false">Toca</string>
+    <string name="tour_guide_main_location_toca_description">Tradición</string>
+    <string name="tour_guide_main_location_cucaita_name" translatable="false">Cucaita</string>
+    <string name="tour_guide_main_location_cucaita_description">Paisajes</string>
+    <string name="tour_guide_main_location_somondoco_name" translatable="false">Somondoco</string>
+    <string name="tour_guide_main_location_somondoco_description">Artesanías</string>
+    <string name="tour_guide_main_location_chitaraque_name" translatable="false">Chitaraque</string>
+    <string name="tour_guide_main_location_chitaraque_description">Naturaleza</string>
+    <string name="tour_guide_main_location_umbita_name" translatable="false">Úmbita</string>
+    <string name="tour_guide_main_location_umbita_description">Naturaleza</string>
+    <string name="tour_guide_main_location_togui_name" translatable="false">Togüí</string>
+    <string name="tour_guide_main_location_togui_description">Cascadas y ríos</string>
+    <string name="tour_guide_main_location_chivor_name" translatable="false">Chivor</string>
+    <string name="tour_guide_main_location_chivor_description">Minería, surf de vela, y embalses
+    </string>
+    <string name="tour_guide_main_location_mongua_name" translatable="false">Mongua</string>
+    <string name="tour_guide_main_location_mongua_description">Excursionismo e historia</string>
+    <string name="tour_guide_main_location_gameza_name" translatable="false">Gámeza</string>
+    <string name="tour_guide_main_location_gameza_description">Recreación al aire libre</string>
+    <string name="tour_guide_main_location_samaca_name" translatable="false">Samacá</string>
+    <string name="tour_guide_main_location_samaca_description">Salto en bungee, minería, e historia
+    </string>
+    <string name="tour_guide_main_location_coscuez_name" translatable="false">Coscuez</string>
+    <string name="tour_guide_main_location_coscuez_description">Caza</string>
     <!-- Tour Guide Main Layout Strings End -->
 
 
