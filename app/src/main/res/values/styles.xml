@@ -236,6 +236,6 @@
     </style>
 
     <!-- Style for the TourGuideDetailActivity -->
-    <style name="TourGuideDetailActivityStyle" parent="TourGuideMainActivityStyle" />
+    <style name="TourGuideDetailActivityStyle" parent="TourGuideMainActivityStyle"></style>
 
 </resources>

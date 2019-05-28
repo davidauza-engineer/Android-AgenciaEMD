@@ -2,7 +2,8 @@ package engineer.davidauza.agenciaemd.models;
 
 /**
  * {@link Location} represents a location to visit in Boyacá.
- * It contains an image, a String containing the name of the location, and a String containing a
+ * It contains an image resource ID, a String resource ID containing the name of the location, a
+ * String resource ID containing a short description, and a String resource ID containing a long
  * description.
  */
 public class Location {
@@ -13,51 +14,63 @@ public class Location {
     private int mPicture;
 
     /**
-     * Stores the name of the location.
+     * String resource ID for the name of the location.
      */
-    private String mName;
+    private int mName;
 
     /**
-     * Stores the description of the location.
+     * String resource ID for a short description of the location.
      */
-    private String mDescription;
+    private int mShortDescription;
 
-    //TODO
-
+    /**
+     * String resource ID for a long description of the location.
+     */
+    private int mLongDescription;
 
     /**
      * Create a new {@link Location} object.
      *
-     * @param pPicture     is a picture of the location.
-     * @param pName        is the name of the location.
-     * @param pDescription is a small description of the location.
+     * @param pPicture          is the image resource ID of the location.
+     * @param pName             is the name of the location.
+     * @param pShortDescription is a short description of the location.
+     * @param pLongDescription  is a long description of the location.
      */
     public Location(int pPicture,
-                    String pName,
-                    String pDescription) {
+                    int pName,
+                    int pShortDescription,
+                    int pLongDescription) {
         mPicture = pPicture;
         mName = pName;
-        mDescription = pDescription;
+        mShortDescription = pShortDescription;
+        mLongDescription = pLongDescription;
     }
 
     /**
-     * Return the image resource ID of the location.
+     * Returns the image resource ID of the location.
      */
     public int getPicture() {
         return mPicture;
     }
 
     /**
-     * Return the name of the location.
+     * Returns the String resource ID which contains the name of the location.
      */
-    public String getName() {
+    public int getName() {
         return mName;
     }
 
     /**
-     * Return the description of the location.
+     * Returns the String resource ID which contains a short description of the location.
      */
-    public String getDescription() {
-        return mDescription;
+    public int getShortDescription() {
+        return mShortDescription;
+    }
+
+    /**
+     * Returns the String resource ID which contains a long description of the location.
+     */
+    public int getLongDescription() {
+        return mLongDescription;
     }
 }

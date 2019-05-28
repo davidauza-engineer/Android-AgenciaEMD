@@ -283,195 +283,528 @@
     <string name="tour_guide_main_category_four">Naturaleza</string>
     <string name="tour_guide_main_category_five">Recreación al Aire Libre</string>
     <string name="tour_guide_main_location_tunja_name" translatable="false">Tunja</string>
-    <string name="tour_guide_main_location_tunja_description">Iglesias, historia, coventos y
+    <string name="tour_guide_main_location_tunja_short_description">Iglesias, historia, coventos y
         monumentos
     </string>
-    <string name="tour_guide_main_locantion_tunja_description_long">Tunja es un municipio
-        colombiano, capital del departamento de Boyacá, situado sobre la cordillera oriental de los
-        Andes a 115 km al noreste de Bogotá. Es la ciudad capital más alta del país. Tunja fue
-        construida sobre Hunza, una de las capitales de la confederación Muisca el 6 de agosto de
-        1539. Con su título de ciudad otorgado por la corona española, Tunja llegó a convertirse en
-        un fortín para colonos emigrantes de Castilla, Extremadura y Andalucía, y uno de los mayores
-        centros administrativos, judiciales, políticos y culturales del país. Durante el agitado
-        periodo de la independencia, se constituyó como capital de la recién creada República de
-        Tunja el 9 de diciembre de 1811.
-    ​​</string>
+    <string name="tour_guide_main_location_tunja_long_description">Tunja es un municipio colombiano,
+        capital del departamento de Boyacá, situado sobre la cordillera oriental de los Andes a 115
+        km al noreste de Bogotá. Es la ciudad capital más alta del país. Tunja fue construida sobre
+        Hunza, una de las capitales de la confederación Muisca el 6 de agosto de 1539. Con su título
+        de ciudad otorgado por la corona española, Tunja llegó a convertirse en un fortín para
+        colonos emigrantes de Castilla, Extremadura y Andalucía, y uno de los mayores centros
+        administrativos, judiciales, políticos y culturales del país. Durante el agitado periodo de
+        la independencia, se constituyó como capital de la recién creada República de Tunja el 9 de
+        diciembre de 1811.
+    </string>
     <string name="tour_guide_main_location_chiquinquira_name" translatable="false">Chiquinquirá
     </string>
-    <string name="tour_guide_main_location_chiquinquira_description">Iglesias, monumentos, basílicas
-        e historia
+    <string name="tour_guide_main_location_chiquinquira_short_description">Iglesias, monumentos,
+        basílicas e historia
+    </string>
+    <string name="tour_guide_main_location_chiquinquira_long_description">Chiquinquirá es un
+        municipio colombiano, capital de la provincia de Occidente en el departamento de Boyacá,
+        situada en el valle del río Suárez, a 134 km al norte de Bogotá y a 73 km de Tunja, la
+        capital del departamento. Con 65.274 habitantes es el cuarto municipio más poblado del
+        departamento, después de Tunja, Duitama y Sogamoso (que superan los 100.000 habitantes). Es
+        el centro económico y comercial de la región occidental del departamento de Boyacá, a la que
+        provee de materiales, alimentos elaborados, ropa, textiles e insumos agroveterinarios. Es la
+        cuna u origen de personajes destacados, como el poeta Julio Flórez y el pintor y escultor
+        Rómulo Rozo. Es la sede de la Basílica de la Virgen de Chiquinquirá perteneciente a la
+        Iglesia católica, que visitó el Papa Juan Pablo II en 1986. Es un destino turístico del
+        centro del país, pues muchos visitantes y peregrinos llegan a la ciudad para visitar, entre
+        otros, la basílica y la imagen de la Virgen María exhibida en su interior.
     </string>
     <string name="tour_guide_main_location_paipa_name" translatable="false">Paipa</string>
-    <string name="tour_guide_main_location_paipa_description">Fuentes termales, monumentos, lagos, e
-        historia
+    <string name="tour_guide_main_location_paipa_short_description">Fuentes termales, monumentos,
+        lagos, e historia
+    </string>
+    <string name="tour_guide_main_location_paipa_long_description">Paipa (originalmente Villa de San
+        Miguel Arcángel de Paipa) es un municipio colombiano situado en el centro-oriente de
+        Colombia, administrativamente se encuentra en la provincia de Tundama del departamento de
+        Boyacá. Cuenta, según los datos del censo de 2005, con una población de 27.274 habitantes,
+        lo que lo convierte en el sexto municipio más poblado de Boyacá. En el plano económico, se
+        destaca como uno de los principales centros turísticos de Boyacá.
     </string>
     <string name="tour_guide_main_location_villa_de_leyva_name" translatable="false">Villa de Leyva
     </string>
-    <string name="tour_guide_main_location_villa_de_leyva_description">Municipio colombiano conocido
-     por la vasta Plaza Mayor, edificios coloniales y la casa del primer congreso
+    <string name="tour_guide_main_location_villa_de_leyva_short_description">Municipio colombiano
+        conocido por la vasta Plaza Mayor, edificios coloniales y la casa del primer congreso
+    </string>
+    <string name="tour_guide_main_location_villa_de_leyva_long_description">Villa de Leyva es un
+        municipio colombiano ubicado en la provincia de Ricaurte del departamento de Boyacá, está
+        ubicado a 40 km al occidente de Tunja, capital del departamento. Fue fundada en 1572 con el
+        nombre de Villa de Santa María de Leyva y reconocida como monumento nacional en 1954. Se
+        caracteriza por conservar su arquitectura de estilo colonial, y por sus variados paisajes
+        rurales que van desde la zona de páramo con sus nacimientos y reservorios de agua hasta la
+        zona desértica. Sobresale también su enorme plaza principal, empedrada (área de 1,4 ha) que
+        se encuentra flanqueada por viejos edificios coloniales. Es considerada uno de los pueblos
+        más hermosos de Colombia, siendo el pueblo como tal y sus alrededores uno de los destinos
+        turísticos más importante en el país. A Villa de Leyva se llega por vía terrestre a través
+        de carreteras que la comunican con Tunja su capital (capital del departamento de Boyacá),
+        con Chiquinquirá, Arcabuco y Santa Sofía.
     </string>
     <string name="tour_guide_main_location_soata_name" translatable="false">Soatá</string>
-    <string name="tour_guide_main_location_soata_description">Historia, avistamiento de aves, y
-        arquitectura
+    <string name="tour_guide_main_location_soata_short_description">Historia, avistamiento de aves,
+        y arquitectura
+    </string>
+    <string name="tour_guide_main_location_soata_long_description">Soatá es un municipio colombiano
+        del departamento de Boyacá, capital de la provincia del Norte. Se sitúa en la ladera
+        occidental de la Cordillera Oriental, en el noreste del departamento.
     </string>
     <string name="tour_guide_main_location_ramiriqui_name" translatable="false">Ramiriquí</string>
-    <string name="tour_guide_main_location_ramiriqui_description">Historia y ciclismo</string>
+    <string name="tour_guide_main_location_ramiriqui_short_description">Historia y ciclismo</string>
+    <string name="tour_guide_main_location_ramiriqui_long_description">Ramiriquí es un municipio
+        colombiano, capital de la Provincia de Márquez, ubicado en el departamento de Boyacá, en el
+        sur-oriente del mismo. Está constituido en su zona rural por 24 veredas, y en su zona urbana
+        por 8 barrios. Se encuentra en el oriente colombiano, en la región natural conocida como el
+        Altiplano Cundiboyacense, formación ubicada en la Cordillera Oriental (Colombia) de los
+        Andes.
+    </string>
     <string name="tour_guide_main_location_busbanza_name" translatable="false">Busbanzá</string>
-    <string name="tour_guide_main_location_busbanza_description">Iglesias, artesanías y ecoturismo
+    <string name="tour_guide_main_location_busbanza_short_description">Iglesias, artesanías y
+        ecoturismo
+    </string>
+    <string name="tour_guide_main_location_busbanza_long_description">Busbanzá es un municipio
+        ubicado en la provincia de Tundama en el departamento de Boyacá, Colombia. Cuenta con 1.127
+        habitantes, 194 casas, ocho profesores y un solo barrio, aunque en este momento se está
+        desarrollando un proyecto urbanístico para los habitantes de la zona rural del municipio. En
+        lengua Muisca o Chibcha, Busbanzá significa "Tierra del Tributo", porque a este lugar se
+        venían a pagar los impuestos.
     </string>
     <string name="tour_guide_main_location_jenesano_name" translatable="false">Jenesano</string>
-    <string name="tour_guide_main_location_jenesano_description">Historia, deportes y naturaleza
+    <string name="tour_guide_main_location_jenesano_short_description">Historia, deportes, y
+        naturaleza
+    </string>
+    <string name="tour_guide_main_location_jenesano_long_description">Jenesano es un municipio
+        colombiano ubicado en la Provincia de Márquez del departamento de Boyacá. Se encuentra a una
+        distancia de 30 km de Tunja. Este municipio limita al occidente con Nuevo Colón, al oriente
+        con Ramiriquí, al norte con el municipio de Boyacá y al sur con Tibaná.
     </string>
     <string name="tour_guide_main_location_zetaquira_name" translatable="false">Zetaquirá</string>
-    <string name="tour_guide_main_location_zetaquira_description">Fuentes termales, historia, y
-        cascadas
+    <string name="tour_guide_main_location_zetaquira_short_description">Fuentes termales, historia,
+        y cascadas
+    </string>
+    <string name="tour_guide_main_location_zetaquira_long_description">Zetaquirá es un municipio
+        colombiano ubicado en la Provincia de Lengupá, en el departamento de Boyacá. Está situado a
+        67 km de la ciudad de Tunja, capital del departamento.
     </string>
     <string name="tour_guide_main_location_firavitoba_name" translatable="false">Firavitoba</string>
-    <string name="tour_guide_main_location_firavitoba_description">Historia y minería</string>
+    <string name="tour_guide_main_location_firavitoba_short_description">Historia y minería</string>
+    <string name="tour_guide_main_location_firavitoba_long_description">Firavitoba es un municipio
+        colombiano ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Está situado a
+        unos 77 kilómetros de la ciudad de Tunja, la capital del departamento y a 10 km de Sogamoso,
+        la capital de la provincia.
+    </string>
     <string name="tour_guide_main_location_tasco_name" translatable="false">Tasco</string>
-    <string name="tour_guide_main_location_tasco_description">Historia</string>
-    <string name="tour_guide_main_location_tobasia_name" translatable="false">Tobasia</string>
-    <string name="tour_guide_main_location_tobasia_description">Historia y arquitectura</string>
+    <string name="tour_guide_main_location_tasco_short_description">Historia</string>
+    <string name="tour_guide_main_location_tasco_long_description">Tasco es un municipio colombiano
+        ubicado en la provincia de Valderrama del departamento de Boyacá. Está a una distancia de
+        115 km de Tunja. Este municipio limita al occidente con Betéitiva y Paz de Río, al oriente
+        con Socotá, al norte con el municipio de Socha y al sur con Corrales y Gámeza. En el
+        municipio de tasco encontramos grandes deportistas de ciclismo.
+    </string>
     <string name="tour_guide_main_location_cerinza_name" translatable="false">Cerinza</string>
-    <string name="tour_guide_main_location_cerinza_description">Artesanías, parques, historia y
-        naturaleza
+    <string name="tour_guide_main_location_cerinza_short_description">Artesanías, parques, historia
+        y naturaleza
+    </string>
+    <string name="tour_guide_main_location_cerinza_long_description">Cerinza es un municipio
+        colombiano, ubicado en la Provincia de Tundama del Departamento de Boyacá aproximadamente a
+        unos 20 km de la Ciudad de Duitama Capital de la provincia. El terrirorio del municipio se
+        halla sobre el altiplano Cundiboyacence.
     </string>
     <string name="tour_guide_main_location_santa_sofia_name" translatable="false">Santa Sofía
     </string>
-    <string name="tour_guide_main_location_santa_sofia_description">Cascadas e iglesias</string>
+    <string name="tour_guide_main_location_santa_sofia_short_description">Cascadas e iglesias
+    </string>
+    <string name="tour_guide_main_location_santa_sofia_long_description">Santa Sofía es un municipio
+        colombiano ubicado en la Provincia de Ricaurte en el departamento de Boyacá. Está situado a
+        12 km al norte de Villa de Leyva y a 77 km de Tunja la capital del departamento.
+    </string>
     <string name="tour_guide_main_location_morca_name" translatable="false">Morcá</string>
-    <string name="tour_guide_main_location_morca_description">Iglesias</string>
+    <string name="tour_guide_main_location_morca_short_description">Iglesias</string>
+    <string name="tour_guide_main_location_morca_long_description">Morcá es una vereda de la ciudad
+        de Sogamoso, en el departamento de Boyacá (Colombia), ubicada al extremo sur oriental. Es
+        un área poblada por más de 1.000 habitantes donde se encuentra la plazoleta principal
+        compuesta por una iglesia, una fuente y una cancha de baloncesto.
+    </string>
     <string name="tour_guide_main_location_belen_name" translatable="false">Belén</string>
-    <string name="tour_guide_main_location_belen_description">Excursionismo e iglesias</string>
+    <string name="tour_guide_main_location_belen_short_description">Excursionismo e iglesias
+    </string>
+    <string name="tour_guide_main_location_belen_long_description">Belén es un municipio del
+        Departamento de Boyacá, Colombia, también llamado Tierra Noble y Legendaria. Se encuentra
+        localizado en la Cordillera Oriental en la Provincia de Tundama al norte del Departamento de
+        Boyacá, en la ruta Norte de Bogota, Tunja, Duitama, se ubica a una distancia de 25,8 km de
+        la ciudad de Duitama Capital de la Provincia.
+    </string>
     <string name="tour_guide_main_location_paz_de_rio_name" translatable="false">Paz de Río</string>
-    <string name="tour_guide_main_location_paz_de_rio_description">Iglesias e historia</string>
+    <string name="tour_guide_main_location_paz_de_rio_short_description">Iglesias e historia
+    </string>
+    <string name="tour_guide_main_location_paz_de_rio_long_description">Paz de Río es un municipio
+        colombiano ubicado al nororiente del departamento de Boyacá, en la provincia de Valderrama.
+    </string>
     <string name="tour_guide_main_location_santa_rosa_de_viterbo_name" translatable="false">Santa
         Rosa de Viterbo
     </string>
-    <string name="tour_guide_main_location_santa_rosa_de_viterbo_description">Parapente, historia e
-        iglesias
+    <string name="tour_guide_main_location_santa_rosa_de_viterbo_short_description">Parapente,
+        historia e iglesias
+    </string>
+    <string name="tour_guide_main_location_santa_rosa_de_viterbo_long_description">Santa Rosa de
+        Viterbo es un municipio colombiano ubicado en la provincia de Tundama en el departamento de
+        Boyacá. Está situado sobre la Troncal Central del Norte a unos 67 kilómetros al norte de la
+        ciudad de Tunja y a 197 kilómetros de la ciudad de Bogotá. Fue la capital de los
+        departamentos de Tundama y de Santa Rosa​ a principios del siglo XX, durante el periodo 1905
+        a 1910.
     </string>
     <string name="tour_guide_main_location_rondon_name" translatable="false">Rondón</string>
-    <string name="tour_guide_main_location_rondon_description">Monumentos</string>
+    <string name="tour_guide_main_location_rondon_short_description">Monumentos</string>
+    <string name="tour_guide_main_location_rondon_long_description">Rondón, es un municipio
+        colombiano ubicado en la Provincia de Márquez, en el departamento de Boyacá. Abarca una
+        superficie de 158 km², 3​ distribuidos en doce veredas, cuya principal actividad económica es
+        el sector agropecuario.
+    </string>
     <string name="tour_guide_main_location_paya_name" translatable="false">Paya</string>
-    <string name="tour_guide_main_location_paya_description">Historia y monumentos</string>
-    <string name="tour_guide_main_location_jerico_name" translatable="false">Jericó</string>
-    <string name="tour_guide_main_location_jerico_description">Iglesias</string>
+    <string name="tour_guide_main_location_paya_short_description">Historia y monumentos</string>
+    <string name="tour_guide_main_location_paya_long_description">Paya es un municipio colombiano
+        ubicado en la Provincia de La Libertad, en el departamento de Boyacá. Se encuentra
+        aproximadamente a 255 km de la ciudad de Tunja, capital del departamento.
+    </string>
     <string name="tour_guide_main_location_paramo_iguaque_name" translatable="false">Páramo Iguaque
     </string>
-    <string name="tour_guide_main_location_paramo_iguaque_description">Parque, reserva natural,
-        lago, y ecoturismo
+    <string name="tour_guide_main_location_paramo_iguaque_short_description">Parque, reserva
+        natural, lago, y ecoturismo
+    </string>
+    <string name="tour_guide_main_location_paramo_iguaque_long_description">El Santuario de Fauna y
+        Flora Iguaque es uno de los 56 parques nacionales naturales de Colombia. Tiene una extensión
+        de 6750 hectáreas (67,5 km²) de páramo y bosque andino, y se ubica en la cordillera Oriental
+        en el departamento de Boyacá. Recorre esta cordillera por un trecho de 8 km en jurisdicción
+        de los municipios de Chíquiza, Villa de Leyva y Arcabuco.
     </string>
     <string name="tour_guide_main_location_arcabuco_name" translatable="false">Arcabuco</string>
-    <string name="tour_guide_main_location_arcabuco_description">Reserva natural, colibríes, y
+    <string name="tour_guide_main_location_arcabuco_short_description">Reserva natural, colibríes, y
          parques
     </string>
+    <string name="tour_guide_main_location_arcabuco_long_description">Arcabuco es un municipio
+        colombiano ubicado en la provincia de Ricaurte en el departamento de Boyacá. Está situado a
+        unos 34 km de la ciudad de Tunja, capital del departamento.
+    </string>
     <string name="tour_guide_main_location_el_cocuy_name" translatable="false">El Cocuy</string>
-    <string name="tour_guide_main_location_el_cocuy_description">Parques, excursionismo, ecoturismo,
-        y glaciares
+    <string name="tour_guide_main_location_el_cocuy_short_description">Parques, excursionismo,
+        ecoturismo, y glaciares
+    </string>
+    <string name="tour_guide_main_location_el_cocuy_long_description">El Cocuy, cuyo nombre colonial
+        fue primero San Gabriel de El Cocuy, y después, Villa de Nuestra Señora del Rosario de El
+        Cocuy, es un municipio colombiano, capital de la Provincia de Gutiérrez, en el departamento
+        de Boyacá. Es conocido como «Ciudad Nevado, Remanso de Paz». El estilo arquitectónico del
+        casco urbano es de tipo republicano y colonial, con algunas calles empedradas, y sus
+        viviendas conservan su estilo con el cual fueron construidas, con el fin de preservar,
+        restaurar, conservar, y mejorar el uso racional de los espacios públicos y privados. El
+        Cocuy es principalmente reconocido por su nevado.
     </string>
     <string name="tour_guide_main_location_tenza_name" translatable="false">Tenza</string>
-    <string name="tour_guide_main_location_tenza_description">Ecoturismo y cascadas</string>
+    <string name="tour_guide_main_location_tenza_short_description">Ecoturismo y cascadas</string>
+    <string name="tour_guide_main_location_tenza_long_description">Tenza es un municipio colombiano
+        del departamento de Boyacá, situado en el centro-oriente de Colombia, en la región del Valle
+        de Tenza. Está situado a unos 83 kilómetros de la ciudad de Tunja. Se ubica en la Provincia
+        del Oriente.
+    </string>
     <string name="tour_guide_main_location_raquira_name" translatable="false">Ráquira</string>
-    <string name="tour_guide_main_location_raquira_description">Artesanías, cerámica, y ecoturismo
+    <string name="tour_guide_main_location_raquira_short_description">Artesanías, cerámica, y
+        ecoturismo
+    </string>
+    <string name="tour_guide_main_location_raquira_long_description">Ráquira es un municipio
+        colombiano de la provincia de Ricaurte en el departamento de Boyacá. Está situado a unos 60
+        kilómetros de Tunja. Ráquira es considerada como la capital artesanal de Colombia y fue
+        galardonada por la Corporación Nacional de Turismo en 1.994 como uno de los pueblos más
+        lindos de Boyacá, gracias a la pintoresca decoración de sus casas. También existe una
+        cerámica de Ráquira.
     </string>
     <string name="tour_guide_main_location_moniquira_name" translatable="false">Moniquirá</string>
-    <string name="tour_guide_main_location_moniquira_description">Cascadas, ecoturismo y naturaleza
+    <string name="tour_guide_main_location_moniquira_short_description">Cascadas, ecoturismo y
+        naturaleza
+    </string>
+    <string name="tour_guide_main_location_moniquira_long_description">Moniquirá es un municipio
+        colombiano ubicado en la provincia de Ricaurte, de la cual es capital, en el departamento de
+        Boyacá; Su cabecera dista 56 km de Tunja, la capital departamental. Situado a 1.700 msnm, su
+        territorio, que pertenece a la cordillera Oriental, está bañado por los ríos Moniquirá,
+        Pómeca y Suárez. Sus suelos se distribuyen en los pisos térmicos templado y frío. La
+        temperatura media anual del casco urbano es de 19 / 20 °C y el promedio de precipitaciones
+        de 2.005 mm. Es el séptimo municipio más poblado del departamento.
     </string>
     <string name="tour_guide_main_location_garagoa_name" translatable="false">Garagoa</string>
-    <string name="tour_guide_main_location_garagoa_description">Ecoturismo, naturaleza, e historia
+    <string name="tour_guide_main_location_garagoa_short_description">Ecoturismo, naturaleza, e
+        historia
+    </string>
+    <string name="tour_guide_main_location_garagoa_long_description">Garagoa es un municipio
+        colombiano, capital de la provincia de Neira, al suroriente del departamento de Boyacá.
+        Dista por carretera de Bogotá, la capital del país, 136 km y de Tunja, la capital del
+        departamento, a 81 km. Es el Noveno municipio más poblado del departamento.
     </string>
     <string name="tour_guide_main_location_san_pablo_de_borbur_name" translatable="false">San Pablo
         de Borbur</string>
-    <string name="tour_guide_main_location_san_pablo_de_borbur_description">Ecoturismo</string>
-    <string name="tour_guide_main_location_el_marfil_name" translatable="false">El Marfil</string>
-    <string name="tour_guide_main_location_el_marfil_description">Reservas naturales y naturaleza
+    <string name="tour_guide_main_location_san_pablo_de_borbur_short_description">Ecoturismo
     </string>
-    <string name="tour_guide_main_location_puerto_pinzon_name" translatable="false">Puerto Pinzón
-    </string>
-    <string name="tour_guide_main_location_puerto_pinzon_description">Reservas naturales y montañas
+    <string name="tour_guide_main_location_san_pablo_de_borbur_long_description">San Pablo de Borbur
+        es un municipio colombiano ubicado en la provincia de Occidente en el departamento de
+        Boyacá.
     </string>
     <string name="tour_guide_main_location_iza_name" translatable="false">Iza</string>
-    <string name="tour_guide_main_location_iza_description">Fuentes termales y lagos</string>
+    <string name="tour_guide_main_location_iza_short_description">Fuentes termales y lagos</string>
+    <string name="tour_guide_main_location_iza_long_description">Iza es un municipio colombiano
+        ubicado en el departamento de Boyacá. Forma parte de la provincia de Sugamuxi. Se sitúa a
+        noventa kilómetros al oriente de Tunja, la capital del departamento.
+    </string>
     <string name="tour_guide_main_location_guican_name" translatable="false">Güicán</string>
-    <string name="tour_guide_main_location_guican_description">Fuentes termales y glaciares</string>
-    <string name="tour_guide_main_location_cuitiva_name" translatable="false">Cuitiva</string>
-    <string name="tour_guide_main_location_cuitiva_description">Lagos, fuentes termales, e historia
+    <string name="tour_guide_main_location_guican_short_description">Fuentes termales y glaciares
+    </string>
+    <string name="tour_guide_main_location_guican_long_description">Güicán de la Sierra, llamado
+        también Nuestra Señora de la Candelaria de Güicán, es un municipio colombiano ubicado en la
+        Provincia de Gutiérrez, en el departamento de Boyacá. Se encuentra a 255 km de Tunja,
+        capital del departamento. Güicán se caracteriza porque un 81% del territorio de su
+        jurisdicción hace parte del Parque nacional natural El Cocuy.
+    </string>
+    <string name="tour_guide_main_location_cuitiva_name" translatable="false">Cuítiva</string>
+    <string name="tour_guide_main_location_cuitiva_short_description">Lagos, fuentes termales, e
+        historia
+    </string>
+    <string name="tour_guide_main_location_cuitiva_long_description">Cuítiva es un municipio
+        colombiano ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Es una de las
+        tres poblaciones que se encuentra bordeando la Laguna de Tota. Está situado a unos 85
+        kilómetros al oriente de la ciudad de Tunja. El municipio limita por el norte con Iza, por
+        el oriente con Sogamoso, por el occidente con Aquitania y por el sur con el municipio de
+        Tota.
     </string>
     <string name="tour_guide_main_location_chinavita_name" translatable="false">Chinavita</string>
-    <string name="tour_guide_main_location_chinavita_description">Fuentes termales y cámping
+    <string name="tour_guide_main_location_chinavita_short_description">Fuentes termales y cámping
     </string>
-    <string name="tour_guide_main_location_lago_tota_name" translatable="false">Lago Tota</string>
-    <string name="tour_guide_main_location_lago_tota_description">Pintoresco lago con cámping y
-        senderos
+    <string name="tour_guide_main_location_chinavita_long_description">Chinavita es un municipio
+        colombiano. Está localizado al sur oriente del departamento de Boyacá. Hace parte de la
+        provincia de Neira. Chinavita es nombre chibcha que significa: China: Iluminado, Vita:
+        Cumbre; Cumbre iluminada. Cuenta la tradición oral, que por algún fenómeno luminoso, el
+        terreno que actualmente ocupa Chinavita presentaba una luminosidad especial, visible desde
+        Garagoa y Pachavita.
+    </string>
+    <string name="tour_guide_main_location_lago_de_tota_name" translatable="false">Lago de Tota
+    </string>
+    <string name="tour_guide_main_location_lago_de_tota_short_description">Pintoresco lago con
+        cámping y senderos
+    </string>
+    <string name="tour_guide_main_location_lago_de_tota_long_description">El lago de Tota es un
+        cuerpo de agua natural situado en el departamento de Boyacá, Colombia, en jurisdicción de
+        los municipios de Cuítiva, Tota y Aquitania. Se encuentra ubicado a 34 km al sur de
+        Sogamoso, aproximadamente 200 km al noroeste de Bogotá, la capital del país.
     </string>
     <string name="tour_guide_main_location_tota_name" translatable="false">Tota</string>
-    <string name="tour_guide_main_location_tota_description">Lagos</string>
+    <string name="tour_guide_main_location_tota_short_description">Lagos</string>
+    <string name="tour_guide_main_location_tota_long_description">Tota es un municipio colombiano
+        ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Está situado a unos 40 km
+        de la ciudad de Sogamoso y comparte la laguna de Tota con los municipios de Cuítiva y
+        Aquitania. Es el municipio más antiguo de Boyacá según su año de fundación.
+    </string>
     <string name="tour_guide_main_location_aquitania_name" translatable="false">Aquitania</string>
-    <string name="tour_guide_main_location_aquitania_description">Lagos y trucha arcoiris</string>
+    <string name="tour_guide_main_location_aquitania_short_description">Lagos y trucha arcoiris
+    </string>
+    <string name="tour_guide_main_location_aquitania_long_description">Aquitania es un municipio
+        colombiano ubicado en la provincia de Sugamuxi en el departamento de Boyacá. De acuerdo con
+        el Censo 2.005 el municipio cuenta con 16.087 habitantes,​ siendo el noveno municipio más
+        poblado del departamento. A 3.030 metros sobre el nivel del mar, es uno de los 10 municipios
+        más altos de Colombia.
+    </string>
     <string name="tour_guide_main_location_gachantiva_name" translatable="false">Gachantivá</string>
-    <string name="tour_guide_main_location_gachantiva_description">Cascadas y naturaleza</string>
+    <string name="tour_guide_main_location_gachantiva_short_description">Cascadas y naturaleza
+    </string>
+    <string name="tour_guide_main_location_gachantiva_long_description">Gachantivá es un municipio
+        colombiano ubicado a unos 57 km al noroccidente de Tunja en la Provincia de Ricaurte en el
+        departamento de Boyacá, llamado inicialmente «capitán de Gachas». Fue fundado en 1.715, en
+        una época de un fuerte dominio español cuando se produjeron grandes desplazamientos
+        indígenas.
+    </string>
     <string name="tour_guide_main_location_sogamoso_name" translatable="false">Sogamoso</string>
-    <string name="tour_guide_main_location_sogamoso_description">Museos, lagos, e historia</string>
+    <string name="tour_guide_main_location_sogamoso_short_description">Museos, lagos, e historia
+    </string>
+    <string name="tour_guide_main_location_sogamoso_long_description">Sogamoso es un municipio
+        colombiano situado en el centro-oriente del departamento de Boyacá en la región del Alto
+        Chicamocha. Es la capital de la Provincia de Sugamuxi, se encuentra a 228,5 km al noreste de
+        Bogotá, la capital del país, y a 75,8 km de Tunja, la capital del departamento. Posee una
+        altitud de 2.569 m, tiene temperaturas promedio de 18°C. La base económica de la ciudad es
+        el comercio interregional entre los Llanos Orientales y el centro del país; La industria
+        siderúrgica y de materiales de construcción; Y la explotación de calizas, carbón y mármol.
+        Es uno de los municipios con mayor calidad de vida en Colombia y es categorizado por el DNP
+        como un municipio con un entorno de desarrollo robusto. Se le conoce como la Ciudad del Sol
+        y del Acero.
+    </string>
     <string name="tour_guide_main_location_mongui_name" translatable="false">Monguí</string>
-    <string name="tour_guide_main_location_mongui_description">Conventos, basílicas,
+    <string name="tour_guide_main_location_mongui_short_description">Conventos, basílicas,
         excursionismo, e historia
     </string>
+    <string name="tour_guide_main_location_mongui_long_description">Monguí es un municipio
+        colombiano ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Está situado a
+        unos 97 km de la ciudad de Tunja, capital del departamento.
+    </string>
     <string name="tour_guide_main_location_duitama_name" translatable="false">Duitama</string>
-    <string name="tour_guide_main_location_duitama_description">Ciclismo, naturaleza, parques,
+    <string name="tour_guide_main_location_duitama_short_description">Ciclismo, naturaleza, parques,
         historia, y arte
     </string>
+    <string name="tour_guide_main_location_duitama_long_description">Duitama es un municipio
+        colombiano, ubicado en el departamento de Boyacá, situado en el centro-oriente de Colombia,
+        en la región del Alto Chicamocha. Es la capital de la provincia del Tundama. Se le conoce
+        como "La Capital Cívica de Boyacá" y "La perla de Boyacá". Es el puerto transportador
+        terrestre más importante del oriente colombiano al encontrarse sobre la Troncal Central del
+        Norte, y es un punto estratégico de las relaciones industriales y comerciales de esta región
+        del país. Según el DANE, sólo el 8,99% de la población vive con necesidades básicas
+        insatisfechas(NBI), lo que significa para Duitama el sexto lugar a nivel nacional entre los
+        municipios con menores índices de NBI.
+    </string>
     <string name="tour_guide_main_location_sachica_name" translatable="false">Sáchica</string>
-    <string name="tour_guide_main_location_sachica_description">Pintura e historia</string>
+    <string name="tour_guide_main_location_sachica_short_description">Pintura e historia</string>
+    <string name="tour_guide_main_location_sachica_long_description">Sáchica es un municipio
+        colombiano ubicado a unos 32 km al oeste de Tunja, en la Provincia de Ricaurte en el
+        departamento de Boyacá, reconocido como capital nacional de la cebolla.
+    </string>
     <string name="tour_guide_main_location_puerto_boyaca_name" translatable="false">Puerto Boyacá
     </string>
-    <string name="tour_guide_main_location_puerto_boyaca_description">Historia, ríos, y naturaleza
+    <string name="tour_guide_main_location_puerto_boyaca_short_description">Historia, ríos, y
+        naturaleza
     </string>
-    <string name="tour_guide_main_location_cienaga_name" translatable="false">Ciénaga</string>
-    <string name="tour_guide_main_location_cienaga_description">Naturaleza y lagos</string>
+    <string name="tour_guide_main_location_puerto_boyaca_long_description">Puerto Boyacá es un
+        municipio y puerto colombiano del departamento de Boyacá, capital de la Zona de Manejo
+        Especial y antiguamente denominada «Territorio Vásquez». Puerto Boyacá es uno de los
+        principales puertos de la región del Magdalena Medio y con una población cercana a los
+        50.000 habitantes, es la quinta ciudad del departamento. También es a la vez el principal
+        puerto fluvial del departamento de Boyacá.
+    </string>
+    <string name="tour_guide_main_location_cienega_name" translatable="false">Ciénega</string>
+    <string name="tour_guide_main_location_cienega_short_description">Naturaleza y lagos</string>
+    <string name="tour_guide_main_location_cienega_long_description">Ciénega es un municipio
+        colombiano ubicado en la provincia de Márquez, en el departamento de Boyacá. Limita en el
+        flanco oriental de la cordillera Oriental de Los Andes colombianos, en el centro oriente del
+        departamento de Boyacá. Se encuentra a aproximadamente 24 km de la capital departamental,
+        Tunja, cuyo acceso es por una vía pavimentada.
+    </string>
     <string name="tour_guide_main_location_socha_name" translatable="false">Socha</string>
-    <string name="tour_guide_main_location_socha_description">Historia, parques, minería, y cascadas
+    <string name="tour_guide_main_location_socha_short_description">Historia, parques, minería, y
+        cascadas
+    </string>
+    <string name="tour_guide_main_location_socha_long_description">Socha es un municipio colombiano,
+        capital de la provincia de Valderrama en el departamento de Boyacá. Se encuentra a 117 km de
+        Tunja, la capital del departamento.
     </string>
     <string name="tour_guide_main_location_pajarito_name" translatable="false">Pajarito</string>
-    <string name="tour_guide_main_location_pajarito_description">Cascadas</string>
+    <string name="tour_guide_main_location_pajarito_short_description">Cascadas</string>
+    <string name="tour_guide_main_location_pajarito_long_description">Pajarito es un municipio
+        colombiano ubicado en la Provincia de La Libertad, en el departamento de Boyacá. Se
+        encuentra aproximadamente a 176 km de la ciudad de Tunja, capital del departamento, y a 343
+        km de Bogotá, la capital del país.
+    </string>
     <string name="tour_guide_main_location_pisba_name" translatable="false">Pisba</string>
-    <string name="tour_guide_main_location_pisba_description">Parques, historia, naturaleza, y áreas
-        protegidas
+    <string name="tour_guide_main_location_pisba_short_description">Parques, historia, naturaleza, y
+        áreas protegidas
+    </string>
+    <string name="tour_guide_main_location_pisba_long_description">Pisba es un municipio colombiano
+        ubicado en la Provincia de La Libertad, en el departamento de Boyacá. Se encuentra
+        aproximadamente a 220 km de la ciudad de Tunja, capital del departamento.
     </string>
     <string name="tour_guide_main_location_pesca_name" translatable="false">Pesca</string>
-    <string name="tour_guide_main_location_pesca_description">Naturaleza</string>
+    <string name="tour_guide_main_location_pesca_short_description">Naturaleza</string>
+    <string name="tour_guide_main_location_pesca_long_description">Pesca es un municipio colombiano
+        ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Está situado a unos 108
+        kilómetros de la ciudad de Tunja.
+    </string>
     <string name="tour_guide_main_location_tinjaca_name" translatable="false">Tinjacá</string>
-    <string name="tour_guide_main_location_tinjaca_description">Artesanías</string>
+    <string name="tour_guide_main_location_tinjaca_short_description">Artesanías</string>
+    <string name="tour_guide_main_location_tinjaca_long_description">Tinjacá es un municipio
+        colombiano ubicado en la provincia de Ricaurte en el departamento de Boyacá, a 18 kilómetros
+        del municipio de Villa de Leyva y a 54 km de Tunja, la capital del departamento.
+    </string>
     <string name="tour_guide_main_location_guateque_name" translatable="false">Guateque</string>
-    <string name="tour_guide_main_location_guateque_description">Cascadas</string>
+    <string name="tour_guide_main_location_guateque_short_description">Cascadas</string>
+    <string name="tour_guide_main_location_guateque_long_description">Guateque es un municipio
+        colombiano, capital de la Provincia del Oriente en el suroeste del departamento de Boyacá,
+        125 kilómetros al sur de Tunja, capital departamental, y a 112 km al este de Bogotá. Limita
+        con los municipios de La Capilla, Tenza, Sutatenza, Somondoco y Guayatá, así como con los
+        municipios cundinamarqueses de Tibirita y Manta.
+    </string>
     <string name="tour_guide_main_location_saboya_name" translatable="false">Saboyá</string>
-    <string name="tour_guide_main_location_saboya_description">Naturaleza</string>
+    <string name="tour_guide_main_location_saboya_short_description">Naturaleza</string>
+    <string name="tour_guide_main_location_saboya_long_description">Saboyá es un municipio
+        colombiano ubicado en la provincia de Occidente en el departamento de Boyacá.
+    </string>
     <string name="tour_guide_main_location_combita_name" translatable="false">Cómbita</string>
-    <string name="tour_guide_main_location_combita_description">Naturaleza y parques</string>
+    <string name="tour_guide_main_location_combita_short_description">Naturaleza y parques</string>
+    <string name="tour_guide_main_location_combita_long_description">Cómbita es un municipio
+        colombiano ubicado en la provincia del Centro, en el departamento de Boyacá. Está situado
+        sobre la Troncal Central del Norte a unos 8,5 km de la ciudad de Tunja, capital del
+        departamento, de cuya área metropolitana hace parte Cómbita.
+    </string>
     <string name="tour_guide_main_location_toca_name" translatable="false">Toca</string>
-    <string name="tour_guide_main_location_toca_description">Tradición</string>
+    <string name="tour_guide_main_location_toca_short_description">Tradición</string>
+    <string name="tour_guide_main_location_toca_long_description">Toca es un municipio colombiano
+        ubicado en la provincia del Centro, en el departamento de Boyacá.
+    </string>
     <string name="tour_guide_main_location_cucaita_name" translatable="false">Cucaita</string>
-    <string name="tour_guide_main_location_cucaita_description">Paisajes</string>
+    <string name="tour_guide_main_location_cucaita_short_description">Paisajes</string>
+    <string name="tour_guide_main_location_cucaita_long_description">Cucaita es un municipio
+        colombiano ubicado en la provincia del Centro, en el departamento de Boyacá. Está situado a
+        unos 144 km de la ciudad de Bogotá.
+    </string>
     <string name="tour_guide_main_location_somondoco_name" translatable="false">Somondoco</string>
-    <string name="tour_guide_main_location_somondoco_description">Artesanías</string>
+    <string name="tour_guide_main_location_somondoco_short_description">Artesanías</string>
+    <string name="tour_guide_main_location_somondoco_long_description">Somondoco es un municipio
+        colombiano, ubicado en la provincia del oriente del Departamento de Boyacá, al que se llega
+        desde el municipio de Guateque. Dista 131 km a la ciudad de Tunja, capital del departamento
+        y se caracteriza por sus cultivos y platos típicos como el chicharrón de cuajada. El
+        municipio además cuenta con una plaza de toros y un pesebre en su parte más alta desde el
+        cual se divisa una gran sección del Valle de Tenza.
+    </string>
     <string name="tour_guide_main_location_chitaraque_name" translatable="false">Chitaraque</string>
-    <string name="tour_guide_main_location_chitaraque_description">Naturaleza</string>
+    <string name="tour_guide_main_location_chitaraque_short_description">Naturaleza</string>
+    <string name="tour_guide_main_location_chitaraque_long_description">Chitaraque es un municipio
+        de Boyacá, Colombia, perteneciente a la Provincia de Ricaurte en límites con el Departamento
+        de Santander. Dista aproximadamente 105 kilómetros de la ciudad de Tunja, capital del
+        departamento.
+    </string>
     <string name="tour_guide_main_location_umbita_name" translatable="false">Úmbita</string>
-    <string name="tour_guide_main_location_umbita_description">Naturaleza</string>
+    <string name="tour_guide_main_location_umbita_short_description">Naturaleza</string>
+    <string name="tour_guide_main_location_umbita_long_description">Úmbita es un municipio
+        colombiano ubicado en la Provincia de Márquez en el departamento de Boyacá.
+    </string>
     <string name="tour_guide_main_location_togui_name" translatable="false">Togüí</string>
-    <string name="tour_guide_main_location_togui_description">Cascadas y ríos</string>
+    <string name="tour_guide_main_location_togui_short_description">Cascadas y ríos</string>
+    <string name="tour_guide_main_location_togui_long_description">Togüí es un municipio colombiano
+        ubicado en la provincia de Ricaurte en el departamento de Boyacá. Está situado a unos 60 km
+        de la ciudad de Tunja, capital del departamento.
+    </string>
     <string name="tour_guide_main_location_chivor_name" translatable="false">Chivor</string>
-    <string name="tour_guide_main_location_chivor_description">Minería, surf de vela, y embalses
+    <string name="tour_guide_main_location_chivor_short_description">Minería, surf de vela, y
+        embalses
+    </string>
+    <string name="tour_guide_main_location_chivor_long_description">Chivor es un municipio situado
+        en el extremo sur oriente de la Provincia del Oriente, en el Departamento de Boyacá,
+        Colombia. Cuenta actualmente con 2.126 habitantes y tiene una temperatura de 18 grados
+        celsius.
     </string>
     <string name="tour_guide_main_location_mongua_name" translatable="false">Mongua</string>
-    <string name="tour_guide_main_location_mongua_description">Excursionismo e historia</string>
-    <string name="tour_guide_main_location_gameza_name" translatable="false">Gámeza</string>
-    <string name="tour_guide_main_location_gameza_description">Recreación al aire libre</string>
-    <string name="tour_guide_main_location_samaca_name" translatable="false">Samacá</string>
-    <string name="tour_guide_main_location_samaca_description">Salto en bungee, minería, e historia
+    <string name="tour_guide_main_location_mongua_short_description">Excursionismo e historia
     </string>
-    <string name="tour_guide_main_location_coscuez_name" translatable="false">Coscuez</string>
-    <string name="tour_guide_main_location_coscuez_description">Caza</string>
+    <string name="tour_guide_main_location_mongua_long_description">Mongua es un municipio
+        colombiano ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Está situado a
+        unos 55 km de la ciudad de Tunja, capital del departamento.
+    </string>
+    <string name="tour_guide_main_location_gameza_name" translatable="false">Gámeza</string>
+    <string name="tour_guide_main_location_gameza_short_description">Recreación al aire libre
+    </string>
+    <string name="tour_guide_main_location_gameza_long_description">Gámeza es un municipio
+        colombiano ubicado en la provincia de Sugamuxi en el departamento de Boyacá. Está situado a
+        unos 18 km de la ciudad de Sogamoso.
+    </string>
+    <string name="tour_guide_main_location_samaca_name" translatable="false">Samacá</string>
+    <string name="tour_guide_main_location_samaca_short_description">Salto en bungee, minería, e
+        historia
+    </string>
+    <string name="tour_guide_main_location_samaca_long_description">Samacá es un municipio
+        colombiano ubicado en la provincia del Centro, en el departamento de Boyacá. Está situado a
+        unos 30 km de la ciudad de Tunja. En cuanto a su población, es el octavo municipio más
+        poblado del departamento.
+    </string>
     <!-- Tour Guide Main Layout Strings End -->
 
 

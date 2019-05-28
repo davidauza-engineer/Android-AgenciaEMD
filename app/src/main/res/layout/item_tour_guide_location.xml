@@ -58,7 +58,7 @@
             android:singleLine="true"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="@color/colorPrimaryText"
-            tools:text="@string/tour_guide_main_location_tunja_description" />
+            tools:text="@string/tour_guide_main_location_tunja_short_description" />
 
     </LinearLayout>
 

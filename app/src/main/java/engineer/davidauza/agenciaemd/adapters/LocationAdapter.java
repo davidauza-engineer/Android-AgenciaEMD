@@ -58,7 +58,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
         // Replace the contents of the View with that element
         viewHolder.mPictureImageView.setImageResource(currentLocation.getPicture());
         viewHolder.mNameTextView.setText(currentLocation.getName());
-        viewHolder.mDescriptionTextView.setText(currentLocation.getDescription());
+        viewHolder.mDescriptionTextView.setText(currentLocation.getShortDescription());
 
         setOnClickListener(viewHolder, currentLocation);
     }
@@ -86,8 +86,10 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
                         pCurrentLocation.getPicture());
                 intent.putExtra(TourGuideDetailActivity.EXTRA_NAME,
                         pCurrentLocation.getName());
-                intent.putExtra(TourGuideDetailActivity.EXTRA_DESCRIPTION,
-                        pCurrentLocation.getDescription());
+                intent.putExtra(TourGuideDetailActivity.EXTRA_SHORT_DESCRIPTION,
+                        pCurrentLocation.getShortDescription());
+                intent.putExtra(TourGuideDetailActivity.EXTRA_LONG_DESCRIPTION,
+                        pCurrentLocation.getLongDescription());
                 context.startActivity(intent);
             }
         });
