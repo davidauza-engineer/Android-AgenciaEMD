@@ -205,7 +205,7 @@
             app:layout_constraintTop_toBottomOf="@id/tejo_button" />
 
         <TextView
-            android:id="@+id/copyright"
+            android:id="@+id/lbl_copyright"
             style="@style/MainCopyrightTextViewStyle"
             android:layout_marginTop="40dp"
             app:layout_constraintBottom_toBottomOf="parent"

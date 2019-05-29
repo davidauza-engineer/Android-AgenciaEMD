@@ -21,27 +21,27 @@ public class MusicMainActivity extends AppCompatActivity {
         final ArrayList<MusicMenuSong> songs = new ArrayList<>();
         // First song
         songs.add(new MusicMenuSong(R.drawable.img_colombia_flag,
-                getString(R.string.music_menu_song_one_name),
-                " " + getString(R.string.music_menu_song_one_lyrics_composer),
-                " " + getString(R.string.music_menu_song_one_music_composer),
+                getString(R.string.music_main_song_one_name),
+                " " + getString(R.string.music_main_song_one_lyrics_composer),
+                " " + getString(R.string.music_main_song_one_music_composer),
                 R.raw.snd_colombia_anthem));
         // Second song
         songs.add(new MusicMenuSong(R.drawable.img_boyaca_flag,
-                getString(R.string.music_menu_song_two_name),
-                " " + getString(R.string.music_menu_song_two_lyrics_composer),
-                " " + getString(R.string.music_menu_song_two_music_composer),
+                getString(R.string.music_main_song_two_name),
+                " " + getString(R.string.music_main_song_two_lyrics_composer),
+                " " + getString(R.string.music_main_song_two_music_composer),
                 R.raw.snd_boyaca_anthem));
         // Third song
         songs.add(new MusicMenuSong(R.drawable.img_tunja_flag,
-                getString(R.string.music_menu_song_three_name),
-                " " + getString(R.string.music_menu_song_three_lyrics_composer),
-                " " + getString(R.string.music_menu_song_three_music_composer),
+                getString(R.string.music_main_song_three_name),
+                " " + getString(R.string.music_main_song_three_lyrics_composer),
+                " " + getString(R.string.music_main_song_three_music_composer),
                 R.raw.snd_tunja_anthem));
         // Fourth song
         songs.add(new MusicMenuSong(R.drawable.img_sogamoso_flag,
-                getString(R.string.music_menu_song_four_name),
-                " " + getString(R.string.music_menu_song_four_lyrics_composer),
-                " " + getString(R.string.music_menu_song_four_music_composer),
+                getString(R.string.music_main_song_four_name),
+                " " + getString(R.string.music_main_song_four_lyrics_composer),
+                " " + getString(R.string.music_main_song_four_music_composer),
                 R.raw.snd_sogamoso_anthem));
 
         // Create an {@link SongAdapter}, whose data source is a list of {@link MusicMenuSong}s. The adapter

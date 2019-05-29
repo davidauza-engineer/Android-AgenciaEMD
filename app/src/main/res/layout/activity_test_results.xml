@@ -92,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@id/reset_button" />
 
         <TextView
-            android:id="@+id/copyright"
+            android:id="@+id/lbl_copyright"
             style="@style/MainCopyrightTextViewStyle"
             android:layout_marginLeft="56dp"
             android:layout_marginTop="32dp"

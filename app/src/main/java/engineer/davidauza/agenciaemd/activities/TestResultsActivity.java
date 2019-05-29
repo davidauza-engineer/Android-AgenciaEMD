@@ -238,7 +238,7 @@ public class TestResultsActivity extends AppCompatActivity {
         });
 
         // Set Copyright TextView
-        TextView copyright = findViewById(R.id.copyright);
+        TextView copyright = findViewById(R.id.lbl_copyright);
         MainActivity.setCopyrightText(copyright);
     }
 

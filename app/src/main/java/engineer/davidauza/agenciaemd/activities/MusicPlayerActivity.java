@@ -14,6 +14,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.utils.LinkFormatter;
 import engineer.davidauza.agenciaemd.utils.TimeFormatter;
 
 public class MusicPlayerActivity extends AppCompatActivity {
@@ -172,9 +173,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
             }
         });
 
-        // Set copyright text
-        TextView copyrightTextView = findViewById(R.id.copyright);
-        MainActivity.setCopyrightText(copyrightTextView);
+        setCopyrightText();
     }
 
     /**
@@ -431,5 +430,13 @@ public class MusicPlayerActivity extends AppCompatActivity {
             TejoCounterActivity.createToastShort(MusicPlayerActivity.this,
                     R.string.music_player_focus_not_granted);
         }
+    }
+
+    /**
+     * This method sets up the copyright TextView to correctly display the copyright text.
+     */
+    private void setCopyrightText() {
+        TextView copyrightTextView = findViewById(R.id.lbl_copyright);
+        LinkFormatter.format(copyrightTextView, MainActivity.COPYRIGHT_TEXT);
     }
 }

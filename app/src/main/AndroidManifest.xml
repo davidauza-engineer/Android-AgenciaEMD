@@ -35,7 +35,7 @@
         </activity>
         <activity
             android:name=".activities.MusicMainActivity"
-            android:label="@string/music_menu_activity_label"
+            android:label="@string/music_main_activity_label"
             android:parentActivityName=".activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

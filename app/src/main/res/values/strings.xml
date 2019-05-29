@@ -243,22 +243,22 @@
 
 
     <!-- Music Menu Layout Strings Start -->
-    <string name="music_menu_activity_label">Música Regional</string>
-    <string name="music_menu_header">Selecciona el himno que quieres escuchar:</string>
-    <string name="music_menu_layout_lyrics">Letra: </string>
-    <string name="music_menu_layout_music">Música: </string>
-    <string name="music_menu_song_one_name">Himno de Colombia</string>
-    <string name="music_menu_song_one_lyrics_composer">Rafael Núñez</string>
-    <string name="music_menu_song_one_music_composer">Oreste Síndici</string>
-    <string name="music_menu_song_two_name">Himno de Boyacá</string>
-    <string name="music_menu_song_two_lyrics_composer">Pedro Medina Avendaño</string>
-    <string name="music_menu_song_two_music_composer">Jorge Camargo Spolidore</string>
-    <string name="music_menu_song_three_name">Himno de Tunja</string>
-    <string name="music_menu_song_three_lyrics_composer">Alfredo Gómez Jaime</string>
-    <string name="music_menu_song_three_music_composer">Francisco Cristancho Camargo</string>
-    <string name="music_menu_song_four_name">Himno de Sogamoso</string>
-    <string name="music_menu_song_four_lyrics_composer">Pedro Medina Avendaño</string>
-    <string name="music_menu_song_four_music_composer">Luis Antonio Escobar</string>
+    <string name="music_main_activity_label">Música Regional</string>
+    <string name="music_main_header">Selecciona el himno que quieres escuchar:</string>
+    <string name="music_main_layout_lyrics">Letra: </string>
+    <string name="music_main_layout_music">Música: </string>
+    <string name="music_main_song_one_name">Himno de Colombia</string>
+    <string name="music_main_song_one_lyrics_composer">Rafael Núñez</string>
+    <string name="music_main_song_one_music_composer">Oreste Síndici</string>
+    <string name="music_main_song_two_name">Himno de Boyacá</string>
+    <string name="music_main_song_two_lyrics_composer">Pedro Medina Avendaño</string>
+    <string name="music_main_song_two_music_composer">Jorge Camargo Spolidore</string>
+    <string name="music_main_song_three_name">Himno de Tunja</string>
+    <string name="music_main_song_three_lyrics_composer">Alfredo Gómez Jaime</string>
+    <string name="music_main_song_three_music_composer">Francisco Cristancho Camargo</string>
+    <string name="music_main_song_four_name">Himno de Sogamoso</string>
+    <string name="music_main_song_four_lyrics_composer">Pedro Medina Avendaño</string>
+    <string name="music_main_song_four_music_composer">Luis Antonio Escobar</string>
     <!-- Music Menu Layout Strings End -->
 
 
@@ -806,6 +806,13 @@
         poblado del departamento.
     </string>
     <!-- Tour Guide Main Layout Strings End -->
+
+
+    <!-- Tour Guide Detail Layout Strings Start -->
+    <string name="tour_guide_detail_credits_one">Contenido adaptado de</string>
+    <string name="tour_guide_detail_credits_two">y</string>
+    <string name="tour_guide_detail_credits_three" translatable="false">.</string>
+    <!-- Tour Guide Detail Layout Strings End -->
 
 
 </resources>

@@ -16,32 +16,32 @@
             style="@style/SongNameStyle"
             android:layout_margin="16dp"
             android:textAppearance="?android:textAppearanceMedium"
-            tools:text="@string/music_menu_song_one_name" />
+            tools:text="@string/music_main_song_one_name" />
 
         <LinearLayout style="@style/MusicPlayerHorizontalLinearLayoutsStyle">
 
             <TextView
                 style="@style/MusicPlayerTextViewsStyle"
-                android:text="@string/music_menu_layout_lyrics" />
+                android:text="@string/music_main_layout_lyrics" />
 
             <TextView
                 android:id="@+id/song_lyrics_composer"
                 style="@style/MusicPlayerTextViewsStyle"
                 android:singleLine="true"
-                tools:text="@string/music_menu_song_one_lyrics_composer" />
+                tools:text="@string/music_main_song_one_lyrics_composer" />
         </LinearLayout>
 
         <LinearLayout style="@style/MusicPlayerHorizontalLinearLayoutsStyle">
 
             <TextView
                 style="@style/MusicPlayerTextViewsStyle"
-                android:text="@string/music_menu_layout_music" />
+                android:text="@string/music_main_layout_music" />
 
             <TextView
                 android:id="@+id/song_music_composer"
                 style="@style/MusicPlayerTextViewsStyle"
                 android:singleLine="true"
-                tools:text="@string/music_menu_song_one_music_composer" />
+                tools:text="@string/music_main_song_one_music_composer" />
 
         </LinearLayout>
 
@@ -135,7 +135,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/copyright"
+            android:id="@+id/lbl_copyright"
             style="@style/MainCopyrightTextViewStyle"
             android:layout_gravity="center"
             android:layout_marginTop="72dp"

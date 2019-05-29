@@ -82,7 +82,7 @@ public class TejoCounterActivity extends AppCompatActivity {
         displayScore(mScoreTeamB, mTeamBTextView);
 
         // Set copyright text
-        TextView copyrightTextView = findViewById(R.id.copyright);
+        TextView copyrightTextView = findViewById(R.id.lbl_copyright);
         MainActivity.setCopyrightText(copyrightTextView);
     }
 

@@ -12,8 +12,19 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.utils.LinkFormatter;
 
 public class MainActivity extends AppCompatActivity {
+
+    /**
+     * The text used across the app to let the user know about the copyright.
+     */
+    public static final String COPYRIGHT_TEXT = "Copyright 2019 " +
+            "<a href=\"https://davidauza.engineer\">David Auza</a>" +
+            "<br /><a href=\"http://agenciaemd.com\">Agencia EMD</a> " +
+            "<br />Todos los derechos reservados" +
+            "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
+            " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
 
     /**
      * This method sets the copyright text and links
@@ -62,10 +73,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setUpTourGuideButton();
-
-        // Set copyright text
-        TextView copyrightTextView = findViewById(R.id.copyright);
-        setCopyrightText(copyrightTextView);
+        setCopyrightText();
     }
 
     /**
@@ -97,5 +105,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    /**
+     * This method sets up the copyright TextView to correctly display the copyright text.
+     */
+    private void setCopyrightText() {
+        TextView copyrightTextView = findViewById(R.id.lbl_copyright);
+        LinkFormatter.format(copyrightTextView, COPYRIGHT_TEXT);
     }
 }

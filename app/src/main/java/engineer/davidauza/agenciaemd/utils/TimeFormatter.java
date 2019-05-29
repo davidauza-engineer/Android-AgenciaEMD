@@ -5,6 +5,7 @@ package engineer.davidauza.agenciaemd.utils;
  * mm:ss
  */
 public class TimeFormatter {
+
     /**
      * Converts a given time in milliseconds to the format mm:dd
      *
