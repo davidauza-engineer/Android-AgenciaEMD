@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import engineer.davidauza.agenciaemd.R;
+import engineer.davidauza.agenciaemd.utils.LinkFormatter;
 
 public class TejoCounterActivity extends AppCompatActivity {
 
@@ -81,9 +82,7 @@ public class TejoCounterActivity extends AppCompatActivity {
         mTeamBTextView = findViewById(R.id.team_b_score);
         displayScore(mScoreTeamB, mTeamBTextView);
 
-        // Set copyright text
-        TextView copyrightTextView = findViewById(R.id.lbl_copyright);
-        MainActivity.setCopyrightText(copyrightTextView);
+        setCopyrightText();
     }
 
     /**
@@ -422,5 +421,13 @@ public class TejoCounterActivity extends AppCompatActivity {
         mGameOver = false;
         mResetAvailable = false;
         changeButtonAlpha(R.id.reset_button, 0.25f);
+    }
+
+    /**
+     * This method sets up the Copyright TextView to correctly display the copyright text.
+     */
+    private void setCopyrightText() {
+        TextView copyrightTextView = findViewById(R.id.lbl_copyright);
+        LinkFormatter.format(copyrightTextView, MainActivity.COPYRIGHT_TEXT);
     }
 }

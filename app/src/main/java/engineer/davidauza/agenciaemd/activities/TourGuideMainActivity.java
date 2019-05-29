@@ -7,8 +7,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import engineer.davidauza.agenciaemd.R;
-import engineer.davidauza.agenciaemd.adapters.LocationCategoryAdapter;
+import engineer.davidauza.agenciaemd.adapters.LocationPagerAdapter;
 
+/**
+ * This class displays a {@link ViewPager} where each page shows a different list of locations.
+ */
 public class TourGuideMainActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +23,7 @@ public class TourGuideMainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method sets the ToolBar to display the UP button
+     * This method sets the ToolBar to display the UP button.
      */
     private void setUpToolBar() {
         Toolbar toolbar = findViewById(R.id.ly_toolbar);
@@ -29,12 +32,12 @@ public class TourGuideMainActivity extends AppCompatActivity {
     }
 
     /**
-     * This method sets the ViewPager to properly display fragments
+     * This method sets the ViewPager to properly display fragments.
      */
     private void setUpViewPager() {
         ViewPager viewPager = findViewById(R.id.ly_view_pager);
-        LocationCategoryAdapter adapter =
-                new LocationCategoryAdapter(getSupportFragmentManager(),
+        LocationPagerAdapter adapter =
+                new LocationPagerAdapter(getSupportFragmentManager(),
                         TourGuideMainActivity.this);
         viewPager.setAdapter(adapter);
         setUpTabLayout(viewPager);

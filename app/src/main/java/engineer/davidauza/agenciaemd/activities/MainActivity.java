@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Html;
 import android.text.Layout;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,21 +23,6 @@ public class MainActivity extends AppCompatActivity {
             "<br />Todos los derechos reservados" +
             "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
             " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
-
-    /**
-     * This method sets the copyright text and links
-     */
-    public static void setCopyrightText(TextView pCopyrightTextView) {
-        String copyrightText =
-                "Copyright 2019 <a href=\"https://davidauza.engineer\">David Auza</a>" +
-                        "<br /><a href=\"http://agenciaemd.com\">Agencia EMD</a> " +
-                        "<br />Todos los derechos reservados" +
-                        "<br />Íconos hechos por <a href=\"https://www.freepik.com\">Freepik</a>" +
-                        " de <a href=\"https://www.flaticon.com\">www.flaticon.com</a>";
-
-        pCopyrightTextView.setText(Html.fromHtml(copyrightText));
-        pCopyrightTextView.setMovementMethod(LinkMovementMethod.getInstance());
-    }
 
     /**
      * This method justifies the text if the API is greater than or equal to 26

@@ -11,11 +11,11 @@ import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.fragments.LocationsFragment;
 
 /**
- * {@link LocationCategoryAdapter} is a {@link FragmentPagerAdapter} that can provide the layout
- * for each list item based on a data source which is a list of
+ * {@link LocationPagerAdapter} is a {@link FragmentPagerAdapter} that can provide the layout for
+ * each list item based on a data source which is a list of
  * {@link engineer.davidauza.agenciaemd.models.Location} objects.
  */
-public class LocationCategoryAdapter extends FragmentPagerAdapter {
+public class LocationPagerAdapter extends FragmentPagerAdapter {
 
     /**
      * Context of the TourGuideMainActivity
@@ -23,14 +23,14 @@ public class LocationCategoryAdapter extends FragmentPagerAdapter {
     private Context mContext;
 
     /**
-     * Create a new {@link LocationCategoryAdapter} object.
+     * Create a new {@link LocationPagerAdapter} object.
      *
      * @param pFragmentManager is the FragmentManager that will keep each fragment's state in the
      *                         adapter across swipes.
      * @param pContext         is the Context of the TourGuideMainActivity.
      */
-    public LocationCategoryAdapter(FragmentManager pFragmentManager,
-                                   Context pContext) {
+    public LocationPagerAdapter(FragmentManager pFragmentManager,
+                                Context pContext) {
         super(pFragmentManager);
         mContext = pContext;
     }

@@ -1,8 +1,8 @@
 package engineer.davidauza.agenciaemd.utils;
 
 /**
- * This class contains a method to convert a given time in milliseconds to a String in the format
- * mm:ss
+ * This class contains a static method to convert a given time in milliseconds to a String in the
+ * format mm:ss
  */
 public class TimeFormatter {
 

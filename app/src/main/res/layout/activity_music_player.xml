@@ -50,7 +50,7 @@
             style="@style/SongPictureStyle"
             android:layout_gravity="center_horizontal"
             android:maxWidth="195dp"
-            tools:src="@drawable/img_colombia_flag" />
+            tools:src="@drawable/img_flag_colombia" />
 
         <SeekBar
             android:id="@+id/bar"

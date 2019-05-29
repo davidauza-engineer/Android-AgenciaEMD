@@ -17,10 +17,10 @@ import engineer.davidauza.agenciaemd.activities.TourGuideDetailActivity;
 import engineer.davidauza.agenciaemd.models.Location;
 
 /**
- * {@link LocationAdapter} is a {@link RecyclerView.Adapter} that can provide the layout for each
- * list item based on a data source, which is a list of {@link Location} objects.
+ * {@link LocationViewAdapter} is a {@link RecyclerView.Adapter} that can provide the layout for
+ * each list item based on a data source, which is a list of {@link Location} objects.
  */
-public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyViewHolder> {
+public class LocationViewAdapter extends RecyclerView.Adapter<LocationViewAdapter.MyViewHolder> {
 
     /**
      * The ArrayList containing the list of locations to display.
@@ -28,11 +28,11 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
     private ArrayList<Location> mLocations;
 
     /**
-     * Create a new {@link LocationAdapter} object.
+     * Create a new {@link LocationViewAdapter} object.
      *
      * @param pLocation is the ArrayList containing the list of locations to display.
      */
-    public LocationAdapter(ArrayList<Location> pLocation) {
+    public LocationViewAdapter(ArrayList<Location> pLocation) {
         mLocations = pLocation;
     }
 
@@ -44,7 +44,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         // Create a new View
         View view = LayoutInflater.from(viewGroup.getContext()).
-                inflate(R.layout.item_tour_guide_location, viewGroup, false);
+                inflate(R.layout.item_location, viewGroup, false);
         return new MyViewHolder(view);
     }
 
@@ -55,6 +55,7 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
     public void onBindViewHolder(@NonNull final MyViewHolder viewHolder, int i) {
         // Get element from the dataset at this position
         Location currentLocation = mLocations.get(i);
+
         // Replace the contents of the View with that element
         viewHolder.mPictureImageView.setImageResource(currentLocation.getPicture());
         viewHolder.mNameTextView.setText(currentLocation.getName());
@@ -81,7 +82,6 @@ public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.MyView
             public void onClick(View v) {
                 Context context = v.getContext();
                 Intent intent = new Intent(context, TourGuideDetailActivity.class);
-                // TODO check if it actually works
                 intent.putExtra(TourGuideDetailActivity.EXTRA_IMAGE,
                         pCurrentLocation.getPicture());
                 intent.putExtra(TourGuideDetailActivity.EXTRA_NAME,

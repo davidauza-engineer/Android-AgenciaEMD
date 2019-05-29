@@ -41,7 +41,7 @@
             android:layout_marginTop="8dp"
             android:adjustViewBounds="true"
             android:maxWidth="200dp"
-            android:src="@drawable/img_company_logo"
+            android:src="@drawable/img_logo_emd"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/subtitle" />

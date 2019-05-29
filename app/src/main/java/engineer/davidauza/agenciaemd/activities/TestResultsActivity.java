@@ -11,8 +11,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import engineer.davidauza.agenciaemd.R;
-import engineer.davidauza.agenciaemd.adapters.QuestionAdapter;
+import engineer.davidauza.agenciaemd.adapters.QuestionViewAdapter;
 import engineer.davidauza.agenciaemd.fragments.TestResultsResetDialogFragment;
+import engineer.davidauza.agenciaemd.utils.LinkFormatter;
 
 /**
  * This class calculates the results of the test based on the answers provided by the user
@@ -23,7 +24,7 @@ public class TestResultsActivity extends AppCompatActivity {
      * Each question has a total of 10 points
      * The following array stores the corresponding score for each question. e.g.
      * scoreArray[0][0] stores the score for the question 1, option 1, and so on
-     *
+     * <p>
      * IMPORTANT: This property should never be accessed directly
      */
     byte[][] scoreArray = new byte[10][6];
@@ -157,7 +158,7 @@ public class TestResultsActivity extends AppCompatActivity {
         byte score = 0;
 
         // Get the SharedPreferences file from TestMainActivity class to be able to access its data
-        SharedPreferences settings = getSharedPreferences(QuestionAdapter.PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(QuestionViewAdapter.PREFS_NAME, 0);
 
         // Add the score corresponding to question One
         score += getScore((byte) 0,
@@ -237,9 +238,7 @@ public class TestResultsActivity extends AppCompatActivity {
             }
         });
 
-        // Set Copyright TextView
-        TextView copyright = findViewById(R.id.lbl_copyright);
-        MainActivity.setCopyrightText(copyright);
+        setCopyrightText();
     }
 
     /**
@@ -420,5 +419,13 @@ public class TestResultsActivity extends AppCompatActivity {
                 getString(R.string.test_results_email_subject),
                 body,
                 R.string.test_results_error_email);
+    }
+
+    /**
+     * This method sets up the copyright TextView to correctly display the copyright text.
+     */
+    private void setCopyrightText() {
+        TextView copyrightTextView = findViewById(R.id.lbl_copyright);
+        LinkFormatter.format(copyrightTextView, MainActivity.COPYRIGHT_TEXT);
     }
 }

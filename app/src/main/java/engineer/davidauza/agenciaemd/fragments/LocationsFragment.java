@@ -15,7 +15,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import engineer.davidauza.agenciaemd.R;
-import engineer.davidauza.agenciaemd.adapters.LocationAdapter;
+import engineer.davidauza.agenciaemd.adapters.LocationPagerAdapter;
+import engineer.davidauza.agenciaemd.adapters.LocationViewAdapter;
 import engineer.davidauza.agenciaemd.models.Location;
 
 /**
@@ -26,7 +27,7 @@ public class LocationsFragment extends Fragment {
 
     /**
      * The BundleKey to receive the category page from
-     * {@link engineer.davidauza.agenciaemd.adapters.LocationCategoryAdapter}
+     * {@link LocationPagerAdapter}
      */
     public static final String BUNDLE_KEY = "category_page";
 
@@ -69,10 +70,9 @@ public class LocationsFragment extends Fragment {
      * @param pContainer is the ViewGroup object passed by the onCreateView method.
      */
     private void setUpRecyclerView(LayoutInflater pInflater, ViewGroup pContainer) {
-        mRecyclerView = (RecyclerView) pInflater.inflate(R.layout.fragment_tour_guide_locations,
+        mRecyclerView = (RecyclerView) pInflater.inflate(R.layout.fragment_locations,
                 pContainer, false);
 
-        //TODO check when the lists are ready
         // Use this setting to improve performance if you know that changes in content do not change
         // the layout size of the RecyclerView
         mRecyclerView.setHasFixedSize(true);
@@ -93,7 +93,7 @@ public class LocationsFragment extends Fragment {
      */
     private ArrayList<Location> createList() {
         ArrayList<Location> locations = new ArrayList<>();
-        // Get the page passed using the method setArguments in the {@link LocationCategoryAdapter}
+        // Get the page passed using the method setArguments in the {@link LocationPagerAdapter}
         int page = getArguments().getInt(BUNDLE_KEY);
         switch (page) {
             case 0:
@@ -487,13 +487,13 @@ public class LocationsFragment extends Fragment {
     }
 
     /**
-     * This method creates a {@link LocationAdapter} and sets it to the RecyclerView.
+     * This method creates a {@link LocationViewAdapter} and sets it to the RecyclerView.
      *
      * @param pLocation is the ArrayList containing the locations to be displayed.
      */
     private void setUpRecyclerViewAdapter(ArrayList<Location> pLocation) {
         // Specify an adapter
-        mAdapter = new LocationAdapter(pLocation);
+        mAdapter = new LocationViewAdapter(pLocation);
         mRecyclerView.setAdapter(mAdapter);
     }
 }

@@ -181,7 +181,7 @@ public class MusicPlayerActivity extends AppCompatActivity {
      * on that it fills the corresponding TextViews and ImageView.
      */
     private void populateSongInfo() {
-        // MusicMenuSong's name
+        // Song's name
         TextView songNameTextView = findViewById(R.id.song_name);
         songNameTextView.setText(getIntent().getStringExtra("SONG_NAME"));
 
@@ -193,12 +193,12 @@ public class MusicPlayerActivity extends AppCompatActivity {
         TextView musicComposerTextView = findViewById(R.id.song_music_composer);
         musicComposerTextView.setText(getIntent().getStringExtra("SONG_MUSIC"));
 
-        // MusicMenuSong's image
+        // Song's image
         ImageView songPictureImageView = findViewById(R.id.song_picture);
         songPictureImageView.
-                setImageResource(getIntent().getIntExtra("SONG_PICTURE", R.drawable.img_company_logo));
+                setImageResource(getIntent().getIntExtra("SONG_PICTURE", R.drawable.img_logo_emd));
 
-        // MusicMenuSong's duration
+        // Song's duration
         TextView timerRightTextView = findViewById(R.id.timer_right);
         String songDurationInSeconds =
                 TimeFormatter.toMmSs(mMediaPlayer.getDuration());

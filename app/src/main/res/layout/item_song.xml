@@ -18,7 +18,7 @@
             android:id="@+id/song_picture"
             style="@style/SongPictureStyle"
             android:maxWidth="150dp"
-            tools:src="@drawable/img_colombia_flag" />
+            tools:src="@drawable/img_flag_colombia" />
 
         <TextView
             android:id="@+id/song_name"

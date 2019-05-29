@@ -16,13 +16,13 @@ import java.util.ArrayList;
 
 import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.activities.MainActivity;
-import engineer.davidauza.agenciaemd.models.MainTestQuestion;
+import engineer.davidauza.agenciaemd.models.Question;
 
 /**
- * QuestionAdapter is an ArrayAdapter that can provide the layout for each list item based on a
- * data source, which is a list of MainTestQuestion objects.
+ * QuestionViewAdapter is an ArrayAdapter that can provide the layout for each list item based on a
+ * data source, which is a list of Question objects.
  */
-public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
+public class QuestionViewAdapter extends ArrayAdapter<Question> {
 
     // The name of the file to store the state so it can be recovered
     public static final String PREFS_NAME = "MyPrefsFile";
@@ -391,13 +391,13 @@ public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
             };
 
     /**
-     * Create a new QuestionAdapter object.
+     * Create a new QuestionViewAdapter object.
      *
      * @param pContext   is the current context (i.e. Activity) that the adapter is being created
      *                   in.
      * @param pQuestions is the list of Questions to be displayed.
      */
-    public QuestionAdapter(Context pContext, ArrayList<MainTestQuestion> pQuestions) {
+    public QuestionViewAdapter(Context pContext, ArrayList<Question> pQuestions) {
         super(pContext, 0, pQuestions);
     }
 
@@ -406,14 +406,14 @@ public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
 
         // Inflate the View
         pConvertView = LayoutInflater.from(getContext()).
-                inflate(R.layout.item_test_main_question, pParent, false);
+                inflate(R.layout.item_question, pParent, false);
 
-        // Get the MainTestQuestion object located at this position in the list
-        MainTestQuestion currentQuestion = (MainTestQuestion) getItem(pPosition);
+        // Get the Question object located at this position in the list
+        Question currentQuestion = (Question) getItem(pPosition);
 
-        // Find the header TextView in the item_test_main_question.xmlayout with the ID question_header.
+        // Find the header TextView in the item_question.xmlayout with the ID question_header.
         TextView headerTextView = pConvertView.findViewById(R.id.question_header);
-        // Get the MainTestQuestion header from the currentQuestion object and set this text on the header
+        // Get the Question header from the currentQuestion object and set this text on the header
         // TextView.
         headerTextView.setText(currentQuestion.getQuestionHeader());
 
@@ -424,13 +424,13 @@ public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
 
         // Find the body TextView in the item_questionml layout with the ID question_body.
         TextView bodyTextView = pConvertView.findViewById(R.id.question_body);
-        // Get the MainTestQuestion body from the currentQuestion object and set this text on the body
+        // Get the Question body from the currentQuestion object and set this text on the body
         // TextView.
         bodyTextView.setText(currentQuestion.getQuestionBody());
         // If API is greater than or equal to 26, justify the text
         MainActivity.justifyText(bodyTextView);
 
-        // Find the first RadioButton in the item_test_main_question.xmlayout with the ID
+        // Find the first RadioButton in the item_question.xmlayout with the ID
         // yes_radio_button.
         RadioButton firstRadioButton = pConvertView.findViewById(R.id.yes_radio_button);
         // Check if a String has been provided for this field or not
@@ -451,7 +451,7 @@ public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
             firstRadioButton.setChecked(loadRadioButtonOne(firstRadioButton.getTag().toString()));
         }
 
-        // Find the second RadioButton in the item_test_main_question.xmlayout with the ID
+        // Find the second RadioButton in the item_question.xmlayout with the ID
         // no_radio_button.
         RadioButton secondRadioButton = pConvertView.findViewById(R.id.no_radio_button);
         // Check if a String has been provided for field or not
@@ -494,7 +494,7 @@ public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
             firstCheckBox.setChecked(loadCheckBoxOne(firstCheckBox.getTag().toString()));
         }
 
-        // Find the second CheckBox in the item_test_main_question.xmlayout with the ID checkbox_two.
+        // Find the second CheckBox in the item_question.xmlayout with the ID checkbox_two.
         CheckBox secondCheckBox = pConvertView.findViewById(R.id.checkbox_two);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxTwoText() == null) {
@@ -582,7 +582,7 @@ public class QuestionAdapter extends ArrayAdapter<MainTestQuestion> {
             fifthCheckBox.setChecked(loadCheckBoxFive(fifthCheckBox.getTag().toString()));
         }
 
-        // Find the sixth CheckBox in the item_test_main_question.xmlayout with the ID checkbox_six.
+        // Find the sixth CheckBox in the item_question.xmlayout with the ID checkbox_six.
         CheckBox sixthCheckBox = pConvertView.findViewById(R.id.checkbox_six);
         // Check if a String has been provided for this field or not
         if (currentQuestion.getCheckBoxSixText() == null) {

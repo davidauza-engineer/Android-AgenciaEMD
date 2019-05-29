@@ -1,12 +1,12 @@
 package engineer.davidauza.agenciaemd.models;
 
 /**
- * This class represents a question.
+ * This class represents a {@link Question}.
  * It contains a question header, a picture related to the question, the body of the question, in
  * some cases two RadioButtons, in some cases four CheckBoxes, and in some other cases six
  * CheckBoxes.
  */
-public class MainTestQuestion {
+public class Question {
 
     /**
      * The header of each question
@@ -63,7 +63,7 @@ public class MainTestQuestion {
     private String mCheckBoxSixText;
 
     /**
-     * Create a new MainTestQuestion object, when the question uses RadioButtons.
+     * Create a new Question object, when the question uses RadioButtons.
      *
      * @param pQuestionHeader     The header of each question
      * @param pImageResourceId    Image resource ID for the question
@@ -71,11 +71,11 @@ public class MainTestQuestion {
      * @param pRadioButtonOneText Text for RadioButton 1
      * @param pRadioButtonTwoText Text for RadioButton 2
      */
-    public MainTestQuestion(String pQuestionHeader,
-                            int pImageResourceId,
-                            String pQuestionBody,
-                            String pRadioButtonOneText,
-                            String pRadioButtonTwoText) {
+    public Question(String pQuestionHeader,
+                    int pImageResourceId,
+                    String pQuestionBody,
+                    String pRadioButtonOneText,
+                    String pRadioButtonTwoText) {
 
         mQuestionHeader = pQuestionHeader;
         mImageResourceId = pImageResourceId;
@@ -85,7 +85,7 @@ public class MainTestQuestion {
     }
 
     /**
-     * Create a new MainTestQuestion object, when the question uses CheckBoxes and four possible answers.
+     * Create a new Question object, when the question uses CheckBoxes and four possible answers.
      *
      * @param pQuestionHeader    The header of each question
      * @param pImageResourceId   Image resource ID for the question
@@ -95,13 +95,13 @@ public class MainTestQuestion {
      * @param pCheckBoxThreeText Text for the third CheckBox
      * @param pCheckBoxFourText  Text for the fourth CheckBox
      */
-    public MainTestQuestion(String pQuestionHeader,
-                            int pImageResourceId,
-                            String pQuestionBody,
-                            String pCheckBoxOneText,
-                            String pCheckBoxTwoText,
-                            String pCheckBoxThreeText,
-                            String pCheckBoxFourText) {
+    public Question(String pQuestionHeader,
+                    int pImageResourceId,
+                    String pQuestionBody,
+                    String pCheckBoxOneText,
+                    String pCheckBoxTwoText,
+                    String pCheckBoxThreeText,
+                    String pCheckBoxFourText) {
 
         mQuestionHeader = pQuestionHeader;
         mImageResourceId = pImageResourceId;
@@ -113,7 +113,7 @@ public class MainTestQuestion {
     }
 
     /**
-     * Create a new MainTestQuestion object, when the question uses CheckBoxes and six possible answers.
+     * Create a new Question object, when the question uses CheckBoxes and six possible answers.
      *
      * @param pQuestionHeader    The header of each question
      * @param pImageResourceId   Image resource ID for the question
@@ -125,15 +125,15 @@ public class MainTestQuestion {
      * @param pCheckBoxFiveText  Text for the fifth CheckBox
      * @param pCheckBoxSixText   Text for the sixth CheckBox
      */
-    public MainTestQuestion(String pQuestionHeader,
-                            int pImageResourceId,
-                            String pQuestionBody,
-                            String pCheckBoxOneText,
-                            String pCheckBoxTwoText,
-                            String pCheckBoxThreeText,
-                            String pCheckBoxFourText,
-                            String pCheckBoxFiveText,
-                            String pCheckBoxSixText) {
+    public Question(String pQuestionHeader,
+                    int pImageResourceId,
+                    String pQuestionBody,
+                    String pCheckBoxOneText,
+                    String pCheckBoxTwoText,
+                    String pCheckBoxThreeText,
+                    String pCheckBoxFourText,
+                    String pCheckBoxFiveText,
+                    String pCheckBoxSixText) {
 
         mQuestionHeader = pQuestionHeader;
         mImageResourceId = pImageResourceId;

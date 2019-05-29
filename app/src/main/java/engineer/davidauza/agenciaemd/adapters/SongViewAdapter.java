@@ -14,22 +14,22 @@ import java.util.ArrayList;
 
 import engineer.davidauza.agenciaemd.R;
 import engineer.davidauza.agenciaemd.activities.MusicPlayerActivity;
-import engineer.davidauza.agenciaemd.models.MusicMenuSong;
+import engineer.davidauza.agenciaemd.models.Song;
 
 /**
- * {@link SongAdapter} is an {@link ArrayAdapter} that can provide the layout for each grid
- * item based on a data source, which is a list of {@link MusicMenuSong} objects.
+ * {@link SongViewAdapter} is an {@link ArrayAdapter} that can provide the layout for each grid
+ * item based on a data source, which is a list of {@link Song} objects.
  */
-public class SongAdapter extends ArrayAdapter<MusicMenuSong> {
+public class SongViewAdapter extends ArrayAdapter<Song> {
 
     /**
-     * Create a new {@link SongAdapter} object.
+     * Create a new {@link SongViewAdapter} object.
      *
      * @param pContext is the current context (i.e. Activity) that the adapter is being created in.
-     * @param pSongs   is the list of {@link MusicMenuSong}s to be displayed.
+     * @param pSongs   is the list of {@link Song}s to be displayed.
      */
-    public SongAdapter(Context pContext,
-                       ArrayList<MusicMenuSong> pSongs) {
+    public SongViewAdapter(Context pContext,
+                           ArrayList<Song> pSongs) {
         super(pContext, 0, pSongs);
     }
 
@@ -38,16 +38,16 @@ public class SongAdapter extends ArrayAdapter<MusicMenuSong> {
         // Check if an existing View is being reused, otherwise inflate the View
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).
-                    inflate(R.layout.item_music_menu_song, parent, false);
+                    inflate(R.layout.item_song, parent, false);
         }
 
-        // Get the {@link MusicMenuSong} object located at this position in the list
-        MusicMenuSong currentSong = getItem(position);
+        // Get the {@link Song} object located at this position in the list
+        Song currentSong = getItem(position);
 
-        // Find the ImageView in the item_music_menu_song.xmlayout with the ID song_picture.
+        // Find the ImageView in the item_song.xmlayout with the ID song_picture.
         ImageView imageView = convertView.findViewById(R.id.song_picture);
         // Display the provided image based on the resource ID
-        imageView.setImageResource(currentSong.getImageResorceId());
+        imageView.setImageResource(currentSong.getImageResourceId());
 
         // Find the first TextView in the item_songml layout with the ID song_name.
         TextView songNameTextView = convertView.findViewById(R.id.song_name);
@@ -75,7 +75,7 @@ public class SongAdapter extends ArrayAdapter<MusicMenuSong> {
             @Override
             public void onClick(View v) {
                 int position = (Integer) cardView.getTag();
-                MusicMenuSong currentSong = getItem(position);
+                Song currentSong = getItem(position);
                 // Create the intent to open the MusicPlayerActivity Activity
                 Intent intent = new Intent(getContext(), MusicPlayerActivity.class);
                 // Put the name of the song
@@ -85,7 +85,7 @@ public class SongAdapter extends ArrayAdapter<MusicMenuSong> {
                 // Put the music composer of the song
                 intent.putExtra("SONG_MUSIC", currentSong.getMusicComposer());
                 // Put the image of the song
-                intent.putExtra("SONG_PICTURE", currentSong.getImageResorceId());
+                intent.putExtra("SONG_PICTURE", currentSong.getImageResourceId());
                 // Put the audio resource of the song
                 intent.putExtra("SONG_RESOURCE", currentSong.getAudioResourceId());
                 getContext().startActivity(intent);

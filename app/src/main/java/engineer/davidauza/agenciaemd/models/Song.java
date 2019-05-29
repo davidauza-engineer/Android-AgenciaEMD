@@ -1,11 +1,11 @@
 package engineer.davidauza.agenciaemd.models;
 
 /**
- * {@link MusicMenuSong} represents a song that the user can listen to.
+ * {@link Song} represents a song that the user can listen to.
  * It contains an image, the name of the song, the lyrics author, the music author and an audio
  * resource ID.
  */
-public class MusicMenuSong {
+public class Song {
 
     /**
      * Image resource ID for the song
@@ -33,7 +33,7 @@ public class MusicMenuSong {
     private int mAudioResourceId;
 
     /**
-     * Create a new MusicMenuSong object.
+     * Create a new Song object.
      *
      * @param pImageResourceId is the resource ID for the image file associated with this song
      * @param pNameOfTheSong   is the name of the song
@@ -41,11 +41,11 @@ public class MusicMenuSong {
      * @param pMusicComposer   is the name of the composer of the song's music
      * @param pAudioResourceId is the resource ID for the audio file associated with this song
      */
-    public MusicMenuSong(int pImageResourceId,
-                         String pNameOfTheSong,
-                         String pLyricsComposer,
-                         String pMusicComposer,
-                         int pAudioResourceId) {
+    public Song(int pImageResourceId,
+                String pNameOfTheSong,
+                String pLyricsComposer,
+                String pMusicComposer,
+                int pAudioResourceId) {
 
         mImageResourceId = pImageResourceId;
         mNameOfTheSong = pNameOfTheSong;
@@ -57,7 +57,7 @@ public class MusicMenuSong {
     /**
      * Return the image resource ID of the song.
      */
-    public int getImageResorceId() {
+    public int getImageResourceId() {
         return mImageResourceId;
     }
 
