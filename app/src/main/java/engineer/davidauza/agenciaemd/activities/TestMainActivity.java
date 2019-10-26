@@ -235,8 +235,6 @@ public class TestMainActivity extends AppCompatActivity {
         if (imm.isAcceptingText()) {
             adjustCursor(0, false);
         }
-        // Create a toast with a thank you message
-        TejoCounterActivity.createToastShort(this, R.string.test_results_toast);
         Intent intent = new Intent(this, TestResultsActivity.class);
         startActivity(intent);
     }
